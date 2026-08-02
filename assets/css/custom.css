@@ -1,0 +1,10 @@
+.main-nav a{
+    color:white;
+}
+.site-header {
+    border-bottom: 2px solid #224159;
+}
+
+.site-header.scrolled {
+    background: rgb(7 42 69 / 85%);
+}

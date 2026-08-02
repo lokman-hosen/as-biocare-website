@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Products | AS BIO CARE LIMITED</title>
+<meta name="description" content="Browse the full AS BIO CARE product catalogue - fish medicine, poultry medicine, water treatment and more.">
+<meta property="og:title" content="Our Products | AS BIO CARE LIMITED">
+<meta property="og:description" content="Browse the full AS BIO CARE product catalogue - fish medicine, poultry medicine, water treatment and more.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/images/logo.png">
+<link rel="icon" href="assets/images/logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body>
+
+<!-- Loader -->
+<div id="site-loader">
+  <img src="assets/images/logo.png" alt="AS Bio Care" class="loader-logo">
+  <div class="loader-bar"><span></span></div>
+  <div class="loader-text">AS BIO CARE LIMITED</div>
+</div>
+
+<div class="nav-scrim"></div>
+<div class="mobile-nav">
+  <div class="mobile-nav-head">
+    <img src="assets/images/logo.png" alt="logo" style="height:36px;">
+    <button class="mobile-nav-close icon-btn"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="products.html" class="active">Products</a>
+  <a href="news.html">News</a>
+  <a href="blog.html">Blog</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="depots.html">Depots</a>
+  <a href="contact.html">Contact</a>
+  <div style="margin-top:22px;display:flex;gap:10px;">
+    <a href="tel:+8801700000000" class="btn btn-primary btn-sm btn-block"><i class="fa-solid fa-phone"></i><span>Call Us</span></a>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/images/logo.png" alt="AS Bio Care Limited logo">
+      <!-- <span class="brand-name">AS BIO CARE<small>Aquaculture &amp; Poultry Health</small></span>-->
+    </a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html" class="active">Products</a>
+      <a href="news.html">News</a>
+      <a href="blog.html">Blog</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="depots.html">Depots</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-switch">
+        <button class="active">EN</button><button>বাংলা</button>
+      </div>
+      <button class="icon-btn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <a href="tel:+8801700000000" class="btn btn-outline btn-sm" style="display:none" data-call><i class="fa-solid fa-phone"></i></a>
+      <a href="contact.html" class="btn btn-primary btn-sm"><span>Contact</span></a>
+      <button class="hamburger" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container content">
+    <span class="eyebrow">Catalogue</span>
+    <h1>Our Products</h1>
+    <div class="breadcrumb"><a href="index.html">Home</a><i class="fa-solid fa-chevron-right" style="font-size:.6rem;"></i><span>Our Products</span></div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:56px;">
+  <div class="container">
+    <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between;align-items:center;margin-bottom:34px;">
+      <div style="position:relative;max-width:380px;flex:1;">
+        <input type="text" id="product-search" class="form-control" placeholder="Search products..." style="padding-left:44px;">
+        <i class="fa-solid fa-magnifying-glass" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--c-slate);"></i>
+      </div>
+    </div>
+    <div class="chip-row" data-filter style="margin-bottom:44px;">
+      <button class="chip active" data-chip="all">All Products</button>
+      <button class="chip" data-chip="fish">Fish Medicines</button>
+      <button class="chip" data-chip="poultry">Poultry Medicines</button>
+      <button class="chip" data-chip="water">Water Treatment</button>
+      <button class="chip" data-chip="feed">Feed Supplement</button>
+      <button class="chip" data-chip="growth">Growth Promoter</button>
+      <button class="chip" data-chip="vitamins">Vitamins</button>
+      <button class="chip" data-chip="disease">Disease Prevention</button>
+      <button class="chip" data-chip="equipment">Equipment</button>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;">
+      
+<div class="card card-lift product-card reveal delay-1" data-category="fish" data-name="AquaGuard Plus">
+  <div class="thumb">
+    <span class="cat-tag">Fish Medicine</span>
+    <img src="https://picsum.photos/seed/aquaguard/520/390" alt="AquaGuard Plus" loading="lazy">
+  </div>
+  <div class="body">
+    <span class="badge">Fish Medicine</span>
+    <h3>AquaGuard Plus</h3>
+    <p>Broad-spectrum antibacterial solution that treats fin rot, ulcer disease and bacterial gill infection in farmed fish.</p>
+    <a href="product-details.html" class="btn btn-outline btn-sm btn-block"><span>View Details</span><i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+</div>
+<div class="card card-lift product-card reveal delay-2" data-category="poultry" data-name="PoultroShield">
+  <div class="thumb">
+    <span class="cat-tag">Poultry Medicine</span>
+    <img src="https://picsum.photos/seed/poultroshield/520/390" alt="PoultroShield" loading="lazy">
+  </div>
+  <div class="body">
+    <span class="badge">Poultry Medicine</span>
+    <h3>PoultroShield</h3>
+    <p>Fast-acting antibiotic premix that protects layer and broiler flocks against E. coli, CRD and coccidiosis.</p>
+    <a href="product-details.html" class="btn btn-outline btn-sm btn-block"><span>View Details</span><i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+</div>
+<div class="card card-lift product-card reveal delay-3" data-category="water" data-name="ClearPond Water Conditioner">
+  <div class="thumb">
+    <span class="cat-tag">Water Treatment</span>
+    <img src="https://picsum.photos/seed/clearpond/520/390" alt="ClearPond Water Conditioner" loading="lazy">
+  </div>
+  <div class="body">
+    <span class="badge">Water Treatment</span>
+    <h3>ClearPond Water Conditioner</h3>
+    <p>Rapidly neutralises ammonia, nitrite and chlorine while stabilising pond pH for a healthier aquatic environment.</p>
+    <a href="product-details.html" class="btn btn-outline btn-sm btn-block"><span>View Details</span><i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+</div>
+<div class="card card-lift product-card reveal delay-4" data-category="feed" data-name="GrowMax Feed Supplement">
+  <div class="thumb">
+    <span class="cat-tag">Feed Supplement</span>
+    <img src="https://picsum.photos/seed/growmax/520/390" alt="GrowMax Feed Supplement" loading="lazy">
+  </div>
+  <div class="body">
+    <span class="badge">Feed Supplement</span>
+    <h3>GrowMax Feed Supplement</h3>
+    <p>A balanced blend of amino acids, vitamins and minerals that boosts feed conversion ratio in fish and poultry.</p>
+    <a href="product-details.html" class="btn btn-outline btn-sm btn-block"><span>View Details</span><i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+</div>
+<div class="card card-lift product-card reveal delay-1" data-category="vitamins" data-name="VitaBoost Multivitamin">
+  <div class="thumb">
+    <span class="cat-tag">Vitamins</span>
+    <img src="https://picsum.photos/seed/vitaboost/520/390" alt="VitaBoost Multivitamin" loading="lazy">
+  </div>
+  <div class="body">
+    <span class="badge">Vitamins</span>
+    <h3>VitaBoost Multivitamin</h3>
+    <p>A complete multivitamin and electrolyte formula that reduces stress during transport, handling and hot weather.</p>
+    <a href="product-details.html" class="btn btn-outline btn-sm btn-block"><span>View Details</span><i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+</div>
+<div class="card card-lift product-card reveal delay-2" data-category="growth" data-name="RapidGain Growth Promoter">
+  <div class="thumb">
+    <span class="cat-tag">Growth Promoter</span>
+    <img src="https://picsum.photos/seed/rapidgain/520/390" alt="RapidGain Growth Promoter" loading="lazy">
+  </div>
+  <div class="body">
+    <span class="badge">Growth Promoter</span>
+    <h3>RapidGain Growth Promoter</h3>
+    <p>A natural, hormone-free growth promoter that accelerates weight gain in fish and poultry without residue concerns.</p>
+    <a href="product-details.html" class="btn btn-outline btn-sm btn-block"><span>View Details</span><i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+</div>
+<div class="card card-lift product-card reveal delay-3" data-category="disease" data-name="BioShield Disease Preventor">
+  <div class="thumb">
+    <span class="cat-tag">Disease Prevention</span>
+    <img src="https://picsum.photos/seed/bioshield/520/390" alt="BioShield Disease Preventor" loading="lazy">
+  </div>
+  <div class="body">
+    <span class="badge">Disease Prevention</span>
+    <h3>BioShield Disease Preventor</h3>
+    <p>A preventive biosecurity solution that lowers the risk of viral and bacterial outbreaks in high-density farms.</p>
+    <a href="product-details.html" class="btn btn-outline btn-sm btn-block"><span>View Details</span><i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+</div>
+<div class="card card-lift product-card reveal delay-4" data-category="equipment" data-name="AeroFlow Pond Aerator">
+  <div class="thumb">
+    <span class="cat-tag">Aquaculture Equipment</span>
+    <img src="https://picsum.photos/seed/aeroflow/520/390" alt="AeroFlow Pond Aerator" loading="lazy">
+  </div>
+  <div class="body">
+    <span class="badge">Aquaculture Equipment</span>
+    <h3>AeroFlow Pond Aerator</h3>
+    <p>An energy-efficient paddlewheel aerator that maintains optimal dissolved oxygen levels in intensive fish ponds.</p>
+    <a href="product-details.html" class="btn btn-outline btn-sm btn-block"><span>View Details</span><i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+</div>
+    </div>
+    <div class="pagination">
+      <a href="#" class="active">1</a><a href="#">2</a><a href="#">3</a><a href="#"><i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<div class="float-stack">
+  <a href="#" class="fab fab-messenger" aria-label="Messenger"><i class="fa-brands fa-facebook-messenger"></i><span class="tip">Chat on Messenger</span></a>
+  <a href="#" class="fab fab-whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i><span class="tip">WhatsApp Us</span></a>
+  <a href="tel:+8801700000000" class="fab fab-call" aria-label="Call"><i class="fa-solid fa-phone"></i><span class="tip">Call Head Office</span></a>
+  <button class="scroll-top" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/logo.png" alt="AS Bio Care Limited">
+        <p>AS BIO CARE LIMITED manufactures trusted aquaculture and poultry healthcare products &mdash; fisheries medicines, nutritional supplements, water treatment solutions and disease prevention formulas for farmers across Bangladesh.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="about.html">About Us</a>
+        <a href="mission.html">Our Mission</a>
+        <a href="vision.html">Our Vision</a>
+        <a href="motto.html">Our Motto</a>
+        <a href="team.html">Expert Team</a>
+        <a href="testimonials.html">Testimonials</a>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <a href="products.html">Products</a>
+        <a href="news.html">News</a>
+        <a href="blog.html">Blog</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="depots.html">Our Depots</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+      <div class="footer-col">
+        <h5>Get in Touch</h5>
+        <ul class="footer-contact" style="list-style:none;padding:0;margin:0 0 18px;">
+          <li><i class="fa-solid fa-location-dot"></i><span>Head Office: 123 Progoti Sarani, Dhaka 1212, Bangladesh</span></li>
+          <li><i class="fa-solid fa-phone"></i><span>+880 1700-000000</span></li>
+          <li><i class="fa-solid fa-envelope"></i><span>info@asbiocare.com</span></li>
+        </ul>
+        <h5 style="font-size:.85rem;">Newsletter</h5>
+        <form class="newsletter" data-demo-form>
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 AS Bio Care Limited. All rights reserved.</span>
+      <span><a href="contact.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="contact.html">Terms of Service</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="lightbox"><span class="lightbox-close">&times;</span><img src="" alt=""></div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
