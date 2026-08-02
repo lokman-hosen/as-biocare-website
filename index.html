@@ -1,650 +1,755 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Home | AS BIO CARE LIMITED</title>
-<meta name="description" content="AS BIO CARE LIMITED manufactures trusted aquaculture and poultry healthcare products across Bangladesh.">
-<meta property="og:title" content="Home | AS BIO CARE LIMITED">
-<meta property="og:description" content="AS BIO CARE LIMITED manufactures trusted aquaculture and poultry healthcare products across Bangladesh.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="assets/images/logo.png">
-<link rel="icon" href="assets/images/logo.png" type="image/png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet" href="assets/css/custom.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | AS BIO CARE LIMITED</title>
+  <meta name="description" content="AS BIO CARE LIMITED manufactures trusted aquaculture and poultry healthcare products across Bangladesh.">
+  <meta property="og:title" content="Home | AS BIO CARE LIMITED">
+  <meta property="og:description" content="AS BIO CARE LIMITED manufactures trusted aquaculture and poultry healthcare products across Bangladesh.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/logo.png">
+  <link rel="icon" href="assets/images/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary:  { DEFAULT:'#2762B5', 600:'#1F4E92', 700:'#163A6E', 100:'#E7EFFA' },
+            secondary:{ DEFAULT:'#1F9E4C', 600:'#167A3B', 100:'#E5F7EC' },
+            accent:   { DEFAULT:'#DD3B3B', 600:'#B92E2E' },
+            navy: '#0E2A47', navy2: '#123A63',
+            ink: '#16233A', slate: '#5B6B82',
+            cream: '#F6F9FC', cream2: '#EFF4F9',
+            line: '#E3EAF2'
+          },
+          fontFamily: {
+            display: ['Poppins','sans-serif'],
+            body: ['"Nunito Sans"','sans-serif']
+          },
+          borderRadius: { sm:'10px', md:'16px', lg:'26px' },
+          boxShadow: {
+            soft:'0 2px 10px rgba(14,42,71,.06)',
+            card:'0 12px 30px rgba(14,42,71,.10)',
+            lifted:'0 24px 60px rgba(14,42,71,.14)'
+          },
+          keyframes: {
+            loaderPulse:{'0%,100%':{transform:'scale(1)'},'50%':{transform:'scale(1.08)'}},
+            floatY:{'0%,100%':{transform:'translateY(0) rotate(0deg)'},'50%':{transform:'translateY(-24px) rotate(8deg)'}},
+            pulseRing:{'0%':{transform:'scale(1)',opacity:0.8},'100%':{transform:'scale(1.6)',opacity:0}},
+            blink:{'50%':{opacity:0}}
+          },
+          animation: {
+            loaderPulse:'loaderPulse 1.6s ease-in-out infinite',
+            floatY:'floatY 7s ease-in-out infinite',
+            pulseRing:'pulseRing 2s ease-out infinite',
+            blink:'blink 1s step-start infinite'
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
+<body class="font-body text-ink bg-white antialiased overflow-x-hidden">
 
 <!-- Loader -->
-<div id="site-loader">
-  <img src="assets/images/logo.png" alt="AS Bio Care" class="loader-logo">
-  <div class="loader-bar"><span></span></div>
-  <div class="loader-text">AS BIO CARE LIMITED</div>
+<div id="site-loader" class="fixed inset-0 z-[9999] bg-navy flex flex-col items-center justify-center gap-6 transition-all duration-500">
+  <img src="assets/images/logo.png" alt="AS Bio Care" class="w-20 h-20 animate-loaderPulse">
+  <div class="w-44 h-1 bg-white/15 rounded-full overflow-hidden">
+    <span id="loader-bar-fill" class="block h-full w-0 bg-gradient-to-r from-secondary to-primary rounded-full transition-[width] duration-[1400ms] ease-out"></span>
+  </div>
+  <div class="text-white font-display tracking-[0.18em] text-[11px] uppercase opacity-70">AS BIO CARE LIMITED</div>
 </div>
 
-<div class="nav-scrim"></div>
-<div class="mobile-nav">
-  <div class="mobile-nav-head">
-    <img src="assets/images/logo.png" alt="logo" style="height:36px;">
-    <button class="mobile-nav-close icon-btn"><i class="fa-solid fa-xmark"></i></button>
+<div id="nav-scrim" class="fixed inset-0 bg-navy/50 z-[1100] opacity-0 invisible transition-all duration-400"></div>
+
+<div id="mobile-nav" class="fixed top-0 right-[-100%] w-[86vw] max-w-[340px] h-screen bg-white z-[1200] shadow-2xl transition-[right] duration-500 ease-out p-6 overflow-y-auto">
+  <div class="flex justify-between items-center mb-6">
+    <img src="assets/images/logo.png" alt="logo" class="h-9">
+    <button class="mobile-nav-close w-10 h-10 rounded-full border border-line flex items-center justify-center"><i class="fa-solid fa-xmark"></i></button>
   </div>
-  <a href="index.html" class="active">Home</a>
-  <a href="about.html">About</a>
-  <a href="products.html">Products</a>
-  <a href="news.html">News</a>
-  <a href="blog.html">Blog</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="depots.html">Depots</a>
-  <a href="contact.html">Contact</a>
-  <div style="margin-top:22px;display:flex;gap:10px;">
-    <a href="tel:+8801700000000" class="btn btn-primary btn-sm btn-block"><i class="fa-solid fa-phone"></i><span>Call Us</span></a>
+  <a href="index.html" class="nav-link block py-3 font-display font-semibold text-primary border-b border-line">Home</a>
+  <a href="about.html" class="nav-link block py-3 font-display font-semibold text-navy border-b border-line">About</a>
+  <a href="products.html" class="nav-link block py-3 font-display font-semibold text-navy border-b border-line">Products</a>
+  <a href="news.html" class="nav-link block py-3 font-display font-semibold text-navy border-b border-line">News</a>
+  <a href="blog.html" class="nav-link block py-3 font-display font-semibold text-navy border-b border-line">Blog</a>
+  <a href="gallery.html" class="nav-link block py-3 font-display font-semibold text-navy border-b border-line">Gallery</a>
+  <a href="depots.html" class="nav-link block py-3 font-display font-semibold text-navy border-b border-line">Depots</a>
+  <a href="contact.html" class="nav-link block py-3 font-display font-semibold text-navy">Contact</a>
+  <div class="mt-6 flex gap-2.5">
+    <a href="tel:+8801700000000" class="w-full inline-flex items-center justify-center gap-2 bg-primary text-white font-display font-semibold text-sm px-5 py-3 rounded-full"><i class="fa-solid fa-phone"></i><span>Call Us</span></a>
   </div>
 </div>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="index.html" class="brand">
-      <img src="assets/images/logo.png" alt="AS Bio Care Limited logo">
-<!-- <span class="brand-name">AS BIO CARE<small>Aquaculture &amp; Poultry Health</small></span>-->
+<header id="site-header" class="fixed top-0 inset-x-0 z-[1000] py-[18px] transition-all duration-400">
+  <div class="max-w-[1240px] mx-auto px-6 flex items-center justify-between gap-5">
+    <a href="index.html" class="flex items-center gap-3">
+      <img id="brand-logo" src="assets/images/logo.png" alt="AS Bio Care Limited logo" class="h-11 w-11 object-contain transition-all duration-300">
     </a>
-    <nav class="main-nav">
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About</a>
-      <a href="products.html">Products</a>
-      <a href="news.html">News</a>
-      <a href="blog.html">Blog</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="depots.html">Depots</a>
-      <a href="contact.html">Contact</a>
+    <nav class="hidden lg:flex items-center gap-0.5">
+      <a href="index.html" class="nav-link relative font-display font-semibold text-[14px] text-primary px-4 py-2.5 rounded-full after:content-[''] after:absolute after:left-4 after:right-4 after:bottom-1.5 after:h-0.5 after:bg-secondary after:scale-x-100 after:origin-left after:transition-transform">Home</a>
+      <a href="about.html" class="nav-link relative font-display font-semibold text-[14px] text-navy px-4 py-2.5 rounded-full hover:text-primary transition-colors after:content-[''] after:absolute after:left-4 after:right-4 after:bottom-1.5 after:h-0.5 after:bg-secondary after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform">About</a>
+      <a href="products.html" class="nav-link relative font-display font-semibold text-[14px] text-navy px-4 py-2.5 rounded-full hover:text-primary transition-colors after:content-[''] after:absolute after:left-4 after:right-4 after:bottom-1.5 after:h-0.5 after:bg-secondary after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform">Products</a>
+      <a href="news.html" class="nav-link relative font-display font-semibold text-[14px] text-navy px-4 py-2.5 rounded-full hover:text-primary transition-colors after:content-[''] after:absolute after:left-4 after:right-4 after:bottom-1.5 after:h-0.5 after:bg-secondary after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform">News</a>
+      <a href="blog.html" class="nav-link relative font-display font-semibold text-[14px] text-navy px-4 py-2.5 rounded-full hover:text-primary transition-colors after:content-[''] after:absolute after:left-4 after:right-4 after:bottom-1.5 after:h-0.5 after:bg-secondary after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform">Blog</a>
+      <a href="gallery.html" class="nav-link relative font-display font-semibold text-[14px] text-navy px-4 py-2.5 rounded-full hover:text-primary transition-colors after:content-[''] after:absolute after:left-4 after:right-4 after:bottom-1.5 after:h-0.5 after:bg-secondary after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform">Gallery</a>
+      <a href="depots.html" class="nav-link relative font-display font-semibold text-[14px] text-navy px-4 py-2.5 rounded-full hover:text-primary transition-colors after:content-[''] after:absolute after:left-4 after:right-4 after:bottom-1.5 after:h-0.5 after:bg-secondary after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform">Depots</a>
+      <a href="contact.html" class="nav-link relative font-display font-semibold text-[14px] text-navy px-4 py-2.5 rounded-full hover:text-primary transition-colors after:content-[''] after:absolute after:left-4 after:right-4 after:bottom-1.5 after:h-0.5 after:bg-secondary after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform">Contact</a>
     </nav>
-    <div class="header-actions">
-      <div class="lang-switch">
-        <button class="active">EN</button><button>বাংলা</button>
+    <div class="flex items-center gap-2.5">
+      <div class="hidden lg:flex items-center border border-line rounded-full overflow-hidden font-display font-bold text-[13px]">
+        <button class="lang-btn px-3 py-2 bg-primary text-white">EN</button>
+        <button class="lang-btn px-3 py-2 text-slate">বাংলা</button>
       </div>
-      <button class="icon-btn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
-      <a href="tel:+8801700000000" class="btn btn-outline btn-sm" style="display:none" data-call><i class="fa-solid fa-phone"></i></a>
-      <a href="contact.html" class="btn btn-primary btn-sm"><span>Contact</span></a>
-      <button class="hamburger" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+      <button class="hidden lg:flex w-10 h-10 rounded-full border border-line items-center justify-center text-navy hover:bg-primary hover:text-white hover:border-primary transition-colors" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <a href="contact.html" class="hidden sm:inline-flex items-center gap-2 bg-primary text-white font-display font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-primary-600 transition-colors"><span>Contact</span></a>
+      <button id="hamburger" class="lg:hidden w-[42px] h-[42px] rounded-full border border-line flex items-center justify-center" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
     </div>
   </div>
 </header>
 
-<section class="hero">
-  <div class="hero-slides">
-    <div class="hero-slide active" style="background-image:url('https://storage.needpix.com/rsynced_images/catfish.jpg');"></div>
-    <div class="hero-slide" style="background-image:url('https://picsum.photos/seed/poultryfarm1/1600/1000');"></div>
-    <div class="hero-slide" style="background-image:url('https://cdn.prod.website-files.com/59a55e11a1a95c0001f8ffc0/59bf921eac06760001dc297d_Premster-Fish-farming.jpg');"></div>
+<section class="hero relative min-h-[92vh] flex items-center overflow-hidden bg-navy">
+  <div class="absolute inset-0">
+    <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-100 transition-opacity duration-[1600ms]" style="background-image:url('https://storage.needpix.com/rsynced_images/catfish.jpg');"></div>
+    <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-[1600ms]" style="background-image:url('https://picsum.photos/seed/poultryfarm1/1600/1000');"></div>
+    <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-[1600ms]" style="background-image:url('https://cdn.prod.website-files.com/59a55e11a1a95c0001f8ffc0/59bf921eac06760001dc297d_Premster-Fish-farming.jpg');"></div>
   </div>
-  <div class="hero-overlay"></div>
-  <div class="hero-shape" style="width:220px;height:220px;background:var(--c-secondary);top:14%;left:8%;"></div>
-  <div class="hero-shape" style="width:140px;height:140px;background:var(--c-primary);bottom:22%;left:20%;animation-delay:1.2s;"></div>
-  <div class="hero-shape" style="width:180px;height:180px;background:var(--c-accent);top:20%;right:10%;animation-delay:2.4s;"></div>
-  <div class="container">
-    <div class="hero-content">
-      <span class="eyebrow">Trusted Since 2009</span>
-      <h1>Healthier Farms.<br>Stronger <span class="accent" data-typing='["Fisheries.","Poultry.","Harvests."]'></span></h1>
-      <p>AS BIO CARE LIMITED manufactures advanced aquaculture and poultry healthcare products &mdash; built on research, trusted by farmers, and backed by a nationwide depot network.</p>
-      <div class="hero-cta">
-        <a href="products.html" class="btn btn-accent"><span>Explore Products</span><i class="fa-solid fa-arrow-right"></i></a>
-        <a href="contact.html" class="btn btn-ghost-light"><span>Contact Head Office</span></a>
+  <div class="absolute inset-0 bg-[linear-gradient(120deg,rgba(14,42,71,.92)_10%,rgba(14,42,71,.68)_55%,rgba(31,158,76,.35)_100%)]"></div>
+  <div class="absolute rounded-full blur-[2px] opacity-35 animate-floatY bg-secondary" style="width:220px;height:220px;top:14%;left:8%;"></div>
+  <div class="absolute rounded-full blur-[2px] opacity-35 animate-floatY bg-primary" style="width:140px;height:140px;bottom:22%;left:20%;animation-delay:1.2s;"></div>
+  <div class="absolute rounded-full blur-[2px] opacity-35 animate-floatY bg-accent" style="width:180px;height:180px;top:20%;right:10%;animation-delay:2.4s;"></div>
+  <div class="relative z-[3] max-w-[1240px] mx-auto px-6 w-full">
+    <div class="pt-16 lg:pt-5 text-white">
+      <span class="inline-flex items-center gap-2 font-display font-semibold text-[12px] tracking-[.14em] uppercase bg-white/10 text-white px-4 py-[7px] rounded-full before:content-[''] before:w-[7px] before:h-[7px] before:rounded-full before:bg-secondary before:inline-block">Trusted Since 2009</span>
+      <h1 class="font-display font-semibold text-white text-[2.3rem] sm:text-[2.9rem] lg:text-[3.85rem] leading-[1.12] mt-4">Healthier Farms.<br>Stronger <span class="text-secondary" data-typing='["Fisheries.","Poultry.","Harvests."]'></span></h1>
+      <p class="text-white/80 text-lg max-w-[560px] mt-5 leading-relaxed">AS BIO CARE LIMITED manufactures advanced aquaculture and poultry healthcare products &mdash; built on research, trusted by farmers, and backed by a nationwide depot network.</p>
+      <div class="flex gap-4 flex-wrap mt-8">
+        <a href="products.html" class="inline-flex items-center justify-center gap-2 font-display font-semibold text-[14px] px-7 py-3.5 rounded-full transition-all duration-300 bg-accent text-white shadow-[0_10px_24px_rgba(221,59,59,.28)] hover:bg-accent-600 hover:-translate-y-1"><span>Explore Products</span><i class="fa-solid fa-arrow-right"></i></a>
+        <a href="contact.html" class="inline-flex items-center justify-center gap-2 font-display font-semibold text-[14px] px-7 py-3.5 rounded-full transition-all duration-300 bg-white/10 text-white border border-white/40 backdrop-blur hover:bg-white/20 hover:-translate-y-1"><span>Contact Head Office</span></a>
       </div>
-      <div class="hero-stats">
-        <div class="hero-stat"><b data-count="120" data-suffix="+">0</b><span>Products</span></div>
-        <div class="hero-stat"><b data-count="450" data-suffix="+">0</b><span>Dealers</span></div>
-        <div class="hero-stat"><b data-count="35" data-suffix="+">0</b><span>Depots</span></div>
-        <div class="hero-stat"><b data-count="50000" data-suffix="+">0</b><span>Farmers Served</span></div>
+      <div class="flex gap-11 flex-wrap mt-16">
+        <div><b class="font-display text-[2.1rem] text-white block" data-count="120" data-suffix="+">0</b><span class="text-white/65 text-[13px]">Products</span></div>
+        <div><b class="font-display text-[2.1rem] text-white block" data-count="450" data-suffix="+">0</b><span class="text-white/65 text-[13px]">Dealers</span></div>
+        <div><b class="font-display text-[2.1rem] text-white block" data-count="35" data-suffix="+">0</b><span class="text-white/65 text-[13px]">Depots</span></div>
+        <div><b class="font-display text-[2.1rem] text-white block" data-count="50000" data-suffix="+">0</b><span class="text-white/65 text-[13px]">Farmers Served</span></div>
       </div>
     </div>
   </div>
-  <div class="hero-dots">
-    <button class="active"></button><button></button><button></button>
+  <div class="absolute bottom-[110px] left-0 right-0 z-[3] flex gap-2.5 justify-center">
+    <button class="hero-dot bg-secondary w-6 rounded-md h-2.5 transition-all"></button>
+    <button class="hero-dot bg-white/35 w-2.5 h-2.5 rounded-full transition-all"></button>
+    <button class="hero-dot bg-white/35 w-2.5 h-2.5 rounded-full transition-all"></button>
   </div>
-  <div class="wave-divider">
-    <svg viewBox="0 0 1440 74" preserveAspectRatio="none"><path fill="#ffffff" d="M0,32 C240,80 480,0 720,24 C960,48 1200,72 1440,24 L1440,74 L0,74 Z"></path></svg>
+  <div class="absolute -bottom-0.5 left-0 right-0 z-[2] leading-none">
+    <svg viewBox="0 0 1440 74" preserveAspectRatio="none" class="w-full h-[70px] block"><path fill="#ffffff" d="M0,32 C240,80 480,0 720,24 C960,48 1200,72 1440,24 L1440,74 L0,74 Z"></path></svg>
   </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
-      <div class="reveal-left">
-        <img src="https://www.farmatma.in/wp-content/uploads/2024/01/biofloc-fish-farming.jpg" alt="AS Bio Care manufacturing facility" style="border-radius:26px;box-shadow:var(--shadow-lg);">
+<section class="py-24">
+  <div class="max-w-[1240px] mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+      <div data-reveal="left">
+        <img src="https://www.farmatma.in/wp-content/uploads/2024/01/biofloc-fish-farming.jpg" alt="AS Bio Care manufacturing facility" class="rounded-lg shadow-lifted w-full">
       </div>
-      <div class="reveal-right">
-        <span class="eyebrow">About Our Company</span>
-        <h2 style="font-size:clamp(1.7rem,3vw,2.5rem);margin-top:16px;">Seventeen years of dedicated fish healthcare innovation</h2>
-        <p style="color:var(--c-slate);margin-top:18px;line-height:1.8;">Since our founding, AS BIO CARE LIMITED has grown into one of the most trusted names in aquaculture and poultry healthcare across Bangladesh. Our in-house research team develops fisheries medicines, nutritional supplements, water treatment solutions and disease-prevention formulas that keep farms productive and animals healthy.</p>
-        <p style="color:var(--c-slate);margin-top:14px;line-height:1.8;">Every product that leaves our facility is tested against strict quality standards before it reaches a single depot &mdash; because a farmer's livelihood depends on it working the first time.</p>
-        <div style="display:flex;gap:32px;margin-top:28px;">
-          <div><b style="font-family:var(--font-display);font-size:1.6rem;color:var(--c-primary);">17+</b><div style="color:var(--c-slate);font-size:.85rem;">Years of Experience</div></div>
-          <div><b style="font-family:var(--font-display);font-size:1.6rem;color:var(--c-primary);">ISO</b><div style="color:var(--c-slate);font-size:.85rem;">Certified Manufacturing</div></div>
+      <div data-reveal="right">
+        <span class="inline-flex items-center gap-2 font-display font-semibold text-[12px] tracking-[.14em] uppercase text-secondary-600 bg-secondary-100 px-4 py-[7px] rounded-full before:content-[''] before:w-[7px] before:h-[7px] before:rounded-full before:bg-secondary before:inline-block">About Our Company</span>
+        <h2 class="font-display font-semibold text-navy text-[1.7rem] sm:text-[2.5rem] mt-4">Seventeen years of dedicated fish healthcare innovation</h2>
+        <p class="text-slate mt-5 leading-loose">Since our founding, AS BIO CARE LIMITED has grown into one of the most trusted names in aquaculture and poultry healthcare across Bangladesh. Our in-house research team develops fisheries medicines, nutritional supplements, water treatment solutions and disease-prevention formulas that keep farms productive and animals healthy.</p>
+        <p class="text-slate mt-3.5 leading-loose">Every product that leaves our facility is tested against strict quality standards before it reaches a single depot &mdash; because a farmer's livelihood depends on it working the first time.</p>
+        <div class="flex gap-8 mt-7">
+          <div><b class="font-display text-2xl text-primary">17+</b><div class="text-slate text-[13px]">Years of Experience</div></div>
+          <div><b class="font-display text-2xl text-primary">ISO</b><div class="text-slate text-[13px]">Certified Manufacturing</div></div>
         </div>
-        <a href="about.html" class="btn btn-primary" style="margin-top:30px;"><span>Read More About Us</span><i class="fa-solid fa-arrow-right"></i></a>
+        <a href="about.html" class="mt-7 inline-flex items-center justify-center gap-2 font-display font-semibold text-[14px] px-7 py-3.5 rounded-full transition-all duration-300 bg-primary text-white shadow-[0_10px_24px_rgba(39,98,181,.28)] hover:bg-primary-600 hover:-translate-y-1"><span>Read More About Us</span><i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section bg-cream">
-  <div class="container">
-    <div class="section-head center reveal">
-      <span class="eyebrow">What Drives Us</span>
-      <h2>Mission, Vision &amp; Motto</h2>
-      <p>The three principles that guide every product we develop and every farmer we serve.</p>
+<section class="py-24 bg-cream">
+  <div class="max-w-[1240px] mx-auto px-6">
+    <div class="max-w-[640px] mx-auto text-center mb-14" data-reveal="fade">
+      <span class="inline-flex items-center gap-2 font-display font-semibold text-[12px] tracking-[.14em] uppercase text-secondary-600 bg-secondary-100 px-4 py-[7px] rounded-full before:content-[''] before:w-[7px] before:h-[7px] before:rounded-full before:bg-secondary before:inline-block">What Drives Us</span>
+      <h2 class="font-display font-semibold text-navy text-[1.7rem] sm:text-[2.6rem] mt-4">Mission, Vision &amp; Motto</h2>
+      <p class="text-slate mt-3.5">The three principles that guide every product we develop and every farmer we serve.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;">
-      <div class="card card-lift value-card reveal delay-1">
-        <div class="icon-circle" style="margin:0 auto 20px;"><i class="fa-solid fa-bullseye"></i></div>
-        <h3 style="font-size:1.2rem;">Our Mission</h3>
-        <p style="color:var(--c-slate);margin-top:12px;font-size:.94rem;line-height:1.7;">To deliver affordable, research-backed fish healthcare solutions that improve farm productivity across Bangladesh.</p>
-        <a href="mission.html" class="btn btn-outline btn-sm" style="margin-top:20px;"><span>Learn More</span></a>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+      <div class="bg-white rounded-md border border-line shadow-soft transition-all duration-400 hover:-translate-y-2 hover:shadow-lifted hover:border-transparent p-9 text-center" data-reveal="fade">
+        <div class="w-[60px] h-[60px] rounded-full flex items-center justify-center bg-primary-100 text-primary text-xl mx-auto mb-5"><i class="fa-solid fa-bullseye"></i></div>
+        <h3 class="font-display font-semibold text-navy text-lg">Our Mission</h3>
+        <p class="text-slate mt-3 text-[15px] leading-relaxed">To deliver affordable, research-backed fish healthcare solutions that improve farm productivity across Bangladesh.</p>
+        <a href="mission.html" class="mt-5 inline-flex items-center justify-center gap-2 font-display font-semibold text-[13px] px-5 py-2.5 rounded-full border border-line text-navy hover:border-primary hover:text-primary transition-colors">Learn More</a>
       </div>
-      <div class="card card-lift value-card reveal delay-2">
-        <div class="icon-circle" style="margin:0 auto 20px;background:var(--c-secondary-100);color:var(--c-secondary);"><i class="fa-solid fa-eye"></i></div>
-        <h3 style="font-size:1.2rem;">Our Vision</h3>
-        <p style="color:var(--c-slate);margin-top:12px;font-size:.94rem;line-height:1.7;">To become the most trusted aquaculture and poultry healthcare brand in South Asia by 2035.</p>
-        <a href="vision.html" class="btn btn-outline btn-sm" style="margin-top:20px;"><span>Learn More</span></a>
+      <div class="bg-white rounded-md border border-line shadow-soft transition-all duration-400 hover:-translate-y-2 hover:shadow-lifted hover:border-transparent p-9 text-center" data-reveal="fade">
+        <div class="w-[60px] h-[60px] rounded-full flex items-center justify-center bg-secondary-100 text-secondary text-xl mx-auto mb-5"><i class="fa-solid fa-eye"></i></div>
+        <h3 class="font-display font-semibold text-navy text-lg">Our Vision</h3>
+        <p class="text-slate mt-3 text-[15px] leading-relaxed">To become the most trusted aquaculture and poultry healthcare brand in South Asia by 2035.</p>
+        <a href="vision.html" class="mt-5 inline-flex items-center justify-center gap-2 font-display font-semibold text-[13px] px-5 py-2.5 rounded-full border border-line text-navy hover:border-primary hover:text-primary transition-colors">Learn More</a>
       </div>
-      <div class="card card-lift value-card reveal delay-3">
-        <div class="icon-circle" style="margin:0 auto 20px;background:#FBE7E7;color:var(--c-accent);"><i class="fa-solid fa-heart"></i></div>
-        <h3 style="font-size:1.2rem;">Our Motto</h3>
-        <p style="color:var(--c-slate);margin-top:12px;font-size:.94rem;line-height:1.7;">&ldquo;Healthy Farms, Prosperous Farmers&rdquo; &mdash; a promise behind every bottle we manufacture.</p>
-        <a href="motto.html" class="btn btn-outline btn-sm" style="margin-top:20px;"><span>Learn More</span></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-head center reveal">
-      <span class="eyebrow">Why Farmers Choose Us</span>
-      <h2>Built on Trust, Backed by Research</h2>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
-      <div class="card card-lift feature-card reveal delay-1"><div class="icon-circle"><i class="fa-solid fa-flask"></i></div><h3>High Quality Products</h3><p>Every formula is manufactured under strict quality control before reaching farmers.</p></div>
-      <div class="card card-lift feature-card reveal delay-2"><div class="icon-circle"><i class="fa-solid fa-microscope"></i></div><h3>Research Based</h3><p>Our R&amp;D team continuously develops evidence-based veterinary solutions.</p></div>
-      <div class="card card-lift feature-card reveal delay-3"><div class="icon-circle"><i class="fa-solid fa-user-doctor"></i></div><h3>Expert Team</h3><p>Veterinarians and aquaculture specialists guide every product decision.</p></div>
-      <div class="card card-lift feature-card reveal delay-4"><div class="icon-circle"><i class="fa-solid fa-truck-fast"></i></div><h3>Fast Delivery</h3><p>A nationwide depot network keeps products close to every farm.</p></div>
-      <div class="card card-lift feature-card reveal delay-1"><div class="icon-circle"><i class="fa-solid fa-award"></i></div><h3>Trusted Brand</h3><p>Recognised and recommended by farmers across 35+ districts.</p></div>
-      <div class="card card-lift feature-card reveal delay-2"><div class="icon-circle"><i class="fa-solid fa-headset"></i></div><h3>Customer Support</h3><p>Our advisory team is on call to help farmers get the best results.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section bg-cream">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">Our Products</span>
-      <h2>Featured Products</h2>
-      <p>A snapshot of our best-selling aquaculture and poultry healthcare formulas.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;">
-      
-<div class="card card-lift product-card reveal delay-1" data-category="fish" data-name="Ammosorb">
-  <div class="thumb">
-    <span class="cat-tag">Fish Medicine</span>
-    <img src="https://m.media-amazon.com/images/I/71+3QFdckPL._AC_UF1000,1000_QL80_.jpg" alt="Ammosorb" loading="lazy">
-  </div>
-  <div class="body">
-    <span class="badge">Fish Medicine</span>
-    <h3>Ammosorb</h3>
-    <p>Broad-spectrum antibacterial solution that treats fin rot, ulcer disease and bacterial gill infection in farmed fish.</p>
-    <a href="product-details.html" class="btn btn-outline btn-sm btn-block"><span>View Details</span><i class="fa-solid fa-arrow-right"></i></a>
-  </div>
-</div>
-<div class="card card-lift product-card reveal delay-2" data-category="poultry" data-name="Aqua Root">
-  <div class="thumb">
-    <span class="cat-tag">Poultry Medicine</span>
-    <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/543de22c-4781-4ed0-8911-f512088d6d09.__CR85,0,1365,1024_PT0_SX600_V1___.png" alt="Aqua Root" loading="lazy">
-  </div>
-  <div class="body">
-    <span class="badge">Poultry Medicine</span>
-    <h3>Aqua Root</h3>
-    <p>Fast-acting antibiotic premix that protects layer and broiler flocks against E. coli, CRD and coccidiosis.</p>
-    <a href="product-details.html" class="btn btn-outline btn-sm btn-block"><span>View Details</span><i class="fa-solid fa-arrow-right"></i></a>
-  </div>
-</div>
-<div class="card card-lift product-card reveal delay-3" data-category="water" data-name="PlanktoMin">
-  <div class="thumb">
-    <span class="cat-tag">Water Treatment</span>
-    <img src="https://image.made-in-china.com/43f34j00ETpeKwbLOgur/Floraqua-Spectrum-Broad-Spectrum-Florfenicol-Antibiotic-Treats-Septicemia-Ulcers-Gill-Rot.jpg" alt="PlanktoMin" loading="lazy">
-  </div>
-  <div class="body">
-    <span class="badge">Water Treatment</span>
-    <h3>PlanktoMin</h3>
-    <p>Rapidly neutralises ammonia, nitrite and chlorine while stabilising pond pH for a healthier aquatic environment.</p>
-    <a href="product-details.html" class="btn btn-outline btn-sm btn-block"><span>View Details</span><i class="fa-solid fa-arrow-right"></i></a>
-  </div>
-</div>
-<div class="card card-lift product-card reveal delay-4" data-category="feed" data-name="Eco Tab">
-  <div class="thumb">
-    <span class="cat-tag">Feed Supplement</span>
-    <img src="https://m.media-amazon.com/images/I/71-PidNtbeL._AC_UF350,350_QL80_.jpg" alt="Eco Tab" loading="lazy">
-  </div>
-  <div class="body">
-    <span class="badge">Feed Supplement</span>
-    <h3>Eco Tab</h3>
-    <p>A balanced blend of amino acids, vitamins and minerals that boosts feed conversion ratio in fish and poultry.</p>
-    <a href="product-details.html" class="btn btn-outline btn-sm btn-block"><span>View Details</span><i class="fa-solid fa-arrow-right"></i></a>
-  </div>
-</div>
-    </div>
-    <div style="text-align:center;margin-top:44px;">
-      <a href="products.html" class="btn btn-primary"><span>View Full Catalogue</span><i class="fa-solid fa-arrow-right"></i></a>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-head center reveal">
-      <span class="eyebrow">Categories</span>
-      <h2>Browse by Product Category</h2>
-    </div>
-    <div class="chip-row" style="justify-content:center;">
-      <a href="products.html" class="chip"><i class="fa-solid fa-fish" style="margin-right:8px;"></i>Fish Medicines</a>
-      <a href="products.html" class="chip"><i class="fa-solid fa-kiwi-bird" style="margin-right:8px;"></i>Poultry Medicines</a>
-      <a href="products.html" class="chip"><i class="fa-solid fa-water" style="margin-right:8px;"></i>Water Treatment</a>
-      <a href="products.html" class="chip"><i class="fa-solid fa-seedling" style="margin-right:8px;"></i>Feed Supplement</a>
-      <a href="products.html" class="chip"><i class="fa-solid fa-chart-line" style="margin-right:8px;"></i>Growth Promoter</a>
-      <a href="products.html" class="chip"><i class="fa-solid fa-pills" style="margin-right:8px;"></i>Vitamins</a>
-      <a href="products.html" class="chip"><i class="fa-solid fa-shield-virus" style="margin-right:8px;"></i>Disease Prevention</a>
-      <a href="products.html" class="chip"><i class="fa-solid fa-gears" style="margin-right:8px;"></i>Aquaculture Equipment</a>
-    </div>
-  </div>
-</section>
-
-<section class="section bg-navy" style="color:#fff;">
-  <div class="container">
-    <div class="section-head center reveal" style="max-width:640px;">
-      <span class="eyebrow" style="background:rgba(255,255,255,.1);color:#fff;">By The Numbers</span>
-      <h2 style="color:#fff;">Trusted Across the Country</h2>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:20px;">
-      <div class="stat-ring-card reveal delay-1"><div class="stat-ring" data-pct="92"><svg viewBox="0 0 100 100"><circle class="bg" cx="50" cy="50" r="44"></circle><circle class="fg" cx="50" cy="50" r="44"></circle></svg><div class="num" style="color:#fff;" data-count="120" data-suffix="+">0</div></div><span style="color:rgba(255,255,255,.65);">Products</span></div>
-      <div class="stat-ring-card reveal delay-2"><div class="stat-ring" data-pct="85"><svg viewBox="0 0 100 100"><circle class="bg" cx="50" cy="50" r="44"></circle><circle class="fg" cx="50" cy="50" r="44"></circle></svg><div class="num" style="color:#fff;" data-count="450" data-suffix="+">0</div></div><span style="color:rgba(255,255,255,.65);">Dealers</span></div>
-      <div class="stat-ring-card reveal delay-3"><div class="stat-ring" data-pct="70"><svg viewBox="0 0 100 100"><circle class="bg" cx="50" cy="50" r="44"></circle><circle class="fg" cx="50" cy="50" r="44"></circle></svg><div class="num" style="color:#fff;" data-count="35" data-suffix="+">0</div></div><span style="color:rgba(255,255,255,.65);">Depots</span></div>
-      <div class="stat-ring-card reveal delay-4"><div class="stat-ring" data-pct="96"><svg viewBox="0 0 100 100"><circle class="bg" cx="50" cy="50" r="44"></circle><circle class="fg" cx="50" cy="50" r="44"></circle></svg><div class="num" style="color:#fff;" data-count="50" data-suffix="k+">0</div></div><span style="color:rgba(255,255,255,.65);">Farmers Served</span></div>
-      <div class="stat-ring-card reveal delay-5"><div class="stat-ring" data-pct="88"><svg viewBox="0 0 100 100"><circle class="bg" cx="50" cy="50" r="44"></circle><circle class="fg" cx="50" cy="50" r="44"></circle></svg><div class="num" style="color:#fff;" data-count="17" data-suffix="+">0</div></div><span style="color:rgba(255,255,255,.65);">Years Experience</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-head center reveal">
-      <span class="eyebrow">Our People</span>
-      <h2>Meet Our Expert Team</h2>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;">
-      
-<div class="card card-lift team-card reveal-zoom delay-1">
-  <div class="photo"><img src="https://picsum.photos/seed/team1/400/400" alt="Dr. Aminul Islam" loading="lazy"></div>
-  <div class="info">
-    <h4>Dr. Aminul Islam</h4>
-    <div class="role">Chairman</div>
-    <div class="team-social">
-      <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-      <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-      <a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-    </div>
-  </div>
-</div>
-<div class="card card-lift team-card reveal-zoom delay-2">
-  <div class="photo"><img src="https://picsum.photos/seed/team2/400/400" alt="Shirin Akter" loading="lazy"></div>
-  <div class="info">
-    <h4>Shirin Akter</h4>
-    <div class="role">Managing Director</div>
-    <div class="team-social">
-      <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-      <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-      <a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-    </div>
-  </div>
-</div>
-<div class="card card-lift team-card reveal-zoom delay-3">
-  <div class="photo"><img src="https://picsum.photos/seed/team3/400/400" alt="Dr. Kamrul Hasan" loading="lazy"></div>
-  <div class="info">
-    <h4>Dr. Kamrul Hasan</h4>
-    <div class="role">Head of R&D</div>
-    <div class="team-social">
-      <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-      <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-      <a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-    </div>
-  </div>
-</div>
-<div class="card card-lift team-card reveal-zoom delay-4">
-  <div class="photo"><img src="https://picsum.photos/seed/team4/400/400" alt="Farhana Rahman" loading="lazy"></div>
-  <div class="info">
-    <h4>Farhana Rahman</h4>
-    <div class="role">Quality Assurance Manager</div>
-    <div class="team-social">
-      <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-      <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-      <a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-    </div>
-  </div>
-</div>
-    </div>
-    <div style="text-align:center;margin-top:40px;"><a href="team.html" class="btn btn-outline"><span>View Full Team</span></a></div>
-  </div>
-</section>
-
-<section class="section bg-cream">
-  <div class="container">
-    <div class="section-head center reveal">
-      <span class="eyebrow">Testimonials</span>
-      <h2>What Farmers Say About Us</h2>
-    </div>
-    <div class="testimonial-slider" style="overflow:hidden;">
-      <div class="t-track" style="display:flex;transition:transform .6s var(--ease);">
-        
-<div class="t-slide" style="min-width:100%;padding:0 6px;">
-  <div class="card testimonial-card" style="max-width:720px;margin:0 auto;">
-    <i class="fa-solid fa-quote-right quote-icon"></i>
-    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-    <p style="font-size:1.1rem;">&ldquo;Ammosorb saved my tilapia pond during last year's outbreak. My fish recovered within days and survival rate stayed above 90%.&rdquo;</p>
-    <div class="testimonial-person">
-      <img src="https://picsum.photos/seed/cust1/100/100" alt="Abdul Kader" loading="lazy">
-      <div><h5>Abdul Kader</h5><span>Fish Farmer, Mymensingh</span></div>
-    </div>
-  </div>
-</div>
-<div class="t-slide" style="min-width:100%;padding:0 6px;">
-  <div class="card testimonial-card" style="max-width:720px;margin:0 auto;">
-    <i class="fa-solid fa-quote-right quote-icon"></i>
-    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-    <p style="font-size:1.1rem;">&ldquo;Aqua Root has cut our flock mortality dramatically. The AS Bio Care team also visits our farm to give hands-on advice.&rdquo;</p>
-    <div class="testimonial-person">
-      <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/543de22c-4781-4ed0-8911-f512088d6d09.__CR85,0,1365,1024_PT0_SX600_V1___.png" alt="Nasrin Begum" loading="lazy">
-      <div><h5>Nasrin Begum</h5><span>Poultry Farm Owner, Gazipur</span></div>
-    </div>
-  </div>
-</div>
-<div class="t-slide" style="min-width:100%;padding:0 6px;">
-  <div class="card testimonial-card" style="max-width:720px;margin:0 auto;">
-    <i class="fa-solid fa-quote-right quote-icon"></i>
-    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-    <p style="font-size:1.1rem;">&ldquo;Consistent product quality and on-time delivery. Farmers in our area trust the AS Bio Care name more than any other brand.&rdquo;</p>
-    <div class="testimonial-person">
-      <img src="https://picsum.photos/seed/cust3/100/100" alt="Habibur Rahman" loading="lazy">
-      <div><h5>Habibur Rahman</h5><span>Depot Dealer, Bogura</span></div>
-    </div>
-  </div>
-</div>
-<div class="t-slide" style="min-width:100%;padding:0 6px;">
-  <div class="card testimonial-card" style="max-width:720px;margin:0 auto;">
-    <i class="fa-solid fa-quote-right quote-icon"></i>
-    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-    <p style="font-size:1.1rem;">&ldquo;ClearPond keeps our water parameters stable even during the monsoon. Our shrimp yield has improved every season since we switched.&rdquo;</p>
-    <div class="testimonial-person">
-      <img src="https://picsum.photos/seed/cust4/100/100" alt="Moushumi Sarker" loading="lazy">
-      <div><h5>Moushumi Sarker</h5><span>Shrimp Farmer, Khulna</span></div>
-    </div>
-  </div>
-</div>
+      <div class="bg-white rounded-md border border-line shadow-soft transition-all duration-400 hover:-translate-y-2 hover:shadow-lifted hover:border-transparent p-9 text-center" data-reveal="fade">
+        <div class="w-[60px] h-[60px] rounded-full flex items-center justify-center bg-[#FBE7E7] text-accent text-xl mx-auto mb-5"><i class="fa-solid fa-heart"></i></div>
+        <h3 class="font-display font-semibold text-navy text-lg">Our Motto</h3>
+        <p class="text-slate mt-3 text-[15px] leading-relaxed">&ldquo;Healthy Farms, Prosperous Farmers&rdquo; &mdash; a promise behind every bottle we manufacture.</p>
+        <a href="motto.html" class="mt-5 inline-flex items-center justify-center gap-2 font-display font-semibold text-[13px] px-5 py-2.5 rounded-full border border-line text-navy hover:border-primary hover:text-primary transition-colors">Learn More</a>
       </div>
     </div>
-    <div style="display:flex;justify-content:center;gap:14px;margin-top:30px;">
-      <button class="icon-btn t-prev" aria-label="Previous"><i class="fa-solid fa-arrow-left"></i></button>
-      <button class="icon-btn t-next" aria-label="Next"><i class="fa-solid fa-arrow-right"></i></button>
+  </div>
+</section>
+
+<section class="py-24">
+  <div class="max-w-[1240px] mx-auto px-6">
+    <div class="text-center mb-14" data-reveal="fade">
+      <span class="inline-flex items-center gap-2 font-display font-semibold text-[12px] tracking-[.14em] uppercase text-secondary-600 bg-secondary-100 px-4 py-[7px] rounded-full before:content-[''] before:w-[7px] before:h-[7px] before:rounded-full before:bg-secondary before:inline-block">Why Farmers Choose Us</span>
+      <h2 class="font-display font-semibold text-navy text-[1.7rem] sm:text-[2.6rem] mt-4">Built on Trust, Backed by Research</h2>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white rounded-md border border-line shadow-soft transition-all duration-400 hover:-translate-y-2 hover:shadow-lifted hover:border-transparent p-8" data-reveal="fade"><div class="w-[60px] h-[60px] rounded-full flex items-center justify-center bg-primary-100 text-primary text-xl"><i class="fa-solid fa-flask"></i></div><h3 class="font-display font-semibold text-navy text-lg mt-4 mb-2.5">High Quality Products</h3><p class="text-slate text-[15px] leading-relaxed">Every formula is manufactured under strict quality control before reaching farmers.</p></div>
+      <div class="bg-white rounded-md border border-line shadow-soft transition-all duration-400 hover:-translate-y-2 hover:shadow-lifted hover:border-transparent p-8" data-reveal="fade"><div class="w-[60px] h-[60px] rounded-full flex items-center justify-center bg-primary-100 text-primary text-xl"><i class="fa-solid fa-microscope"></i></div><h3 class="font-display font-semibold text-navy text-lg mt-4 mb-2.5">Research Based</h3><p class="text-slate text-[15px] leading-relaxed">Our R&amp;D team continuously develops evidence-based veterinary solutions.</p></div>
+      <div class="bg-white rounded-md border border-line shadow-soft transition-all duration-400 hover:-translate-y-2 hover:shadow-lifted hover:border-transparent p-8" data-reveal="fade"><div class="w-[60px] h-[60px] rounded-full flex items-center justify-center bg-primary-100 text-primary text-xl"><i class="fa-solid fa-user-doctor"></i></div><h3 class="font-display font-semibold text-navy text-lg mt-4 mb-2.5">Expert Team</h3><p class="text-slate text-[15px] leading-relaxed">Veterinarians and aquaculture specialists guide every product decision.</p></div>
+      <div class="bg-white rounded-md border border-line shadow-soft transition-all duration-400 hover:-translate-y-2 hover:shadow-lifted hover:border-transparent p-8" data-reveal="fade"><div class="w-[60px] h-[60px] rounded-full flex items-center justify-center bg-primary-100 text-primary text-xl"><i class="fa-solid fa-truck-fast"></i></div><h3 class="font-display font-semibold text-navy text-lg mt-4 mb-2.5">Fast Delivery</h3><p class="text-slate text-[15px] leading-relaxed">A nationwide depot network keeps products close to every farm.</p></div>
+      <div class="bg-white rounded-md border border-line shadow-soft transition-all duration-400 hover:-translate-y-2 hover:shadow-lifted hover:border-transparent p-8" data-reveal="fade"><div class="w-[60px] h-[60px] rounded-full flex items-center justify-center bg-primary-100 text-primary text-xl"><i class="fa-solid fa-award"></i></div><h3 class="font-display font-semibold text-navy text-lg mt-4 mb-2.5">Trusted Brand</h3><p class="text-slate text-[15px] leading-relaxed">Recognised and recommended by farmers across 35+ districts.</p></div>
+      <div class="bg-white rounded-md border border-line shadow-soft transition-all duration-400 hover:-translate-y-2 hover:shadow-lifted hover:border-transparent p-8" data-reveal="fade"><div class="w-[60px] h-[60px] rounded-full flex items-center justify-center bg-primary-100 text-primary text-xl"><i class="fa-solid fa-headset"></i></div><h3 class="font-display font-semibold text-navy text-lg mt-4 mb-2.5">Customer Support</h3><p class="text-slate text-[15px] leading-relaxed">Our advisory team is on call to help farmers get the best results.</p></div>
     </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:44px;">
-      <div class="section-head reveal" style="margin-bottom:0;">
-        <span class="eyebrow">Latest News</span>
-        <h2>News &amp; Updates</h2>
+<section class="py-24 bg-cream">
+  <div class="max-w-[1240px] mx-auto px-6">
+    <div class="max-w-[680px] mb-14" data-reveal="fade">
+      <span class="inline-flex items-center gap-2 font-display font-semibold text-[12px] tracking-[.14em] uppercase text-secondary-600 bg-secondary-100 px-4 py-[7px] rounded-full before:content-[''] before:w-[7px] before:h-[7px] before:rounded-full before:bg-secondary before:inline-block">Our Products</span>
+      <h2 class="font-display font-semibold text-navy text-[1.7rem] sm:text-[2.6rem] mt-4">Featured Products</h2>
+      <p class="text-slate mt-3.5">A snapshot of our best-selling aquaculture and poultry healthcare formulas.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <div class="bg-white rounded-md border border-line shadow-soft transition-all duration-400 hover:-translate-y-2 hover:shadow-lifted hover:border-transparent overflow-hidden" data-reveal="fade" data-category="fish" data-name="Ammosorb">
+        <div class="aspect-[4/3] overflow-hidden relative group">
+          <span class="absolute top-3.5 left-3.5 bg-white/90 backdrop-blur px-3 py-1.5 rounded-full text-[11px] font-bold text-primary-600 z-10">Fish Medicine</span>
+          <img src="https://m.media-amazon.com/images/I/71+3QFdckPL._AC_UF1000,1000_QL80_.jpg" alt="Ammosorb" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+        </div>
+        <div class="p-5">
+          <span class="inline-block text-[11px] font-bold px-3 py-1 rounded-full bg-primary-100 text-primary-600">Fish Medicine</span>
+          <h3 class="font-display font-semibold text-navy text-base mt-2.5 mb-2">Ammosorb</h3>
+          <p class="text-slate text-sm leading-relaxed mb-4">Broad-spectrum antibacterial solution that treats fin rot, ulcer disease and bacterial gill infection in farmed fish.</p>
+          <a href="product-details.html" class="w-full inline-flex items-center justify-center gap-2 font-display font-semibold text-[13px] px-5 py-2.5 rounded-full border border-line text-navy hover:border-primary hover:text-primary transition-colors"><span>View Details</span><i class="fa-solid fa-arrow-right"></i></a>
+        </div>
       </div>
-      <a href="news.html" class="btn btn-outline btn-sm">All News</a>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
-      
-<div class="card card-lift post-card reveal delay-1">
-  <div class="thumb"><img src="https://picsum.photos/seed/news1/500/320" alt="AS Bio Care Launches New Research Laboratory in Gazipur" loading="lazy"></div>
-  <div class="body">
-    <div class="post-meta"><span><i class="fa-solid fa-calendar"></i>July 18, 2026</span><span><i class="fa-solid fa-tag"></i>Company News</span></div>
-    <h3>AS Bio Care Launches New Research Laboratory in Gazipur</h3>
-    <p>Our new state-of-the-art laboratory will accelerate the development of next-generation aquaculture and poultry health formulations.</p>
-    <a href="news.html" class="btn btn-outline btn-sm" style="margin-top:14px;"><span>Read More</span><i class="fa-solid fa-arrow-right"></i></a>
-  </div>
-</div>
-<div class="card card-lift post-card reveal delay-2">
-  <div class="thumb"><img src="https://picsum.photos/seed/news2/500/320" alt="AS Bio Care Wins National Aquaculture Innovation Award" loading="lazy"></div>
-  <div class="body">
-    <div class="post-meta"><span><i class="fa-solid fa-calendar"></i>June 02, 2026</span><span><i class="fa-solid fa-tag"></i>Achievement</span></div>
-    <h3>AS Bio Care Wins National Aquaculture Innovation Award</h3>
-    <p>Recognised for outstanding contribution to sustainable fisheries health at the National Aquaculture Summit 2026.</p>
-    <a href="news.html" class="btn btn-outline btn-sm" style="margin-top:14px;"><span>Read More</span><i class="fa-solid fa-arrow-right"></i></a>
-  </div>
-</div>
-<div class="card card-lift post-card reveal delay-3">
-  <div class="thumb"><img src="https://picsum.photos/seed/news3/500/320" alt="Free Farmer Training Camp Held Across 12 Districts" loading="lazy"></div>
-  <div class="body">
-    <div class="post-meta"><span><i class="fa-solid fa-calendar"></i>May 11, 2026</span><span><i class="fa-solid fa-tag"></i>Community</span></div>
-    <h3>Free Farmer Training Camp Held Across 12 Districts</h3>
-    <p>Over 3,000 farmers attended our free disease-prevention and water-quality training sessions this quarter.</p>
-    <a href="news.html" class="btn btn-outline btn-sm" style="margin-top:14px;"><span>Read More</span><i class="fa-solid fa-arrow-right"></i></a>
-  </div>
-</div>
-    </div>
-  </div>
-</section>
 
-<section class="section bg-cream">
-  <div class="container">
-    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:44px;">
-      <div class="section-head reveal" style="margin-bottom:0;">
-        <span class="eyebrow">From the Blog</span>
-        <h2>Latest Articles</h2>
+      <div class="bg-white rounded-md border border-line shadow-soft transition-all duration-400 hover:-translate-y-2 hover:shadow-lifted hover:border-transparent overflow-hidden" data-reveal="fade" data-category="poultry" data-name="Aqua Root">
+        <div class="aspect-[4/3] overflow-hidden relative group">
+          <span class="absolute top-3.5 left-3.5 bg-white/90 backdrop-blur px-3 py-1.5 rounded-full text-[11px] font-bold text-primary-600 z-10">Poultry Medicine</span>
+          <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/543de22c-4781-4ed0-8911-f512088d6d09.__CR85,0,1365,1024_PT0_SX600_V1___.png" alt="Aqua Root" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+        </div>
+        <div class="p-5">
+          <span class="inline-block text-[11px] font-bold px-3 py-1 rounded-full bg-primary-100 text-primary-600">Poultry Medicine</span>
+          <h3 class="font-display font-semibold text-navy text-base mt-2.5 mb-2">Aqua Root</h3>
+          <p class="text-slate text-sm leading-relaxed mb-4">Fast-acting antibiotic premix that protects layer and broiler flocks against E. coli, CRD and coccidiosis.</p>
+          <a href="product-details.html" class="w-full inline-flex items-center justify-center gap-2 font-display font-semibold text-[13px] px-5 py-2.5 rounded-full border border-line text-navy hover:border-primary hover:text-primary transition-colors"><span>View Details</span><i class="fa-solid fa-arrow-right"></i></a>
+        </div>
       </div>
-      <a href="blog.html" class="btn btn-outline btn-sm">All Articles</a>
+
+      <div class="bg-white rounded-md border border-line shadow-soft transition-all duration-400 hover:-translate-y-2 hover:shadow-lifted hover:border-transparent overflow-hidden" data-reveal="fade" data-category="water" data-name="PlanktoMin">
+        <div class="aspect-[4/3] overflow-hidden relative group">
+          <span class="absolute top-3.5 left-3.5 bg-white/90 backdrop-blur px-3 py-1.5 rounded-full text-[11px] font-bold text-primary-600 z-10">Water Treatment</span>
+          <img src="https://image.made-in-china.com/43f34j00ETpeKwbLOgur/Floraqua-Spectrum-Broad-Spectrum-Florfenicol-Antibiotic-Treats-Septicemia-Ulcers-Gill-Rot.jpg" alt="PlanktoMin" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+        </div>
+        <div class="p-5">
+          <span class="inline-block text-[11px] font-bold px-3 py-1 rounded-full bg-primary-100 text-primary-600">Water Treatment</span>
+          <h3 class="font-display font-semibold text-navy text-base mt-2.5 mb-2">PlanktoMin</h3>
+          <p class="text-slate text-sm leading-relaxed mb-4">Rapidly neutralises ammonia, nitrite and chlorine while stabilising pond pH for a healthier aquatic environment.</p>
+          <a href="product-details.html" class="w-full inline-flex items-center justify-center gap-2 font-display font-semibold text-[13px] px-5 py-2.5 rounded-full border border-line text-navy hover:border-primary hover:text-primary transition-colors"><span>View Details</span><i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-md border border-line shadow-soft transition-all duration-400 hover:-translate-y-2 hover:shadow-lifted hover:border-transparent overflow-hidden" data-reveal="fade" data-category="feed" data-name="Eco Tab">
+        <div class="aspect-[4/3] overflow-hidden relative group">
+          <span class="absolute top-3.5 left-3.5 bg-white/90 backdrop-blur px-3 py-1.5 rounded-full text-[11px] font-bold text-primary-600 z-10">Feed Supplement</span>
+          <img src="https://m.media-amazon.com/images/I/71-PidNtbeL._AC_UF350,350_QL80_.jpg" alt="Eco Tab" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+        </div>
+        <div class="p-5">
+          <span class="inline-block text-[11px] font-bold px-3 py-1 rounded-full bg-primary-100 text-primary-600">Feed Supplement</span>
+          <h3 class="font-display font-semibold text-navy text-base mt-2.5 mb-2">Eco Tab</h3>
+          <p class="text-slate text-sm leading-relaxed mb-4">A balanced blend of amino acids, vitamins and minerals that boosts feed conversion ratio in fish and poultry.</p>
+          <a href="product-details.html" class="w-full inline-flex items-center justify-center gap-2 font-display font-semibold text-[13px] px-5 py-2.5 rounded-full border border-line text-navy hover:border-primary hover:text-primary transition-colors"><span>View Details</span><i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
-      
-<div class="card card-lift post-card reveal delay-1">
-  <div class="thumb"><img src="https://picsum.photos/seed/blog1/500/320" alt="5 Early Warning Signs of Bacterial Infection in Fish Ponds" loading="lazy"></div>
-  <div class="body">
-    <div class="post-meta"><span><i class="fa-solid fa-calendar"></i>July 22, 2026</span><span><i class="fa-solid fa-folder"></i>Fish Health</span></div>
-    <h3>5 Early Warning Signs of Bacterial Infection in Fish Ponds</h3>
-    <p>Learn to spot the early signs of bacterial disease before it spreads through your entire pond.</p>
-    <a href="blog-details.html" class="btn btn-outline btn-sm" style="margin-top:14px;"><span>Read Article</span><i class="fa-solid fa-arrow-right"></i></a>
-  </div>
-</div>
-<div class="card card-lift post-card reveal delay-2">
-  <div class="thumb"><img src="https://picsum.photos/seed/blog2/500/320" alt="Optimising Feed Conversion Ratio in Broiler Farming" loading="lazy"></div>
-  <div class="body">
-    <div class="post-meta"><span><i class="fa-solid fa-calendar"></i>July 09, 2026</span><span><i class="fa-solid fa-folder"></i>Poultry</span></div>
-    <h3>Optimising Feed Conversion Ratio in Broiler Farming</h3>
-    <p>Practical, research-backed steps to help your broilers gain weight efficiently while lowering feed costs.</p>
-    <a href="blog-details.html" class="btn btn-outline btn-sm" style="margin-top:14px;"><span>Read Article</span><i class="fa-solid fa-arrow-right"></i></a>
-  </div>
-</div>
-<div class="card card-lift post-card reveal delay-3">
-  <div class="thumb"><img src="https://picsum.photos/seed/blog3/500/320" alt="Why Water Quality Testing Should Be Your Weekly Habit" loading="lazy"></div>
-  <div class="body">
-    <div class="post-meta"><span><i class="fa-solid fa-calendar"></i>June 28, 2026</span><span><i class="fa-solid fa-folder"></i>Water Management</span></div>
-    <h3>Why Water Quality Testing Should Be Your Weekly Habit</h3>
-    <p>A simple weekly testing routine that prevents the majority of pond-related fish losses.</p>
-    <a href="blog-details.html" class="btn btn-outline btn-sm" style="margin-top:14px;"><span>Read Article</span><i class="fa-solid fa-arrow-right"></i></a>
-  </div>
-</div>
+    <div class="text-center mt-11">
+      <a href="products.html" class="inline-flex items-center justify-center gap-2 font-display font-semibold text-[14px] px-7 py-3.5 rounded-full transition-all duration-300 bg-primary text-white shadow-[0_10px_24px_rgba(39,98,181,.28)] hover:bg-primary-600 hover:-translate-y-1"><span>View Full Catalogue</span><i class="fa-solid fa-arrow-right"></i></a>
     </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <div class="section-head center reveal">
-      <span class="eyebrow">Gallery</span>
-      <h2>Life at AS Bio Care</h2>
+<section class="py-24">
+  <div class="max-w-[1240px] mx-auto px-6">
+    <div class="text-center mb-14" data-reveal="fade">
+      <span class="inline-flex items-center gap-2 font-display font-semibold text-[12px] tracking-[.14em] uppercase text-secondary-600 bg-secondary-100 px-4 py-[7px] rounded-full before:content-[''] before:w-[7px] before:h-[7px] before:rounded-full before:bg-secondary before:inline-block">Categories</span>
+      <h2 class="font-display font-semibold text-navy text-[1.7rem] sm:text-[2.6rem] mt-4">Browse by Product Category</h2>
     </div>
-    <div class="gallery-grid">
-      
-<div class="gallery-item reveal-zoom delay-1">
-  <img src="https://picsum.photos/seed/gal1/420/420" alt="Fish Farm Site Visit" loading="lazy">
-  <div class="overlay"><span>Fish Farm Site Visit</span></div>
-</div>
-<div class="gallery-item reveal-zoom delay-2">
-  <img src="https://picsum.photos/seed/gal2/420/300" alt="Poultry Farm Inspection" loading="lazy">
-  <div class="overlay"><span>Poultry Farm Inspection</span></div>
-</div>
-<div class="gallery-item reveal-zoom delay-3">
-  <img src="https://picsum.photos/seed/gal3/420/380" alt="Research Laboratory" loading="lazy">
-  <div class="overlay"><span>Research Laboratory</span></div>
-</div>
-<div class="gallery-item reveal-zoom delay-4">
-  <img src="https://picsum.photos/seed/gal4/420/320" alt="Farmer Training Camp" loading="lazy">
-  <div class="overlay"><span>Farmer Training Camp</span></div>
-</div>
-<div class="gallery-item reveal-zoom delay-1">
-  <img src="https://picsum.photos/seed/gal5/420/400" alt="Product Manufacturing" loading="lazy">
-  <div class="overlay"><span>Product Manufacturing</span></div>
-</div>
-<div class="gallery-item reveal-zoom delay-2">
-  <img src="https://picsum.photos/seed/gal6/420/300" alt="Depot Network Meeting" loading="lazy">
-  <div class="overlay"><span>Depot Network Meeting</span></div>
-</div>
-<div class="gallery-item reveal-zoom delay-3">
-  <img src="https://picsum.photos/seed/gal7/420/360" alt="Water Quality Testing" loading="lazy">
-  <div class="overlay"><span>Water Quality Testing</span></div>
-</div>
-<div class="gallery-item reveal-zoom delay-4">
-  <img src="https://picsum.photos/seed/gal8/420/320" alt="Award Ceremony 2026" loading="lazy">
-  <div class="overlay"><span>Award Ceremony 2026</span></div>
-</div>
+    <div class="flex flex-wrap gap-2.5 justify-center">
+      <a href="products.html" class="px-5 py-2.5 rounded-full border border-line bg-white font-display font-semibold text-sm text-navy hover:border-primary hover:text-primary transition-colors"><i class="fa-solid fa-fish mr-2"></i>Fish Medicines</a>
+      <a href="products.html" class="px-5 py-2.5 rounded-full border border-line bg-white font-display font-semibold text-sm text-navy hover:border-primary hover:text-primary transition-colors"><i class="fa-solid fa-kiwi-bird mr-2"></i>Poultry Medicines</a>
+      <a href="products.html" class="px-5 py-2.5 rounded-full border border-line bg-white font-display font-semibold text-sm text-navy hover:border-primary hover:text-primary transition-colors"><i class="fa-solid fa-water mr-2"></i>Water Treatment</a>
+      <a href="products.html" class="px-5 py-2.5 rounded-full border border-line bg-white font-display font-semibold text-sm text-navy hover:border-primary hover:text-primary transition-colors"><i class="fa-solid fa-seedling mr-2"></i>Feed Supplement</a>
+      <a href="products.html" class="px-5 py-2.5 rounded-full border border-line bg-white font-display font-semibold text-sm text-navy hover:border-primary hover:text-primary transition-colors"><i class="fa-solid fa-chart-line mr-2"></i>Growth Promoter</a>
+      <a href="products.html" class="px-5 py-2.5 rounded-full border border-line bg-white font-display font-semibold text-sm text-navy hover:border-primary hover:text-primary transition-colors"><i class="fa-solid fa-pills mr-2"></i>Vitamins</a>
+      <a href="products.html" class="px-5 py-2.5 rounded-full border border-line bg-white font-display font-semibold text-sm text-navy hover:border-primary hover:text-primary transition-colors"><i class="fa-solid fa-shield-virus mr-2"></i>Disease Prevention</a>
+      <a href="products.html" class="px-5 py-2.5 rounded-full border border-line bg-white font-display font-semibold text-sm text-navy hover:border-primary hover:text-primary transition-colors"><i class="fa-solid fa-gears mr-2"></i>Aquaculture Equipment</a>
     </div>
-    <div style="text-align:center;margin-top:36px;"><a href="gallery.html" class="btn btn-outline"><span>View Full Gallery</span></a></div>
   </div>
 </section>
 
-<section class="section bg-cream">
-  <div class="container">
-    <div class="section-head center reveal">
-      <span class="eyebrow">Our Network</span>
-      <h2>Find a Depot Near You</h2>
-      <p>35+ depots across Bangladesh keep our products within reach of every farmer.</p>
+<section class="py-24 bg-navy text-white">
+  <div class="max-w-[1240px] mx-auto px-6">
+    <div class="max-w-[640px] mx-auto text-center mb-14" data-reveal="fade">
+      <span class="inline-flex items-center gap-2 font-display font-semibold text-[12px] tracking-[.14em] uppercase bg-white/10 text-white px-4 py-[7px] rounded-full before:content-[''] before:w-[7px] before:h-[7px] before:rounded-full before:bg-secondary before:inline-block">By The Numbers</span>
+      <h2 class="font-display font-semibold text-white text-[1.7rem] sm:text-[2.6rem] mt-4">Trusted Across the Country</h2>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
-      
-<div class="card card-lift depot-card reveal delay-1">
-  <span class="badge" style="margin-bottom:12px;">Depot</span>
-  <h4>Dhaka Central Depot</h4>
-  <div class="depot-line"><i class="fa-solid fa-user-tie"></i><span>Manager: Md. Jasim Uddin</span></div>
-  <div class="depot-line"><i class="fa-solid fa-location-dot"></i><span>House 45, Road 7, Dhanmondi, Dhaka 1209</span></div>
-  <div class="depot-line"><i class="fa-solid fa-phone"></i><span>+880 1711-000001</span></div>
-  <div class="depot-line"><i class="fa-solid fa-envelope"></i><span>dhaka@asbiocare.com</span></div>
-  <a href="contact.html" class="btn btn-primary btn-sm btn-block" style="margin-top:14px;"><span>View Details</span></a>
-</div>
-<div class="card card-lift depot-card reveal delay-2">
-  <span class="badge" style="margin-bottom:12px;">Depot</span>
-  <h4>Mymensingh Depot</h4>
-  <div class="depot-line"><i class="fa-solid fa-user-tie"></i><span>Manager: Rafiqul Islam</span></div>
-  <div class="depot-line"><i class="fa-solid fa-location-dot"></i><span>Ganginarpar Road, Mymensingh 2200</span></div>
-  <div class="depot-line"><i class="fa-solid fa-phone"></i><span>+880 1711-000002</span></div>
-  <div class="depot-line"><i class="fa-solid fa-envelope"></i><span>mymensingh@asbiocare.com</span></div>
-  <a href="contact.html" class="btn btn-primary btn-sm btn-block" style="margin-top:14px;"><span>View Details</span></a>
-</div>
-<div class="card card-lift depot-card reveal delay-3">
-  <span class="badge" style="margin-bottom:12px;">Depot</span>
-  <h4>Bogura Depot</h4>
-  <div class="depot-line"><i class="fa-solid fa-user-tie"></i><span>Manager: Shahin Alam</span></div>
-  <div class="depot-line"><i class="fa-solid fa-location-dot"></i><span>Thanthania Bazar, Bogura 5800</span></div>
-  <div class="depot-line"><i class="fa-solid fa-phone"></i><span>+880 1711-000003</span></div>
-  <div class="depot-line"><i class="fa-solid fa-envelope"></i><span>bogura@asbiocare.com</span></div>
-  <a href="contact.html" class="btn btn-primary btn-sm btn-block" style="margin-top:14px;"><span>View Details</span></a>
-</div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5 text-center">
+      <div data-reveal="fade">
+        <div class="stat-ring w-[104px] h-[104px] mx-auto mb-4 relative" data-pct="92">
+          <svg viewBox="0 0 100 100" class="-rotate-90"><circle class="bg" cx="50" cy="50" r="44" fill="none" stroke="#123A63" stroke-width="7"></circle><circle class="fg" cx="50" cy="50" r="44" fill="none" stroke="#1F9E4C" stroke-width="7" stroke-linecap="round"></circle></svg>
+          <div class="num absolute inset-0 flex items-center justify-center font-display font-bold text-xl text-white" data-count="120" data-suffix="+">0</div>
+        </div>
+        <span class="text-white/65 text-sm font-semibold">Products</span>
+      </div>
+      <div data-reveal="fade">
+        <div class="stat-ring w-[104px] h-[104px] mx-auto mb-4 relative" data-pct="85">
+          <svg viewBox="0 0 100 100" class="-rotate-90"><circle class="bg" cx="50" cy="50" r="44" fill="none" stroke="#123A63" stroke-width="7"></circle><circle class="fg" cx="50" cy="50" r="44" fill="none" stroke="#1F9E4C" stroke-width="7" stroke-linecap="round"></circle></svg>
+          <div class="num absolute inset-0 flex items-center justify-center font-display font-bold text-xl text-white" data-count="450" data-suffix="+">0</div>
+        </div>
+        <span class="text-white/65 text-sm font-semibold">Dealers</span>
+      </div>
+      <div data-reveal="fade">
+        <div class="stat-ring w-[104px] h-[104px] mx-auto mb-4 relative" data-pct="70">
+          <svg viewBox="0 0 100 100" class="-rotate-90"><circle class="bg" cx="50" cy="50" r="44" fill="none" stroke="#123A63" stroke-width="7"></circle><circle class="fg" cx="50" cy="50" r="44" fill="none" stroke="#1F9E4C" stroke-width="7" stroke-linecap="round"></circle></svg>
+          <div class="num absolute inset-0 flex items-center justify-center font-display font-bold text-xl text-white" data-count="35" data-suffix="+">0</div>
+        </div>
+        <span class="text-white/65 text-sm font-semibold">Depots</span>
+      </div>
+      <div data-reveal="fade">
+        <div class="stat-ring w-[104px] h-[104px] mx-auto mb-4 relative" data-pct="96">
+          <svg viewBox="0 0 100 100" class="-rotate-90"><circle class="bg" cx="50" cy="50" r="44" fill="none" stroke="#123A63" stroke-width="7"></circle><circle class="fg" cx="50" cy="50" r="44" fill="none" stroke="#1F9E4C" stroke-width="7" stroke-linecap="round"></circle></svg>
+          <div class="num absolute inset-0 flex items-center justify-center font-display font-bold text-xl text-white" data-count="50" data-suffix="k+">0</div>
+        </div>
+        <span class="text-white/65 text-sm font-semibold">Farmers Served</span>
+      </div>
+      <div data-reveal="fade">
+        <div class="stat-ring w-[104px] h-[104px] mx-auto mb-4 relative" data-pct="88">
+          <svg viewBox="0 0 100 100" class="-rotate-90"><circle class="bg" cx="50" cy="50" r="44" fill="none" stroke="#123A63" stroke-width="7"></circle><circle class="fg" cx="50" cy="50" r="44" fill="none" stroke="#1F9E4C" stroke-width="7" stroke-linecap="round"></circle></svg>
+          <div class="num absolute inset-0 flex items-center justify-center font-display font-bold text-xl text-white" data-count="17" data-suffix="+">0</div>
+        </div>
+        <span class="text-white/65 text-sm font-semibold">Years Experience</span>
+      </div>
     </div>
-    <div style="text-align:center;margin-top:36px;"><a href="depots.html" class="btn btn-outline"><span>View All Depots</span></a></div>
   </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <div class="cta-band reveal-zoom">
-      <div class="content">
+<section class="py-24">
+  <div class="max-w-[1240px] mx-auto px-6">
+    <div class="text-center mb-14" data-reveal="fade">
+      <span class="inline-flex items-center gap-2 font-display font-semibold text-[12px] tracking-[.14em] uppercase text-secondary-600 bg-secondary-100 px-4 py-[7px] rounded-full before:content-[''] before:w-[7px] before:h-[7px] before:rounded-full before:bg-secondary before:inline-block">Our People</span>
+      <h2 class="font-display font-semibold text-navy text-[1.7rem] sm:text-[2.6rem] mt-4">Meet Our Expert Team</h2>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <div class="bg-white rounded-md border border-line shadow-soft transition-all duration-400 hover:-translate-y-2 hover:shadow-lifted hover:border-transparent overflow-hidden text-center" data-reveal="zoom">
+        <div class="aspect-square overflow-hidden"><img src="https://picsum.photos/seed/team1/400/400" alt="Dr. Aminul Islam" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"></div>
+        <div class="p-5">
+          <h4 class="font-display font-semibold text-navy text-base">Dr. Aminul Islam</h4>
+          <div class="text-secondary-600 text-[13px] font-bold mt-1">Chairman</div>
+          <div class="flex justify-center gap-2.5 mt-3.5">
+            <a href="#" class="w-8 h-8 rounded-full bg-primary-100 text-primary flex items-center justify-center text-[13px] hover:bg-primary hover:text-white transition-colors" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="w-8 h-8 rounded-full bg-primary-100 text-primary flex items-center justify-center text-[13px] hover:bg-primary hover:text-white transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="w-8 h-8 rounded-full bg-primary-100 text-primary flex items-center justify-center text-[13px] hover:bg-primary hover:text-white transition-colors" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-md border border-line shadow-soft transition-all duration-400 hover:-translate-y-2 hover:shadow-lifted hover:border-transparent overflow-hidden text-center" data-reveal="zoom">
+        <div class="aspect-square overflow-hidden"><img src="https://picsum.photos/seed/team2/400/400" alt="Shirin Akter" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"></div>
+        <div class="p-5">
+          <h4 class="font-display font-semibold text-navy text-base">Shirin Akter</h4>
+          <div class="text-secondary-600 text-[13px] font-bold mt-1">Managing Director</div>
+          <div class="flex justify-center gap-2.5 mt-3.5">
+            <a href="#" class="w-8 h-8 rounded-full bg-primary-100 text-primary flex items-center justify-center text-[13px] hover:bg-primary hover:text-white transition-colors" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="w-8 h-8 rounded-full bg-primary-100 text-primary flex items-center justify-center text-[13px] hover:bg-primary hover:text-white transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="w-8 h-8 rounded-full bg-primary-100 text-primary flex items-center justify-center text-[13px] hover:bg-primary hover:text-white transition-colors" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-md border border-line shadow-soft transition-all duration-400 hover:-translate-y-2 hover:shadow-lifted hover:border-transparent overflow-hidden text-center" data-reveal="zoom">
+        <div class="aspect-square overflow-hidden"><img src="https://picsum.photos/seed/team3/400/400" alt="Dr. Kamrul Hasan" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"></div>
+        <div class="p-5">
+          <h4 class="font-display font-semibold text-navy text-base">Dr. Kamrul Hasan</h4>
+          <div class="text-secondary-600 text-[13px] font-bold mt-1">Head of R&amp;D</div>
+          <div class="flex justify-center gap-2.5 mt-3.5">
+            <a href="#" class="w-8 h-8 rounded-full bg-primary-100 text-primary flex items-center justify-center text-[13px] hover:bg-primary hover:text-white transition-colors" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="w-8 h-8 rounded-full bg-primary-100 text-primary flex items-center justify-center text-[13px] hover:bg-primary hover:text-white transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="w-8 h-8 rounded-full bg-primary-100 text-primary flex items-center justify-center text-[13px] hover:bg-primary hover:text-white transition-colors" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-md border border-line shadow-soft transition-all duration-400 hover:-translate-y-2 hover:shadow-lifted hover:border-transparent overflow-hidden text-center" data-reveal="zoom">
+        <div class="aspect-square overflow-hidden"><img src="https://picsum.photos/seed/team4/400/400" alt="Farhana Rahman" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"></div>
+        <div class="p-5">
+          <h4 class="font-display font-semibold text-navy text-base">Farhana Rahman</h4>
+          <div class="text-secondary-600 text-[13px] font-bold mt-1">Quality Assurance Manager</div>
+          <div class="flex justify-center gap-2.5 mt-3.5">
+            <a href="#" class="w-8 h-8 rounded-full bg-primary-100 text-primary flex items-center justify-center text-[13px] hover:bg-primary hover:text-white transition-colors" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="w-8 h-8 rounded-full bg-primary-100 text-primary flex items-center justify-center text-[13px] hover:bg-primary hover:text-white transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="w-8 h-8 rounded-full bg-primary-100 text-primary flex items-center justify-center text-[13px] hover:bg-primary hover:text-white transition-colors" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="text-center mt-10"><a href="team.html" class="inline-flex items-center justify-center gap-2 font-display font-semibold text-[14px] px-7 py-3.5 rounded-full transition-all duration-300 bg-transparent text-navy border border-line hover:border-primary hover:text-primary hover:-translate-y-1"><span>View Full Team</span></a></div>
+  </div>
+</section>
+
+<section class="py-24 bg-cream">
+  <div class="max-w-[1240px] mx-auto px-6">
+    <div class="text-center mb-14" data-reveal="fade">
+      <span class="inline-flex items-center gap-2 font-display font-semibold text-[12px] tracking-[.14em] uppercase text-secondary-600 bg-secondary-100 px-4 py-[7px] rounded-full before:content-[''] before:w-[7px] before:h-[7px] before:rounded-full before:bg-secondary before:inline-block">Testimonials</span>
+      <h2 class="font-display font-semibold text-navy text-[1.7rem] sm:text-[2.6rem] mt-4">What Farmers Say About Us</h2>
+    </div>
+    <div class="testimonial-slider overflow-hidden">
+      <div class="t-track flex transition-transform duration-[600ms] ease-out">
+
+        <div class="t-slide min-w-full px-1.5">
+          <div class="bg-white rounded-md border border-line shadow-soft p-8 relative max-w-[720px] mx-auto">
+            <i class="fa-solid fa-quote-right text-primary-100 text-4xl absolute top-4 right-5"></i>
+            <div class="text-[#F5A623] text-sm mb-2"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="text-slate text-lg leading-relaxed mt-1.5 mb-5">&ldquo;Ammosorb saved my tilapia pond during last year's outbreak. My fish recovered within days and survival rate stayed above 90%.&rdquo;</p>
+            <div class="flex items-center gap-3.5">
+              <img src="https://picsum.photos/seed/cust1/100/100" alt="Abdul Kader" loading="lazy" class="w-[52px] h-[52px] rounded-full object-cover">
+              <div><h5 class="font-display font-semibold text-navy text-[15px]">Abdul Kader</h5><span class="text-slate text-xs">Fish Farmer, Mymensingh</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="t-slide min-w-full px-1.5">
+          <div class="bg-white rounded-md border border-line shadow-soft p-8 relative max-w-[720px] mx-auto">
+            <i class="fa-solid fa-quote-right text-primary-100 text-4xl absolute top-4 right-5"></i>
+            <div class="text-[#F5A623] text-sm mb-2"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="text-slate text-lg leading-relaxed mt-1.5 mb-5">&ldquo;Aqua Root has cut our flock mortality dramatically. The AS Bio Care team also visits our farm to give hands-on advice.&rdquo;</p>
+            <div class="flex items-center gap-3.5">
+              <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/543de22c-4781-4ed0-8911-f512088d6d09.__CR85,0,1365,1024_PT0_SX600_V1___.png" alt="Nasrin Begum" loading="lazy" class="w-[52px] h-[52px] rounded-full object-cover">
+              <div><h5 class="font-display font-semibold text-navy text-[15px]">Nasrin Begum</h5><span class="text-slate text-xs">Poultry Farm Owner, Gazipur</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="t-slide min-w-full px-1.5">
+          <div class="bg-white rounded-md border border-line shadow-soft p-8 relative max-w-[720px] mx-auto">
+            <i class="fa-solid fa-quote-right text-primary-100 text-4xl absolute top-4 right-5"></i>
+            <div class="text-[#F5A623] text-sm mb-2"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="text-slate text-lg leading-relaxed mt-1.5 mb-5">&ldquo;Consistent product quality and on-time delivery. Farmers in our area trust the AS Bio Care name more than any other brand.&rdquo;</p>
+            <div class="flex items-center gap-3.5">
+              <img src="https://picsum.photos/seed/cust3/100/100" alt="Habibur Rahman" loading="lazy" class="w-[52px] h-[52px] rounded-full object-cover">
+              <div><h5 class="font-display font-semibold text-navy text-[15px]">Habibur Rahman</h5><span class="text-slate text-xs">Depot Dealer, Bogura</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="t-slide min-w-full px-1.5">
+          <div class="bg-white rounded-md border border-line shadow-soft p-8 relative max-w-[720px] mx-auto">
+            <i class="fa-solid fa-quote-right text-primary-100 text-4xl absolute top-4 right-5"></i>
+            <div class="text-[#F5A623] text-sm mb-2"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="text-slate text-lg leading-relaxed mt-1.5 mb-5">&ldquo;ClearPond keeps our water parameters stable even during the monsoon. Our shrimp yield has improved every season since we switched.&rdquo;</p>
+            <div class="flex items-center gap-3.5">
+              <img src="https://picsum.photos/seed/cust4/100/100" alt="Moushumi Sarker" loading="lazy" class="w-[52px] h-[52px] rounded-full object-cover">
+              <div><h5 class="font-display font-semibold text-navy text-[15px]">Moushumi Sarker</h5><span class="text-slate text-xs">Shrimp Farmer, Khulna</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="flex justify-center gap-3.5 mt-8">
+      <button class="t-prev w-10 h-10 rounded-full border border-line bg-white flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-colors" aria-label="Previous"><i class="fa-solid fa-arrow-left"></i></button>
+      <button class="t-next w-10 h-10 rounded-full border border-line bg-white flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-colors" aria-label="Next"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+  </div>
+</section>
+
+<section class="py-24">
+  <div class="max-w-[1240px] mx-auto px-6">
+    <div class="flex justify-between items-end flex-wrap gap-5 mb-11">
+      <div data-reveal="fade">
+        <span class="inline-flex items-center gap-2 font-display font-semibold text-[12px] tracking-[.14em] uppercase text-secondary-600 bg-secondary-100 px-4 py-[7px] rounded-full before:content-[''] before:w-[7px] before:h-[7px] before:rounded-full before:bg-secondary before:inline-block">Latest News</span>
+        <h2 class="font-display font-semibold text-navy text-[1.7rem] sm:text-[2.6rem] mt-4">News &amp; Updates</h2>
+      </div>
+      <a href="news.html" class="inline-flex items-center justify-center gap-2 font-display font-semibold text-[13px] px-5 py-2.5 rounded-full border border-line text-navy hover:border-primary hover:text-primary transition-colors">All News</a>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div class="bg-white rounded-md border border-line shadow-soft transition-all duration-400 hover:-translate-y-2 hover:shadow-lifted hover:border-transparent overflow-hidden" data-reveal="fade">
+        <div class="aspect-[16/10] overflow-hidden"><img src="https://picsum.photos/seed/news1/500/320" alt="AS Bio Care Launches New Research Laboratory in Gazipur" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"></div>
+        <div class="p-6">
+          <div class="flex gap-3.5 text-xs text-slate mb-2.5"><span><i class="fa-solid fa-calendar text-primary mr-1.5"></i>July 18, 2026</span><span><i class="fa-solid fa-tag text-primary mr-1.5"></i>Company News</span></div>
+          <h3 class="font-display font-semibold text-navy text-[17px] leading-snug">AS Bio Care Launches New Research Laboratory in Gazipur</h3>
+          <p class="text-slate text-sm mt-2">Our new state-of-the-art laboratory will accelerate the development of next-generation aquaculture and poultry health formulations.</p>
+          <a href="news.html" class="mt-3.5 inline-flex items-center justify-center gap-2 font-display font-semibold text-[13px] px-5 py-2.5 rounded-full border border-line text-navy hover:border-primary hover:text-primary transition-colors"><span>Read More</span><i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-md border border-line shadow-soft transition-all duration-400 hover:-translate-y-2 hover:shadow-lifted hover:border-transparent overflow-hidden" data-reveal="fade">
+        <div class="aspect-[16/10] overflow-hidden"><img src="https://picsum.photos/seed/news2/500/320" alt="AS Bio Care Wins National Aquaculture Innovation Award" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"></div>
+        <div class="p-6">
+          <div class="flex gap-3.5 text-xs text-slate mb-2.5"><span><i class="fa-solid fa-calendar text-primary mr-1.5"></i>June 02, 2026</span><span><i class="fa-solid fa-tag text-primary mr-1.5"></i>Achievement</span></div>
+          <h3 class="font-display font-semibold text-navy text-[17px] leading-snug">AS Bio Care Wins National Aquaculture Innovation Award</h3>
+          <p class="text-slate text-sm mt-2">Recognised for outstanding contribution to sustainable fisheries health at the National Aquaculture Summit 2026.</p>
+          <a href="news.html" class="mt-3.5 inline-flex items-center justify-center gap-2 font-display font-semibold text-[13px] px-5 py-2.5 rounded-full border border-line text-navy hover:border-primary hover:text-primary transition-colors"><span>Read More</span><i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-md border border-line shadow-soft transition-all duration-400 hover:-translate-y-2 hover:shadow-lifted hover:border-transparent overflow-hidden" data-reveal="fade">
+        <div class="aspect-[16/10] overflow-hidden"><img src="https://picsum.photos/seed/news3/500/320" alt="Free Farmer Training Camp Held Across 12 Districts" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"></div>
+        <div class="p-6">
+          <div class="flex gap-3.5 text-xs text-slate mb-2.5"><span><i class="fa-solid fa-calendar text-primary mr-1.5"></i>May 11, 2026</span><span><i class="fa-solid fa-tag text-primary mr-1.5"></i>Community</span></div>
+          <h3 class="font-display font-semibold text-navy text-[17px] leading-snug">Free Farmer Training Camp Held Across 12 Districts</h3>
+          <p class="text-slate text-sm mt-2">Over 3,000 farmers attended our free disease-prevention and water-quality training sessions this quarter.</p>
+          <a href="news.html" class="mt-3.5 inline-flex items-center justify-center gap-2 font-display font-semibold text-[13px] px-5 py-2.5 rounded-full border border-line text-navy hover:border-primary hover:text-primary transition-colors"><span>Read More</span><i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="py-24 bg-cream">
+  <div class="max-w-[1240px] mx-auto px-6">
+    <div class="flex justify-between items-end flex-wrap gap-5 mb-11">
+      <div data-reveal="fade">
+        <span class="inline-flex items-center gap-2 font-display font-semibold text-[12px] tracking-[.14em] uppercase text-secondary-600 bg-secondary-100 px-4 py-[7px] rounded-full before:content-[''] before:w-[7px] before:h-[7px] before:rounded-full before:bg-secondary before:inline-block">From the Blog</span>
+        <h2 class="font-display font-semibold text-navy text-[1.7rem] sm:text-[2.6rem] mt-4">Latest Articles</h2>
+      </div>
+      <a href="blog.html" class="inline-flex items-center justify-center gap-2 font-display font-semibold text-[13px] px-5 py-2.5 rounded-full border border-line text-navy hover:border-primary hover:text-primary transition-colors">All Articles</a>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div class="bg-white rounded-md border border-line shadow-soft transition-all duration-400 hover:-translate-y-2 hover:shadow-lifted hover:border-transparent overflow-hidden" data-reveal="fade">
+        <div class="aspect-[16/10] overflow-hidden"><img src="https://picsum.photos/seed/blog1/500/320" alt="5 Early Warning Signs of Bacterial Infection in Fish Ponds" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"></div>
+        <div class="p-6">
+          <div class="flex gap-3.5 text-xs text-slate mb-2.5"><span><i class="fa-solid fa-calendar text-primary mr-1.5"></i>July 22, 2026</span><span><i class="fa-solid fa-folder text-primary mr-1.5"></i>Fish Health</span></div>
+          <h3 class="font-display font-semibold text-navy text-[17px] leading-snug">5 Early Warning Signs of Bacterial Infection in Fish Ponds</h3>
+          <p class="text-slate text-sm mt-2">Learn to spot the early signs of bacterial disease before it spreads through your entire pond.</p>
+          <a href="blog-details.html" class="mt-3.5 inline-flex items-center justify-center gap-2 font-display font-semibold text-[13px] px-5 py-2.5 rounded-full border border-line text-navy hover:border-primary hover:text-primary transition-colors"><span>Read Article</span><i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-md border border-line shadow-soft transition-all duration-400 hover:-translate-y-2 hover:shadow-lifted hover:border-transparent overflow-hidden" data-reveal="fade">
+        <div class="aspect-[16/10] overflow-hidden"><img src="https://picsum.photos/seed/blog2/500/320" alt="Optimising Feed Conversion Ratio in Broiler Farming" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"></div>
+        <div class="p-6">
+          <div class="flex gap-3.5 text-xs text-slate mb-2.5"><span><i class="fa-solid fa-calendar text-primary mr-1.5"></i>July 09, 2026</span><span><i class="fa-solid fa-folder text-primary mr-1.5"></i>Poultry</span></div>
+          <h3 class="font-display font-semibold text-navy text-[17px] leading-snug">Optimising Feed Conversion Ratio in Broiler Farming</h3>
+          <p class="text-slate text-sm mt-2">Practical, research-backed steps to help your broilers gain weight efficiently while lowering feed costs.</p>
+          <a href="blog-details.html" class="mt-3.5 inline-flex items-center justify-center gap-2 font-display font-semibold text-[13px] px-5 py-2.5 rounded-full border border-line text-navy hover:border-primary hover:text-primary transition-colors"><span>Read Article</span><i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-md border border-line shadow-soft transition-all duration-400 hover:-translate-y-2 hover:shadow-lifted hover:border-transparent overflow-hidden" data-reveal="fade">
+        <div class="aspect-[16/10] overflow-hidden"><img src="https://picsum.photos/seed/blog3/500/320" alt="Why Water Quality Testing Should Be Your Weekly Habit" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"></div>
+        <div class="p-6">
+          <div class="flex gap-3.5 text-xs text-slate mb-2.5"><span><i class="fa-solid fa-calendar text-primary mr-1.5"></i>June 28, 2026</span><span><i class="fa-solid fa-folder text-primary mr-1.5"></i>Water Management</span></div>
+          <h3 class="font-display font-semibold text-navy text-[17px] leading-snug">Why Water Quality Testing Should Be Your Weekly Habit</h3>
+          <p class="text-slate text-sm mt-2">A simple weekly testing routine that prevents the majority of pond-related fish losses.</p>
+          <a href="blog-details.html" class="mt-3.5 inline-flex items-center justify-center gap-2 font-display font-semibold text-[13px] px-5 py-2.5 rounded-full border border-line text-navy hover:border-primary hover:text-primary transition-colors"><span>Read Article</span><i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="py-24">
+  <div class="max-w-[1240px] mx-auto px-6">
+    <div class="text-center mb-14" data-reveal="fade">
+      <span class="inline-flex items-center gap-2 font-display font-semibold text-[12px] tracking-[.14em] uppercase text-secondary-600 bg-secondary-100 px-4 py-[7px] rounded-full before:content-[''] before:w-[7px] before:h-[7px] before:rounded-full before:bg-secondary before:inline-block">Gallery</span>
+      <h2 class="font-display font-semibold text-navy text-[1.7rem] sm:text-[2.6rem] mt-4">Life at AS Bio Care</h2>
+    </div>
+    <div class="columns-1 sm:columns-2 lg:columns-4 gap-4 [column-fill:_balance]">
+      <div class="gallery-item break-inside-avoid mb-4 rounded-md overflow-hidden relative cursor-pointer group" data-reveal="zoom">
+        <img src="https://picsum.photos/seed/gal1/420/420" alt="Fish Farm Site Visit" loading="lazy" class="w-full block transition-transform duration-500 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-navy/75 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-white font-display font-semibold text-sm">Fish Farm Site Visit</span></div>
+      </div>
+      <div class="gallery-item break-inside-avoid mb-4 rounded-md overflow-hidden relative cursor-pointer group" data-reveal="zoom">
+        <img src="https://picsum.photos/seed/gal2/420/300" alt="Poultry Farm Inspection" loading="lazy" class="w-full block transition-transform duration-500 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-navy/75 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-white font-display font-semibold text-sm">Poultry Farm Inspection</span></div>
+      </div>
+      <div class="gallery-item break-inside-avoid mb-4 rounded-md overflow-hidden relative cursor-pointer group" data-reveal="zoom">
+        <img src="https://picsum.photos/seed/gal3/420/380" alt="Research Laboratory" loading="lazy" class="w-full block transition-transform duration-500 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-navy/75 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-white font-display font-semibold text-sm">Research Laboratory</span></div>
+      </div>
+      <div class="gallery-item break-inside-avoid mb-4 rounded-md overflow-hidden relative cursor-pointer group" data-reveal="zoom">
+        <img src="https://picsum.photos/seed/gal4/420/320" alt="Farmer Training Camp" loading="lazy" class="w-full block transition-transform duration-500 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-navy/75 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-white font-display font-semibold text-sm">Farmer Training Camp</span></div>
+      </div>
+      <div class="gallery-item break-inside-avoid mb-4 rounded-md overflow-hidden relative cursor-pointer group" data-reveal="zoom">
+        <img src="https://picsum.photos/seed/gal5/420/400" alt="Product Manufacturing" loading="lazy" class="w-full block transition-transform duration-500 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-navy/75 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-white font-display font-semibold text-sm">Product Manufacturing</span></div>
+      </div>
+      <div class="gallery-item break-inside-avoid mb-4 rounded-md overflow-hidden relative cursor-pointer group" data-reveal="zoom">
+        <img src="https://picsum.photos/seed/gal6/420/300" alt="Depot Network Meeting" loading="lazy" class="w-full block transition-transform duration-500 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-navy/75 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-white font-display font-semibold text-sm">Depot Network Meeting</span></div>
+      </div>
+      <div class="gallery-item break-inside-avoid mb-4 rounded-md overflow-hidden relative cursor-pointer group" data-reveal="zoom">
+        <img src="https://picsum.photos/seed/gal7/420/360" alt="Water Quality Testing" loading="lazy" class="w-full block transition-transform duration-500 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-navy/75 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-white font-display font-semibold text-sm">Water Quality Testing</span></div>
+      </div>
+      <div class="gallery-item break-inside-avoid mb-4 rounded-md overflow-hidden relative cursor-pointer group" data-reveal="zoom">
+        <img src="https://picsum.photos/seed/gal8/420/320" alt="Award Ceremony 2026" loading="lazy" class="w-full block transition-transform duration-500 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-navy/75 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-white font-display font-semibold text-sm">Award Ceremony 2026</span></div>
+      </div>
+    </div>
+    <div class="text-center mt-9"><a href="gallery.html" class="inline-flex items-center justify-center gap-2 font-display font-semibold text-[14px] px-7 py-3.5 rounded-full transition-all duration-300 bg-transparent text-navy border border-line hover:border-primary hover:text-primary hover:-translate-y-1"><span>View Full Gallery</span></a></div>
+  </div>
+</section>
+
+<section class="py-24 bg-cream">
+  <div class="max-w-[1240px] mx-auto px-6">
+    <div class="text-center mb-14" data-reveal="fade">
+      <span class="inline-flex items-center gap-2 font-display font-semibold text-[12px] tracking-[.14em] uppercase text-secondary-600 bg-secondary-100 px-4 py-[7px] rounded-full before:content-[''] before:w-[7px] before:h-[7px] before:rounded-full before:bg-secondary before:inline-block">Our Network</span>
+      <h2 class="font-display font-semibold text-navy text-[1.7rem] sm:text-[2.6rem] mt-4">Find a Depot Near You</h2>
+      <p class="text-slate mt-3.5">35+ depots across Bangladesh keep our products within reach of every farmer.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div class="bg-white rounded-md border border-line shadow-soft transition-all duration-400 hover:-translate-y-2 hover:shadow-lifted hover:border-transparent p-6" data-reveal="fade">
+        <span class="inline-block text-[11px] font-bold px-3 py-1 rounded-full bg-primary-100 text-primary-600 mb-3">Depot</span>
+        <h4 class="font-display font-semibold text-navy text-base mb-3.5">Dhaka Central Depot</h4>
+        <div class="flex gap-2.5 text-slate text-sm mb-2.5"><i class="fa-solid fa-user-tie text-primary w-4 pt-0.5"></i><span>Manager: Md. Jasim Uddin</span></div>
+        <div class="flex gap-2.5 text-slate text-sm mb-2.5"><i class="fa-solid fa-location-dot text-primary w-4 pt-0.5"></i><span>House 45, Road 7, Dhanmondi, Dhaka 1209</span></div>
+        <div class="flex gap-2.5 text-slate text-sm mb-2.5"><i class="fa-solid fa-phone text-primary w-4 pt-0.5"></i><span>+880 1711-000001</span></div>
+        <div class="flex gap-2.5 text-slate text-sm mb-2.5"><i class="fa-solid fa-envelope text-primary w-4 pt-0.5"></i><span>dhaka@asbiocare.com</span></div>
+        <a href="contact.html" class="w-full mt-3.5 inline-flex items-center justify-center gap-2 font-display font-semibold text-[13px] px-5 py-2.5 rounded-full bg-primary text-white hover:bg-primary-600 transition-colors"><span>View Details</span></a>
+      </div>
+
+      <div class="bg-white rounded-md border border-line shadow-soft transition-all duration-400 hover:-translate-y-2 hover:shadow-lifted hover:border-transparent p-6" data-reveal="fade">
+        <span class="inline-block text-[11px] font-bold px-3 py-1 rounded-full bg-primary-100 text-primary-600 mb-3">Depot</span>
+        <h4 class="font-display font-semibold text-navy text-base mb-3.5">Mymensingh Depot</h4>
+        <div class="flex gap-2.5 text-slate text-sm mb-2.5"><i class="fa-solid fa-user-tie text-primary w-4 pt-0.5"></i><span>Manager: Rafiqul Islam</span></div>
+        <div class="flex gap-2.5 text-slate text-sm mb-2.5"><i class="fa-solid fa-location-dot text-primary w-4 pt-0.5"></i><span>Ganginarpar Road, Mymensingh 2200</span></div>
+        <div class="flex gap-2.5 text-slate text-sm mb-2.5"><i class="fa-solid fa-phone text-primary w-4 pt-0.5"></i><span>+880 1711-000002</span></div>
+        <div class="flex gap-2.5 text-slate text-sm mb-2.5"><i class="fa-solid fa-envelope text-primary w-4 pt-0.5"></i><span>mymensingh@asbiocare.com</span></div>
+        <a href="contact.html" class="w-full mt-3.5 inline-flex items-center justify-center gap-2 font-display font-semibold text-[13px] px-5 py-2.5 rounded-full bg-primary text-white hover:bg-primary-600 transition-colors"><span>View Details</span></a>
+      </div>
+
+      <div class="bg-white rounded-md border border-line shadow-soft transition-all duration-400 hover:-translate-y-2 hover:shadow-lifted hover:border-transparent p-6" data-reveal="fade">
+        <span class="inline-block text-[11px] font-bold px-3 py-1 rounded-full bg-primary-100 text-primary-600 mb-3">Depot</span>
+        <h4 class="font-display font-semibold text-navy text-base mb-3.5">Bogura Depot</h4>
+        <div class="flex gap-2.5 text-slate text-sm mb-2.5"><i class="fa-solid fa-user-tie text-primary w-4 pt-0.5"></i><span>Manager: Shahin Alam</span></div>
+        <div class="flex gap-2.5 text-slate text-sm mb-2.5"><i class="fa-solid fa-location-dot text-primary w-4 pt-0.5"></i><span>Thanthania Bazar, Bogura 5800</span></div>
+        <div class="flex gap-2.5 text-slate text-sm mb-2.5"><i class="fa-solid fa-phone text-primary w-4 pt-0.5"></i><span>+880 1711-000003</span></div>
+        <div class="flex gap-2.5 text-slate text-sm mb-2.5"><i class="fa-solid fa-envelope text-primary w-4 pt-0.5"></i><span>bogura@asbiocare.com</span></div>
+        <a href="contact.html" class="w-full mt-3.5 inline-flex items-center justify-center gap-2 font-display font-semibold text-[13px] px-5 py-2.5 rounded-full bg-primary text-white hover:bg-primary-600 transition-colors"><span>View Details</span></a>
+      </div>
+
+    </div>
+    <div class="text-center mt-9"><a href="depots.html" class="inline-flex items-center justify-center gap-2 font-display font-semibold text-[14px] px-7 py-3.5 rounded-full transition-all duration-300 bg-transparent text-navy border border-line hover:border-primary hover:text-primary hover:-translate-y-1"><span>View All Depots</span></a></div>
+  </div>
+</section>
+
+<section class="py-24">
+  <div class="max-w-[1240px] mx-auto px-6">
+    <div class="relative rounded-lg overflow-hidden p-16 bg-[linear-gradient(120deg,#0E2A47,#123A63)] text-white" data-reveal="zoom">
+      <div class="absolute inset-0 bg-[radial-gradient(500px_260px_at_90%_20%,rgba(31,158,76,.35),transparent)]"></div>
+      <div class="relative z-[2] flex items-center justify-between gap-8 flex-wrap">
         <div>
-          <h2>Ready to protect your farm's future?</h2>
-          <p>Talk to our advisory team about the right healthcare programme for your fish or poultry farm.</p>
+          <h2 class="font-display font-semibold text-white text-[1.5rem] sm:text-[2.2rem] max-w-[560px]">Ready to protect your farm's future?</h2>
+          <p class="text-white/75 mt-2.5 max-w-[520px]">Talk to our advisory team about the right healthcare programme for your fish or poultry farm.</p>
         </div>
-        <div style="display:flex;gap:14px;flex-wrap:wrap;">
-          <a href="contact.html" class="btn btn-accent"><span>Contact Us</span><i class="fa-solid fa-arrow-right"></i></a>
-          <a href="tel:+8801700000000" class="btn btn-ghost-light"><span>Call Head Office</span></a>
+        <div class="flex gap-3.5 flex-wrap">
+          <a href="contact.html" class="inline-flex items-center justify-center gap-2 font-display font-semibold text-[14px] px-7 py-3.5 rounded-full transition-all duration-300 bg-accent text-white shadow-[0_10px_24px_rgba(221,59,59,.28)] hover:bg-accent-600 hover:-translate-y-1"><span>Contact Us</span><i class="fa-solid fa-arrow-right"></i></a>
+          <a href="tel:+8801700000000" class="inline-flex items-center justify-center gap-2 font-display font-semibold text-[14px] px-7 py-3.5 rounded-full transition-all duration-300 bg-white/10 text-white border border-white/40 backdrop-blur hover:bg-white/20 hover:-translate-y-1"><span>Call Head Office</span></a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="float-stack">
-  <a href="#" class="fab fab-messenger" aria-label="Messenger"><i class="fa-brands fa-facebook-messenger"></i><span class="tip">Chat on Messenger</span></a>
-  <a href="#" class="fab fab-whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i><span class="tip">WhatsApp Us</span></a>
-  <a href="tel:+8801700000000" class="fab fab-call" aria-label="Call"><i class="fa-solid fa-phone"></i><span class="tip">Call Head Office</span></a>
-  <button class="scroll-top" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
+<div class="fixed right-6 bottom-6 z-[900] flex flex-col-reverse gap-3.5 items-center">
+  <a href="#" class="w-[54px] h-[54px] rounded-full flex items-center justify-center text-white text-xl shadow-card relative group bg-[#0084FF]" aria-label="Messenger">
+    <i class="fa-brands fa-facebook-messenger"></i>
+    <span class="absolute inset-0 rounded-full border-2 border-[#0084FF] animate-pulseRing"></span>
+    <span class="absolute right-16 bg-navy text-white px-3.5 py-1.5 rounded-lg text-xs whitespace-nowrap opacity-0 translate-x-1.5 group-hover:opacity-100 group-hover:translate-x-0 transition-all font-display pointer-events-none">Chat on Messenger</span>
+  </a>
+  <a href="#" class="w-[54px] h-[54px] rounded-full flex items-center justify-center text-white text-xl shadow-card relative group bg-[#25D366]" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="absolute right-16 bg-navy text-white px-3.5 py-1.5 rounded-lg text-xs whitespace-nowrap opacity-0 translate-x-1.5 group-hover:opacity-100 group-hover:translate-x-0 transition-all font-display pointer-events-none">WhatsApp Us</span>
+  </a>
+  <a href="tel:+8801700000000" class="w-[54px] h-[54px] rounded-full flex items-center justify-center text-white text-xl shadow-card relative group bg-primary" aria-label="Call">
+    <i class="fa-solid fa-phone"></i>
+    <span class="absolute right-16 bg-navy text-white px-3.5 py-1.5 rounded-lg text-xs whitespace-nowrap opacity-0 translate-x-1.5 group-hover:opacity-100 group-hover:translate-x-0 transition-all font-display pointer-events-none">Call Head Office</span>
+  </a>
+  <button class="scroll-top w-[46px] h-[46px] rounded-full bg-navy text-white flex items-center justify-center shadow-card opacity-0 invisible translate-y-2.5 transition-all duration-300" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
 </div>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="assets/images/logo.png" alt="AS Bio Care Limited">
-        <p>AS BIO CARE LIMITED manufactures trusted aquaculture and poultry healthcare products &mdash; fisheries medicines, nutritional supplements, water treatment solutions and disease prevention formulas for farmers across Bangladesh.</p>
-        <div class="footer-social">
-          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+<footer class="bg-navy text-white/75 pt-20">
+  <div class="max-w-[1240px] mx-auto px-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1.3fr] gap-10 pb-12 border-b border-white/10">
+      <div>
+        <img src="assets/images/logo.png" alt="AS Bio Care Limited" class="h-11 mb-4">
+        <p class="text-sm leading-relaxed text-white/60">AS BIO CARE LIMITED manufactures trusted aquaculture and poultry healthcare products &mdash; fisheries medicines, nutritional supplements, water treatment solutions and disease prevention formulas for farmers across Bangladesh.</p>
+        <div class="flex gap-2.5 mt-5">
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-secondary transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-secondary transition-colors" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-secondary transition-colors" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-secondary transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
         </div>
       </div>
-      <div class="footer-col">
-        <h5>Company</h5>
-        <a href="about.html">About Us</a>
-        <a href="mission.html">Our Mission</a>
-        <a href="vision.html">Our Vision</a>
-        <a href="motto.html">Our Motto</a>
-        <a href="team.html">Expert Team</a>
-        <a href="testimonials.html">Testimonials</a>
+      <div>
+        <h5 class="text-white font-display font-semibold text-[15px] mb-5">Company</h5>
+        <a href="about.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">About Us</a>
+        <a href="mission.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">Our Mission</a>
+        <a href="vision.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">Our Vision</a>
+        <a href="motto.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">Our Motto</a>
+        <a href="team.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">Expert Team</a>
+        <a href="testimonials.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">Testimonials</a>
       </div>
-      <div class="footer-col">
-        <h5>Resources</h5>
-        <a href="products.html">Products</a>
-        <a href="news.html">News</a>
-        <a href="blog.html">Blog</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="depots.html">Our Depots</a>
-        <a href="contact.html">Contact Us</a>
+      <div>
+        <h5 class="text-white font-display font-semibold text-[15px] mb-5">Resources</h5>
+        <a href="products.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">Products</a>
+        <a href="news.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">News</a>
+        <a href="blog.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">Blog</a>
+        <a href="gallery.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">Gallery</a>
+        <a href="depots.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">Our Depots</a>
+        <a href="contact.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">Contact Us</a>
       </div>
-      <div class="footer-col">
-        <h5>Get in Touch</h5>
-        <ul class="footer-contact" style="list-style:none;padding:0;margin:0 0 18px;">
-          <li><i class="fa-solid fa-location-dot"></i><span>Head Office: 123 Progoti Sarani, Dhaka 1212, Bangladesh</span></li>
-          <li><i class="fa-solid fa-phone"></i><span>+880 1700-000000</span></li>
-          <li><i class="fa-solid fa-envelope"></i><span>info@asbiocare.com</span></li>
+      <div>
+        <h5 class="text-white font-display font-semibold text-[15px] mb-5">Get in Touch</h5>
+        <ul class="list-none p-0 mb-4.5">
+          <li class="flex gap-2.5 text-sm text-white/65 mb-3.5"><i class="fa-solid fa-location-dot text-secondary mt-0.5"></i><span>Head Office: 123 Progoti Sarani, Dhaka 1212, Bangladesh</span></li>
+          <li class="flex gap-2.5 text-sm text-white/65 mb-3.5"><i class="fa-solid fa-phone text-secondary mt-0.5"></i><span>+880 1700-000000</span></li>
+          <li class="flex gap-2.5 text-sm text-white/65 mb-3.5"><i class="fa-solid fa-envelope text-secondary mt-0.5"></i><span>info@asbiocare.com</span></li>
         </ul>
-        <h5 style="font-size:.85rem;">Newsletter</h5>
-        <form class="newsletter" data-demo-form>
-          <input type="email" placeholder="Your email address" required>
-          <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+        <h5 class="text-white font-display font-semibold text-[13px] mb-2">Newsletter</h5>
+        <form class="flex mt-2.5 rounded-full overflow-hidden bg-white/10 p-1.5" data-demo-form>
+          <input type="email" placeholder="Your email address" required class="flex-1 bg-transparent border-none px-4 text-sm text-white placeholder:text-white/50 focus:outline-none">
+          <button type="submit" class="bg-secondary border-none text-white px-4.5 py-2.5 rounded-full font-bold"><i class="fa-solid fa-paper-plane"></i></button>
         </form>
       </div>
     </div>
-    <div class="footer-bottom">
+    <div class="flex justify-between items-center py-6 text-sm text-white/50 flex-wrap gap-2.5">
       <span>&copy; 2026 AS Bio Care Limited. All rights reserved.</span>
-      <span><a href="contact.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="contact.html">Terms of Service</a></span>
+      <span><a href="contact.html" class="hover:text-white">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="contact.html" class="hover:text-white">Terms of Service</a></span>
     </div>
   </div>
 </footer>
 
-<div class="lightbox"><span class="lightbox-close">&times;</span><img src="" alt=""></div>
+<div class="lightbox hidden fixed inset-0 bg-navy/90 z-[3000] items-center justify-center p-10">
+  <span class="lightbox-close absolute top-6 right-8 text-white text-2xl cursor-pointer">&times;</span>
+  <img src="" alt="" class="max-w-[90vw] max-h-[85vh] rounded-lg">
+</div>
 
 <script src="assets/js/main.js"></script>
 </body>
