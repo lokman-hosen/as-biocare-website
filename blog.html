@@ -1,232 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog | AS BIO CARE LIMITED</title>
-<meta name="description" content="Practical guidance on fish health, poultry care and farm management from AS BIO CARE LIMITED.">
-<meta property="og:title" content="Blog | AS BIO CARE LIMITED">
-<meta property="og:description" content="Practical guidance on fish health, poultry care and farm management from AS BIO CARE LIMITED.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="assets/images/logo.png">
-<link rel="icon" href="assets/images/logo.png" type="image/png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet" href="assets/css/custom.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | AS BIO CARE LIMITED</title>
+  <meta name="description" content="Practical guidance on fish health, poultry care and farm management from AS BIO CARE LIMITED.">
+  <meta property="og:title" content="Blog | AS BIO CARE LIMITED">
+  <meta property="og:description" content="Practical guidance on fish health, poultry care and farm management from AS BIO CARE LIMITED.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/logo.png">
+  <link rel="icon" href="assets/images/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary:  { DEFAULT:'#2762B5', 600:'#1F4E92', 700:'#163A6E', 100:'#E7EFFA' },
+            secondary:{ DEFAULT:'#1F9E4C', 600:'#167A3B', 100:'#E5F7EC' },
+            accent:   { DEFAULT:'#DD3B3B', 600:'#B92E2E' },
+            navy: '#0E2A47', navy2: '#123A63',
+            ink: '#16233A', slate: '#5B6B82',
+            cream: '#F6F9FC', cream2: '#EFF4F9',
+            line: '#E3EAF2'
+          },
+          fontFamily: {
+            display: ['Poppins','sans-serif'],
+            body: ['"Nunito Sans"','sans-serif']
+          },
+          borderRadius: { sm:'10px', md:'16px', lg:'26px' },
+          boxShadow: {
+            soft:'0 2px 10px rgba(14,42,71,.06)',
+            card:'0 12px 30px rgba(14,42,71,.10)',
+            lifted:'0 24px 60px rgba(14,42,71,.14)'
+          },
+          keyframes: {
+            loaderPulse:{'0%,100%':{transform:'scale(1)'},'50%':{transform:'scale(1.08)'}},
+            floatY:{'0%,100%':{transform:'translateY(0) rotate(0deg)'},'50%':{transform:'translateY(-24px) rotate(8deg)'}},
+            pulseRing:{'0%':{transform:'scale(1)',opacity:0.8},'100%':{transform:'scale(1.6)',opacity:0}},
+            blink:{'50%':{opacity:0}}
+          },
+          animation: {
+            loaderPulse:'loaderPulse 1.6s ease-in-out infinite',
+            floatY:'floatY 7s ease-in-out infinite',
+            pulseRing:'pulseRing 2s ease-out infinite',
+            blink:'blink 1s step-start infinite'
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
+<body class="font-body text-ink bg-white antialiased overflow-x-hidden">
 
 <!-- Loader -->
-<div id="site-loader">
-  <img src="assets/images/logo.png" alt="AS Bio Care" class="loader-logo">
-  <div class="loader-bar"><span></span></div>
-  <div class="loader-text">AS BIO CARE LIMITED</div>
+<div id="site-loader" class="fixed inset-0 z-[9999] bg-navy flex flex-col items-center justify-center gap-6 transition-all duration-500">
+  <img src="assets/images/logo.png" alt="AS Bio Care" class="w-20 h-20 animate-loaderPulse">
+  <div class="w-44 h-1 bg-white/15 rounded-full overflow-hidden">
+    <span id="loader-bar-fill" class="block h-full w-0 bg-gradient-to-r from-secondary to-primary rounded-full transition-[width] duration-[1400ms] ease-out"></span>
+  </div>
+  <div class="text-white font-display tracking-[0.18em] text-[11px] uppercase opacity-70">AS BIO CARE LIMITED</div>
 </div>
 
-<div class="nav-scrim"></div>
-<div class="mobile-nav">
-  <div class="mobile-nav-head">
-    <img src="assets/images/logo.png" alt="logo" style="height:36px;">
-    <button class="mobile-nav-close icon-btn"><i class="fa-solid fa-xmark"></i></button>
+<div id="nav-scrim" class="fixed inset-0 bg-navy/50 z-[1100] opacity-0 invisible transition-all duration-400"></div>
+
+<div id="mobile-nav" class="fixed top-0 right-[-100%] w-[86vw] max-w-[340px] h-screen bg-white z-[1200] shadow-2xl transition-[right] duration-500 ease-out p-6 overflow-y-auto">
+  <div class="flex justify-between items-center mb-6">
+    <img src="assets/images/logo.png" alt="logo" class="h-9">
+    <button class="mobile-nav-close w-10 h-10 rounded-full border border-line flex items-center justify-center"><i class="fa-solid fa-xmark"></i></button>
   </div>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="products.html">Products</a>
-  <a href="news.html">News</a>
-  <a href="blog.html" class="active">Blog</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="depots.html">Depots</a>
-  <a href="contact.html">Contact</a>
-  <div style="margin-top:22px;display:flex;gap:10px;">
-    <a href="tel:+8801700000000" class="btn btn-primary btn-sm btn-block"><i class="fa-solid fa-phone"></i><span>Call Us</span></a>
+  <a href="index.html" class="nav-link block py-3 font-display font-semibold text-navy border-b border-line">Home</a>
+  <a href="about.html" class="nav-link block py-3 font-display font-semibold text-navy border-b border-line">About</a>
+  <a href="products.html" class="nav-link block py-3 font-display font-semibold text-navy border-b border-line">Products</a>
+  <a href="news.html" class="nav-link block py-3 font-display font-semibold text-navy border-b border-line">News</a>
+  <a href="blog.html" class="nav-link block py-3 font-display font-semibold text-primary border-b border-line">Blog</a>
+  <a href="gallery.html" class="nav-link block py-3 font-display font-semibold text-navy border-b border-line">Gallery</a>
+  <a href="depots.html" class="nav-link block py-3 font-display font-semibold text-navy border-b border-line">Depots</a>
+  <a href="contact.html" class="nav-link block py-3 font-display font-semibold text-navy">Contact</a>
+  <div class="mt-6 flex gap-2.5">
+    <a href="tel:+8801700000000" class="w-full inline-flex items-center justify-center gap-2 bg-primary text-white font-display font-semibold text-sm px-5 py-3 rounded-full"><i class="fa-solid fa-phone"></i><span>Call Us</span></a>
   </div>
 </div>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="index.html" class="brand">
-      <img src="assets/images/logo.png" alt="AS Bio Care Limited logo">
-      <!-- <span class="brand-name">AS BIO CARE<small>Aquaculture &amp; Poultry Health</small></span>-->
+<header id="site-header" class="fixed top-0 inset-x-0 z-[1000] py-[18px] transition-all duration-400">
+  <div class="max-w-[1240px] mx-auto px-6 flex items-center justify-between gap-5">
+    <a href="index.html" class="flex items-center gap-3">
+      <img id="brand-logo" src="assets/images/logo.png" alt="AS Bio Care Limited logo" class="h-11 w-11 object-contain transition-all duration-300">
     </a>
-    <nav class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="products.html">Products</a>
-      <a href="news.html">News</a>
-      <a href="blog.html" class="active">Blog</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="depots.html">Depots</a>
-      <a href="contact.html">Contact</a>
+    <nav class="hidden lg:flex items-center gap-0.5">
+      <a href="index.html" class="nav-link relative font-display font-semibold text-[14px] text-navy px-4 py-2.5 rounded-full hover:text-primary transition-colors after:content-[''] after:absolute after:left-4 after:right-4 after:bottom-1.5 after:h-0.5 after:bg-secondary after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform">Home</a>
+      <a href="about.html" class="nav-link relative font-display font-semibold text-[14px] text-navy px-4 py-2.5 rounded-full hover:text-primary transition-colors after:content-[''] after:absolute after:left-4 after:right-4 after:bottom-1.5 after:h-0.5 after:bg-secondary after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform">About</a>
+      <a href="products.html" class="nav-link relative font-display font-semibold text-[14px] text-navy px-4 py-2.5 rounded-full hover:text-primary transition-colors after:content-[''] after:absolute after:left-4 after:right-4 after:bottom-1.5 after:h-0.5 after:bg-secondary after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform">Products</a>
+      <a href="news.html" class="nav-link relative font-display font-semibold text-[14px] text-navy px-4 py-2.5 rounded-full hover:text-primary transition-colors after:content-[''] after:absolute after:left-4 after:right-4 after:bottom-1.5 after:h-0.5 after:bg-secondary after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform">News</a>
+      <a href="blog.html" class="nav-link relative font-display font-semibold text-[14px] text-primary px-4 py-2.5 rounded-full after:content-[''] after:absolute after:left-4 after:right-4 after:bottom-1.5 after:h-0.5 after:bg-secondary after:scale-x-100 after:origin-left after:transition-transform">Blog</a>
+      <a href="gallery.html" class="nav-link relative font-display font-semibold text-[14px] text-navy px-4 py-2.5 rounded-full hover:text-primary transition-colors after:content-[''] after:absolute after:left-4 after:right-4 after:bottom-1.5 after:h-0.5 after:bg-secondary after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform">Gallery</a>
+      <a href="depots.html" class="nav-link relative font-display font-semibold text-[14px] text-navy px-4 py-2.5 rounded-full hover:text-primary transition-colors after:content-[''] after:absolute after:left-4 after:right-4 after:bottom-1.5 after:h-0.5 after:bg-secondary after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform">Depots</a>
+      <a href="contact.html" class="nav-link relative font-display font-semibold text-[14px] text-navy px-4 py-2.5 rounded-full hover:text-primary transition-colors after:content-[''] after:absolute after:left-4 after:right-4 after:bottom-1.5 after:h-0.5 after:bg-secondary after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform">Contact</a>
     </nav>
-    <div class="header-actions">
-      <div class="lang-switch">
-        <button class="active">EN</button><button>বাংলা</button>
+    <div class="flex items-center gap-2.5">
+      <div class="hidden lg:flex items-center border border-line rounded-full overflow-hidden font-display font-bold text-[13px]">
+        <button class="lang-btn px-3 py-2 bg-primary text-white">EN</button>
+        <button class="lang-btn px-3 py-2 text-slate">বাংলা</button>
       </div>
-      <button class="icon-btn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
-      <a href="tel:+8801700000000" class="btn btn-outline btn-sm" style="display:none" data-call><i class="fa-solid fa-phone"></i></a>
-      <a href="contact.html" class="btn btn-primary btn-sm"><span>Contact</span></a>
-      <button class="hamburger" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+      <button class="hidden lg:flex w-10 h-10 rounded-full border border-line items-center justify-center text-navy hover:bg-primary hover:text-white hover:border-primary transition-colors" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <a href="contact.html" class="hidden sm:inline-flex items-center gap-2 bg-primary text-white font-display font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-primary-600 transition-colors"><span>Contact</span></a>
+      <button id="hamburger" class="lg:hidden w-[42px] h-[42px] rounded-full border border-line flex items-center justify-center" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
     </div>
   </div>
 </header>
 
-<section class="page-hero">
-  <div class="container content">
-    <span class="eyebrow">Insights</span>
-    <h1>Blog</h1>
-    <div class="breadcrumb"><a href="index.html">Home</a><i class="fa-solid fa-chevron-right" style="font-size:.6rem;"></i><span>Blog</span></div>
+<section class="relative pt-[190px] pb-24 bg-navy text-white overflow-hidden">
+  <div class="absolute inset-0 bg-[radial-gradient(650px_320px_at_85%_0%,rgba(31,158,76,.35),transparent),radial-gradient(500px_300px_at_10%_100%,rgba(39,98,181,.4),transparent)]"></div>
+  <div class="relative z-[2] max-w-[1240px] mx-auto px-6">
+    <span class="inline-flex items-center gap-2 font-display font-semibold text-[12px] tracking-[.14em] uppercase bg-white/10 text-white px-4 py-[7px] rounded-full before:content-[''] before:w-[7px] before:h-[7px] before:rounded-full before:bg-secondary before:inline-block">Insights</span>
+    <h1 class="font-display font-semibold text-white text-[2rem] sm:text-[3rem] mt-2.5">Blog</h1>
+    <div class="flex gap-2 items-center text-white/65 text-sm mt-3.5">
+      <a href="index.html" class="text-white font-semibold">Home</a>
+      <i class="fa-solid fa-chevron-right text-[10px]"></i>
+      <span>Blog</span>
+    </div>
   </div>
 </section>
 
-<section class="section" style="padding-top:56px;">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:2.2fr 1fr;gap:44px;">
+<section class="pt-14 pb-24">
+  <div class="max-w-[1240px] mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-[2.2fr_1fr] gap-11">
+
       <div>
-        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;">
-          
-<div class="card card-lift post-card reveal delay-1">
-  <div class="thumb"><img src="https://picsum.photos/seed/blog1/500/320" alt="5 Early Warning Signs of Bacterial Infection in Fish Ponds" loading="lazy"></div>
-  <div class="body">
-    <div class="post-meta"><span><i class="fa-solid fa-calendar"></i>July 22, 2026</span><span><i class="fa-solid fa-folder"></i>Fish Health</span></div>
-    <h3>5 Early Warning Signs of Bacterial Infection in Fish Ponds</h3>
-    <p>Learn to spot the early signs of bacterial disease before it spreads through your entire pond.</p>
-    <a href="blog-details.html" class="btn btn-outline btn-sm" style="margin-top:14px;"><span>Read Article</span><i class="fa-solid fa-arrow-right"></i></a>
-  </div>
-</div>
-<div class="card card-lift post-card reveal delay-2">
-  <div class="thumb"><img src="https://picsum.photos/seed/blog2/500/320" alt="Optimising Feed Conversion Ratio in Broiler Farming" loading="lazy"></div>
-  <div class="body">
-    <div class="post-meta"><span><i class="fa-solid fa-calendar"></i>July 09, 2026</span><span><i class="fa-solid fa-folder"></i>Poultry</span></div>
-    <h3>Optimising Feed Conversion Ratio in Broiler Farming</h3>
-    <p>Practical, research-backed steps to help your broilers gain weight efficiently while lowering feed costs.</p>
-    <a href="blog-details.html" class="btn btn-outline btn-sm" style="margin-top:14px;"><span>Read Article</span><i class="fa-solid fa-arrow-right"></i></a>
-  </div>
-</div>
-<div class="card card-lift post-card reveal delay-3">
-  <div class="thumb"><img src="https://picsum.photos/seed/blog3/500/320" alt="Why Water Quality Testing Should Be Your Weekly Habit" loading="lazy"></div>
-  <div class="body">
-    <div class="post-meta"><span><i class="fa-solid fa-calendar"></i>June 28, 2026</span><span><i class="fa-solid fa-folder"></i>Water Management</span></div>
-    <h3>Why Water Quality Testing Should Be Your Weekly Habit</h3>
-    <p>A simple weekly testing routine that prevents the majority of pond-related fish losses.</p>
-    <a href="blog-details.html" class="btn btn-outline btn-sm" style="margin-top:14px;"><span>Read Article</span><i class="fa-solid fa-arrow-right"></i></a>
-  </div>
-</div>
-<div class="card card-lift post-card reveal delay-4">
-  <div class="thumb"><img src="https://picsum.photos/seed/blog4/500/320" alt="Understanding Withdrawal Periods for Poultry Medicine" loading="lazy"></div>
-  <div class="body">
-    <div class="post-meta"><span><i class="fa-solid fa-calendar"></i>June 14, 2026</span><span><i class="fa-solid fa-folder"></i>Poultry</span></div>
-    <h3>Understanding Withdrawal Periods for Poultry Medicine</h3>
-    <p>What every farmer needs to know to keep meat and egg products safe for the market.</p>
-    <a href="blog-details.html" class="btn btn-outline btn-sm" style="margin-top:14px;"><span>Read Article</span><i class="fa-solid fa-arrow-right"></i></a>
-  </div>
-</div>
-<div class="card card-lift post-card reveal delay-1">
-  <div class="thumb"><img src="https://picsum.photos/seed/blog5/500/320" alt="Seasonal Care Guide: Preparing Your Pond for Monsoon" loading="lazy"></div>
-  <div class="body">
-    <div class="post-meta"><span><i class="fa-solid fa-calendar"></i>May 30, 2026</span><span><i class="fa-solid fa-folder"></i>Aquaculture</span></div>
-    <h3>Seasonal Care Guide: Preparing Your Pond for Monsoon</h3>
-    <p>Monsoon rains change your pond's chemistry overnight. Here's how to prepare in advance.</p>
-    <a href="blog-details.html" class="btn btn-outline btn-sm" style="margin-top:14px;"><span>Read Article</span><i class="fa-solid fa-arrow-right"></i></a>
-  </div>
-</div>
-<div class="card card-lift post-card reveal delay-2">
-  <div class="thumb"><img src="https://picsum.photos/seed/blog6/500/320" alt="The Role of Vitamins in Reducing Transport Stress" loading="lazy"></div>
-  <div class="body">
-    <div class="post-meta"><span><i class="fa-solid fa-calendar"></i>May 15, 2026</span><span><i class="fa-solid fa-folder"></i>Nutrition</span></div>
-    <h3>The Role of Vitamins in Reducing Transport Stress</h3>
-    <p>How a simple electrolyte and vitamin regimen can reduce losses during transport and handling.</p>
-    <a href="blog-details.html" class="btn btn-outline btn-sm" style="margin-top:14px;"><span>Read Article</span><i class="fa-solid fa-arrow-right"></i></a>
-  </div>
-</div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+          <div class="bg-white rounded-md border border-line shadow-soft transition-all duration-400 hover:-translate-y-2 hover:shadow-lifted hover:border-transparent overflow-hidden" data-reveal="fade">
+            <div class="aspect-[16/10] overflow-hidden"><img src="https://picsum.photos/seed/blog1/500/320" alt="5 Early Warning Signs of Bacterial Infection in Fish Ponds" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"></div>
+            <div class="p-6">
+              <div class="flex gap-3.5 text-xs text-slate mb-2.5"><span><i class="fa-solid fa-calendar text-primary mr-1.5"></i>July 22, 2026</span><span><i class="fa-solid fa-folder text-primary mr-1.5"></i>Fish Health</span></div>
+              <h3 class="font-display font-semibold text-navy text-[17px] leading-snug">5 Early Warning Signs of Bacterial Infection in Fish Ponds</h3>
+              <p class="text-slate text-sm mt-2">Learn to spot the early signs of bacterial disease before it spreads through your entire pond.</p>
+              <a href="blog-details.html" class="mt-3.5 inline-flex items-center justify-center gap-2 font-display font-semibold text-[13px] px-5 py-2.5 rounded-full border border-line text-navy hover:border-primary hover:text-primary transition-colors"><span>Read Article</span><i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-md border border-line shadow-soft transition-all duration-400 hover:-translate-y-2 hover:shadow-lifted hover:border-transparent overflow-hidden" data-reveal="fade">
+            <div class="aspect-[16/10] overflow-hidden"><img src="https://picsum.photos/seed/blog2/500/320" alt="Optimising Feed Conversion Ratio in Broiler Farming" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"></div>
+            <div class="p-6">
+              <div class="flex gap-3.5 text-xs text-slate mb-2.5"><span><i class="fa-solid fa-calendar text-primary mr-1.5"></i>July 09, 2026</span><span><i class="fa-solid fa-folder text-primary mr-1.5"></i>Poultry</span></div>
+              <h3 class="font-display font-semibold text-navy text-[17px] leading-snug">Optimising Feed Conversion Ratio in Broiler Farming</h3>
+              <p class="text-slate text-sm mt-2">Practical, research-backed steps to help your broilers gain weight efficiently while lowering feed costs.</p>
+              <a href="blog-details.html" class="mt-3.5 inline-flex items-center justify-center gap-2 font-display font-semibold text-[13px] px-5 py-2.5 rounded-full border border-line text-navy hover:border-primary hover:text-primary transition-colors"><span>Read Article</span><i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-md border border-line shadow-soft transition-all duration-400 hover:-translate-y-2 hover:shadow-lifted hover:border-transparent overflow-hidden" data-reveal="fade">
+            <div class="aspect-[16/10] overflow-hidden"><img src="https://picsum.photos/seed/blog3/500/320" alt="Why Water Quality Testing Should Be Your Weekly Habit" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"></div>
+            <div class="p-6">
+              <div class="flex gap-3.5 text-xs text-slate mb-2.5"><span><i class="fa-solid fa-calendar text-primary mr-1.5"></i>June 28, 2026</span><span><i class="fa-solid fa-folder text-primary mr-1.5"></i>Water Management</span></div>
+              <h3 class="font-display font-semibold text-navy text-[17px] leading-snug">Why Water Quality Testing Should Be Your Weekly Habit</h3>
+              <p class="text-slate text-sm mt-2">A simple weekly testing routine that prevents the majority of pond-related fish losses.</p>
+              <a href="blog-details.html" class="mt-3.5 inline-flex items-center justify-center gap-2 font-display font-semibold text-[13px] px-5 py-2.5 rounded-full border border-line text-navy hover:border-primary hover:text-primary transition-colors"><span>Read Article</span><i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-md border border-line shadow-soft transition-all duration-400 hover:-translate-y-2 hover:shadow-lifted hover:border-transparent overflow-hidden" data-reveal="fade">
+            <div class="aspect-[16/10] overflow-hidden"><img src="https://picsum.photos/seed/blog4/500/320" alt="Understanding Withdrawal Periods for Poultry Medicine" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"></div>
+            <div class="p-6">
+              <div class="flex gap-3.5 text-xs text-slate mb-2.5"><span><i class="fa-solid fa-calendar text-primary mr-1.5"></i>June 14, 2026</span><span><i class="fa-solid fa-folder text-primary mr-1.5"></i>Poultry</span></div>
+              <h3 class="font-display font-semibold text-navy text-[17px] leading-snug">Understanding Withdrawal Periods for Poultry Medicine</h3>
+              <p class="text-slate text-sm mt-2">What every farmer needs to know to keep meat and egg products safe for the market.</p>
+              <a href="blog-details.html" class="mt-3.5 inline-flex items-center justify-center gap-2 font-display font-semibold text-[13px] px-5 py-2.5 rounded-full border border-line text-navy hover:border-primary hover:text-primary transition-colors"><span>Read Article</span><i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-md border border-line shadow-soft transition-all duration-400 hover:-translate-y-2 hover:shadow-lifted hover:border-transparent overflow-hidden" data-reveal="fade">
+            <div class="aspect-[16/10] overflow-hidden"><img src="https://picsum.photos/seed/blog5/500/320" alt="Seasonal Care Guide: Preparing Your Pond for Monsoon" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"></div>
+            <div class="p-6">
+              <div class="flex gap-3.5 text-xs text-slate mb-2.5"><span><i class="fa-solid fa-calendar text-primary mr-1.5"></i>May 30, 2026</span><span><i class="fa-solid fa-folder text-primary mr-1.5"></i>Aquaculture</span></div>
+              <h3 class="font-display font-semibold text-navy text-[17px] leading-snug">Seasonal Care Guide: Preparing Your Pond for Monsoon</h3>
+              <p class="text-slate text-sm mt-2">Monsoon rains change your pond's chemistry overnight. Here's how to prepare in advance.</p>
+              <a href="blog-details.html" class="mt-3.5 inline-flex items-center justify-center gap-2 font-display font-semibold text-[13px] px-5 py-2.5 rounded-full border border-line text-navy hover:border-primary hover:text-primary transition-colors"><span>Read Article</span><i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-md border border-line shadow-soft transition-all duration-400 hover:-translate-y-2 hover:shadow-lifted hover:border-transparent overflow-hidden" data-reveal="fade">
+            <div class="aspect-[16/10] overflow-hidden"><img src="https://picsum.photos/seed/blog6/500/320" alt="The Role of Vitamins in Reducing Transport Stress" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"></div>
+            <div class="p-6">
+              <div class="flex gap-3.5 text-xs text-slate mb-2.5"><span><i class="fa-solid fa-calendar text-primary mr-1.5"></i>May 15, 2026</span><span><i class="fa-solid fa-folder text-primary mr-1.5"></i>Nutrition</span></div>
+              <h3 class="font-display font-semibold text-navy text-[17px] leading-snug">The Role of Vitamins in Reducing Transport Stress</h3>
+              <p class="text-slate text-sm mt-2">How a simple electrolyte and vitamin regimen can reduce losses during transport and handling.</p>
+              <a href="blog-details.html" class="mt-3.5 inline-flex items-center justify-center gap-2 font-display font-semibold text-[13px] px-5 py-2.5 rounded-full border border-line text-navy hover:border-primary hover:text-primary transition-colors"><span>Read Article</span><i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
         </div>
-        <div class="pagination"><a href="#" class="active">1</a><a href="#">2</a><a href="#"><i class="fa-solid fa-chevron-right"></i></a></div>
+        <div class="flex gap-2 justify-center mt-10">
+          <a href="#" class="w-10 h-10 rounded-full border border-primary bg-primary text-white flex items-center justify-center font-semibold text-sm">1</a>
+          <a href="#" class="w-10 h-10 rounded-full border border-line flex items-center justify-center font-semibold text-sm hover:bg-primary hover:text-white hover:border-primary transition-colors">2</a>
+          <a href="#" class="w-10 h-10 rounded-full border border-line flex items-center justify-center font-semibold text-sm hover:bg-primary hover:text-white hover:border-primary transition-colors"><i class="fa-solid fa-chevron-right"></i></a>
+        </div>
       </div>
+
       <aside>
-        <div class="card" style="padding:26px;margin-bottom:24px;">
-          <h4 style="font-size:1rem;margin-bottom:16px;">Recent Posts</h4>
-          <a href="blog-details.html" style="display:flex;gap:12px;margin-bottom:14px;"><img src="https://picsum.photos/seed/blog1/80/80" style="width:56px;height:56px;border-radius:10px;object-fit:cover;"><span style="font-size:.85rem;font-weight:600;line-height:1.4;">5 Early Warning Signs of Bacterial Infection in Fish Ponds</span></a><a href="blog-details.html" style="display:flex;gap:12px;margin-bottom:14px;"><img src="https://picsum.photos/seed/blog2/80/80" style="width:56px;height:56px;border-radius:10px;object-fit:cover;"><span style="font-size:.85rem;font-weight:600;line-height:1.4;">Optimising Feed Conversion Ratio in Broiler Farming</span></a><a href="blog-details.html" style="display:flex;gap:12px;margin-bottom:14px;"><img src="https://picsum.photos/seed/blog3/80/80" style="width:56px;height:56px;border-radius:10px;object-fit:cover;"><span style="font-size:.85rem;font-weight:600;line-height:1.4;">Why Water Quality Testing Should Be Your Weekly Habit</span></a><a href="blog-details.html" style="display:flex;gap:12px;margin-bottom:14px;"><img src="https://picsum.photos/seed/blog4/80/80" style="width:56px;height:56px;border-radius:10px;object-fit:cover;"><span style="font-size:.85rem;font-weight:600;line-height:1.4;">Understanding Withdrawal Periods for Poultry Medicine</span></a>
+        <div class="bg-white rounded-md border border-line shadow-soft p-6 mb-6">
+          <h4 class="font-display font-semibold text-navy text-base mb-4">Recent Posts</h4>
+          <a href="blog-details.html" class="flex gap-3 mb-3.5">
+            <img src="https://picsum.photos/seed/blog1/80/80" alt="" class="w-14 h-14 rounded-sm object-cover">
+            <span class="text-sm font-semibold text-navy leading-snug">5 Early Warning Signs of Bacterial Infection in Fish Ponds</span>
+          </a>
+          <a href="blog-details.html" class="flex gap-3 mb-3.5">
+            <img src="https://picsum.photos/seed/blog2/80/80" alt="" class="w-14 h-14 rounded-sm object-cover">
+            <span class="text-sm font-semibold text-navy leading-snug">Optimising Feed Conversion Ratio in Broiler Farming</span>
+          </a>
+          <a href="blog-details.html" class="flex gap-3 mb-3.5">
+            <img src="https://picsum.photos/seed/blog3/80/80" alt="" class="w-14 h-14 rounded-sm object-cover">
+            <span class="text-sm font-semibold text-navy leading-snug">Why Water Quality Testing Should Be Your Weekly Habit</span>
+          </a>
+          <a href="blog-details.html" class="flex gap-3">
+            <img src="https://picsum.photos/seed/blog4/80/80" alt="" class="w-14 h-14 rounded-sm object-cover">
+            <span class="text-sm font-semibold text-navy leading-snug">Understanding Withdrawal Periods for Poultry Medicine</span>
+          </a>
         </div>
-        <div class="card" style="padding:26px;margin-bottom:24px;">
-          <h4 style="font-size:1rem;margin-bottom:16px;">Categories</h4>
-          <a href="blog.html" style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--c-line);"><span>Fish Health</span><span class="badge">4</span></a>
-          <a href="blog.html" style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--c-line);"><span>Poultry</span><span class="badge">6</span></a>
-          <a href="blog.html" style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--c-line);"><span>Water Management</span><span class="badge">3</span></a>
-          <a href="blog.html" style="display:flex;justify-content:space-between;padding:10px 0;"><span>Nutrition</span><span class="badge">5</span></a>
+
+        <div class="bg-white rounded-md border border-line shadow-soft p-6 mb-6">
+          <h4 class="font-display font-semibold text-navy text-base mb-4">Categories</h4>
+          <a href="blog.html" class="flex justify-between py-2.5 border-b border-line"><span class="text-sm text-navy">Fish Health</span><span class="inline-block text-[11px] font-bold px-3 py-1 rounded-full bg-primary-100 text-primary-600">4</span></a>
+          <a href="blog.html" class="flex justify-between py-2.5 border-b border-line"><span class="text-sm text-navy">Poultry</span><span class="inline-block text-[11px] font-bold px-3 py-1 rounded-full bg-primary-100 text-primary-600">6</span></a>
+          <a href="blog.html" class="flex justify-between py-2.5 border-b border-line"><span class="text-sm text-navy">Water Management</span><span class="inline-block text-[11px] font-bold px-3 py-1 rounded-full bg-primary-100 text-primary-600">3</span></a>
+          <a href="blog.html" class="flex justify-between py-2.5"><span class="text-sm text-navy">Nutrition</span><span class="inline-block text-[11px] font-bold px-3 py-1 rounded-full bg-primary-100 text-primary-600">5</span></a>
         </div>
-        <div class="card" style="padding:26px;">
-          <h4 style="font-size:1rem;margin-bottom:16px;">Tags</h4>
-          <div class="chip-row">
-            <span class="chip">Aquaculture</span><span class="chip">Nutrition</span><span class="chip">Safety</span><span class="chip">Seasonal</span><span class="chip">Vitamins</span>
+
+        <div class="bg-white rounded-md border border-line shadow-soft p-6">
+          <h4 class="font-display font-semibold text-navy text-base mb-4">Tags</h4>
+          <div class="flex flex-wrap gap-2.5">
+            <span class="px-4 py-2 rounded-full border border-line bg-white font-display font-semibold text-xs text-navy">Aquaculture</span>
+            <span class="px-4 py-2 rounded-full border border-line bg-white font-display font-semibold text-xs text-navy">Nutrition</span>
+            <span class="px-4 py-2 rounded-full border border-line bg-white font-display font-semibold text-xs text-navy">Safety</span>
+            <span class="px-4 py-2 rounded-full border border-line bg-white font-display font-semibold text-xs text-navy">Seasonal</span>
+            <span class="px-4 py-2 rounded-full border border-line bg-white font-display font-semibold text-xs text-navy">Vitamins</span>
           </div>
         </div>
       </aside>
+
     </div>
   </div>
 </section>
 
-<div class="float-stack">
-  <a href="#" class="fab fab-messenger" aria-label="Messenger"><i class="fa-brands fa-facebook-messenger"></i><span class="tip">Chat on Messenger</span></a>
-  <a href="#" class="fab fab-whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i><span class="tip">WhatsApp Us</span></a>
-  <a href="tel:+8801700000000" class="fab fab-call" aria-label="Call"><i class="fa-solid fa-phone"></i><span class="tip">Call Head Office</span></a>
-  <button class="scroll-top" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
+<div class="fixed right-6 bottom-6 z-[900] flex flex-col-reverse gap-3.5 items-center">
+  <a href="#" class="w-[54px] h-[54px] rounded-full flex items-center justify-center text-white text-xl shadow-card relative group bg-[#0084FF]" aria-label="Messenger">
+    <i class="fa-brands fa-facebook-messenger"></i>
+    <span class="absolute inset-0 rounded-full border-2 border-[#0084FF] animate-pulseRing"></span>
+    <span class="absolute right-16 bg-navy text-white px-3.5 py-1.5 rounded-lg text-xs whitespace-nowrap opacity-0 translate-x-1.5 group-hover:opacity-100 group-hover:translate-x-0 transition-all font-display pointer-events-none">Chat on Messenger</span>
+  </a>
+  <a href="#" class="w-[54px] h-[54px] rounded-full flex items-center justify-center text-white text-xl shadow-card relative group bg-[#25D366]" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="absolute right-16 bg-navy text-white px-3.5 py-1.5 rounded-lg text-xs whitespace-nowrap opacity-0 translate-x-1.5 group-hover:opacity-100 group-hover:translate-x-0 transition-all font-display pointer-events-none">WhatsApp Us</span>
+  </a>
+  <a href="tel:+8801700000000" class="w-[54px] h-[54px] rounded-full flex items-center justify-center text-white text-xl shadow-card relative group bg-primary" aria-label="Call">
+    <i class="fa-solid fa-phone"></i>
+    <span class="absolute right-16 bg-navy text-white px-3.5 py-1.5 rounded-lg text-xs whitespace-nowrap opacity-0 translate-x-1.5 group-hover:opacity-100 group-hover:translate-x-0 transition-all font-display pointer-events-none">Call Head Office</span>
+  </a>
+  <button class="scroll-top w-[46px] h-[46px] rounded-full bg-navy text-white flex items-center justify-center shadow-card opacity-0 invisible translate-y-2.5 transition-all duration-300" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
 </div>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="assets/images/logo.png" alt="AS Bio Care Limited">
-        <p>AS BIO CARE LIMITED manufactures trusted aquaculture and poultry healthcare products &mdash; fisheries medicines, nutritional supplements, water treatment solutions and disease prevention formulas for farmers across Bangladesh.</p>
-        <div class="footer-social">
-          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+<footer class="bg-navy text-white/75 pt-20">
+  <div class="max-w-[1240px] mx-auto px-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1.3fr] gap-10 pb-12 border-b border-white/10">
+      <div>
+        <img src="assets/images/logo.png" alt="AS Bio Care Limited" class="h-11 mb-4">
+        <p class="text-sm leading-relaxed text-white/60">AS BIO CARE LIMITED manufactures trusted aquaculture and poultry healthcare products &mdash; fisheries medicines, nutritional supplements, water treatment solutions and disease prevention formulas for farmers across Bangladesh.</p>
+        <div class="flex gap-2.5 mt-5">
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-secondary transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-secondary transition-colors" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-secondary transition-colors" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-secondary transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
         </div>
       </div>
-      <div class="footer-col">
-        <h5>Company</h5>
-        <a href="about.html">About Us</a>
-        <a href="mission.html">Our Mission</a>
-        <a href="vision.html">Our Vision</a>
-        <a href="motto.html">Our Motto</a>
-        <a href="team.html">Expert Team</a>
-        <a href="testimonials.html">Testimonials</a>
+      <div>
+        <h5 class="text-white font-display font-semibold text-[15px] mb-5">Company</h5>
+        <a href="about.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">About Us</a>
+        <a href="mission.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">Our Mission</a>
+        <a href="vision.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">Our Vision</a>
+        <a href="motto.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">Our Motto</a>
+        <a href="team.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">Expert Team</a>
+        <a href="testimonials.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">Testimonials</a>
       </div>
-      <div class="footer-col">
-        <h5>Resources</h5>
-        <a href="products.html">Products</a>
-        <a href="news.html">News</a>
-        <a href="blog.html">Blog</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="depots.html">Our Depots</a>
-        <a href="contact.html">Contact Us</a>
+      <div>
+        <h5 class="text-white font-display font-semibold text-[15px] mb-5">Resources</h5>
+        <a href="products.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">Products</a>
+        <a href="news.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">News</a>
+        <a href="blog.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">Blog</a>
+        <a href="gallery.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">Gallery</a>
+        <a href="depots.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">Our Depots</a>
+        <a href="contact.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">Contact Us</a>
       </div>
-      <div class="footer-col">
-        <h5>Get in Touch</h5>
-        <ul class="footer-contact" style="list-style:none;padding:0;margin:0 0 18px;">
-          <li><i class="fa-solid fa-location-dot"></i><span>Head Office: 123 Progoti Sarani, Dhaka 1212, Bangladesh</span></li>
-          <li><i class="fa-solid fa-phone"></i><span>+880 1700-000000</span></li>
-          <li><i class="fa-solid fa-envelope"></i><span>info@asbiocare.com</span></li>
+      <div>
+        <h5 class="text-white font-display font-semibold text-[15px] mb-5">Get in Touch</h5>
+        <ul class="list-none p-0 mb-4.5">
+          <li class="flex gap-2.5 text-sm text-white/65 mb-3.5"><i class="fa-solid fa-location-dot text-secondary mt-0.5"></i><span>Head Office: 123 Progoti Sarani, Dhaka 1212, Bangladesh</span></li>
+          <li class="flex gap-2.5 text-sm text-white/65 mb-3.5"><i class="fa-solid fa-phone text-secondary mt-0.5"></i><span>+880 1700-000000</span></li>
+          <li class="flex gap-2.5 text-sm text-white/65 mb-3.5"><i class="fa-solid fa-envelope text-secondary mt-0.5"></i><span>info@asbiocare.com</span></li>
         </ul>
-        <h5 style="font-size:.85rem;">Newsletter</h5>
-        <form class="newsletter" data-demo-form>
-          <input type="email" placeholder="Your email address" required>
-          <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+        <h5 class="text-white font-display font-semibold text-[13px] mb-2">Newsletter</h5>
+        <form class="flex mt-2.5 rounded-full overflow-hidden bg-white/10 p-1.5" data-demo-form>
+          <input type="email" placeholder="Your email address" required class="flex-1 bg-transparent border-none px-4 text-sm text-white placeholder:text-white/50 focus:outline-none">
+          <button type="submit" class="bg-secondary border-none text-white px-4.5 py-2.5 rounded-full font-bold"><i class="fa-solid fa-paper-plane"></i></button>
         </form>
       </div>
     </div>
-    <div class="footer-bottom">
+    <div class="flex justify-between items-center py-6 text-sm text-white/50 flex-wrap gap-2.5">
       <span>&copy; 2026 AS Bio Care Limited. All rights reserved.</span>
-      <span><a href="contact.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="contact.html">Terms of Service</a></span>
+      <span><a href="contact.html" class="hover:text-white">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="contact.html" class="hover:text-white">Terms of Service</a></span>
     </div>
   </div>
 </footer>
 
-<div class="lightbox"><span class="lightbox-close">&times;</span><img src="" alt=""></div>
+<div class="lightbox hidden fixed inset-0 bg-navy/90 z-[3000] items-center justify-center p-10">
+  <span class="lightbox-close absolute top-6 right-8 text-white text-2xl cursor-pointer">&times;</span>
+  <img src="" alt="" class="max-w-[90vw] max-h-[85vh] rounded-lg">
+</div>
 
 <script src="assets/js/main.js"></script>
 </body>
