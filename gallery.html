@@ -1,202 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gallery | AS BIO CARE LIMITED</title>
-<meta name="description" content="A visual look at AS BIO CARE LIMITED's farms, facilities and community outreach.">
-<meta property="og:title" content="Gallery | AS BIO CARE LIMITED">
-<meta property="og:description" content="A visual look at AS BIO CARE LIMITED's farms, facilities and community outreach.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="assets/images/logo.png">
-<link rel="icon" href="assets/images/logo.png" type="image/png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet" href="assets/css/custom.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | AS BIO CARE LIMITED</title>
+  <meta name="description" content="A visual look at AS BIO CARE LIMITED's farms, facilities and community outreach.">
+  <meta property="og:title" content="Gallery | AS BIO CARE LIMITED">
+  <meta property="og:description" content="A visual look at AS BIO CARE LIMITED's farms, facilities and community outreach.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/logo.png">
+  <link rel="icon" href="assets/images/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary:  { DEFAULT:'#2762B5', 600:'#1F4E92', 700:'#163A6E', 100:'#E7EFFA' },
+            secondary:{ DEFAULT:'#1F9E4C', 600:'#167A3B', 100:'#E5F7EC' },
+            accent:   { DEFAULT:'#DD3B3B', 600:'#B92E2E' },
+            navy: '#0E2A47', navy2: '#123A63',
+            ink: '#16233A', slate: '#5B6B82',
+            cream: '#F6F9FC', cream2: '#EFF4F9',
+            line: '#E3EAF2'
+          },
+          fontFamily: {
+            display: ['Poppins','sans-serif'],
+            body: ['"Nunito Sans"','sans-serif']
+          },
+          borderRadius: { sm:'10px', md:'16px', lg:'26px' },
+          boxShadow: {
+            soft:'0 2px 10px rgba(14,42,71,.06)',
+            card:'0 12px 30px rgba(14,42,71,.10)',
+            lifted:'0 24px 60px rgba(14,42,71,.14)'
+          },
+          keyframes: {
+            loaderPulse:{'0%,100%':{transform:'scale(1)'},'50%':{transform:'scale(1.08)'}},
+            floatY:{'0%,100%':{transform:'translateY(0) rotate(0deg)'},'50%':{transform:'translateY(-24px) rotate(8deg)'}},
+            pulseRing:{'0%':{transform:'scale(1)',opacity:0.8},'100%':{transform:'scale(1.6)',opacity:0}},
+            blink:{'50%':{opacity:0}}
+          },
+          animation: {
+            loaderPulse:'loaderPulse 1.6s ease-in-out infinite',
+            floatY:'floatY 7s ease-in-out infinite',
+            pulseRing:'pulseRing 2s ease-out infinite',
+            blink:'blink 1s step-start infinite'
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
+<body class="font-body text-ink bg-white antialiased overflow-x-hidden">
 
 <!-- Loader -->
-<div id="site-loader">
-  <img src="assets/images/logo.png" alt="AS Bio Care" class="loader-logo">
-  <div class="loader-bar"><span></span></div>
-  <div class="loader-text">AS BIO CARE LIMITED</div>
+<div id="site-loader" class="fixed inset-0 z-[9999] bg-navy flex flex-col items-center justify-center gap-6 transition-all duration-500">
+  <img src="assets/images/logo.png" alt="AS Bio Care" class="w-20 h-20 animate-loaderPulse">
+  <div class="w-44 h-1 bg-white/15 rounded-full overflow-hidden">
+    <span id="loader-bar-fill" class="block h-full w-0 bg-gradient-to-r from-secondary to-primary rounded-full transition-[width] duration-[1400ms] ease-out"></span>
+  </div>
+  <div class="text-white font-display tracking-[0.18em] text-[11px] uppercase opacity-70">AS BIO CARE LIMITED</div>
 </div>
 
-<div class="nav-scrim"></div>
-<div class="mobile-nav">
-  <div class="mobile-nav-head">
-    <img src="assets/images/logo.png" alt="logo" style="height:36px;">
-    <button class="mobile-nav-close icon-btn"><i class="fa-solid fa-xmark"></i></button>
+<div id="nav-scrim" class="fixed inset-0 bg-navy/50 z-[1100] opacity-0 invisible transition-all duration-400"></div>
+
+<div id="mobile-nav" class="fixed top-0 right-[-100%] w-[86vw] max-w-[340px] h-screen bg-white z-[1200] shadow-2xl transition-[right] duration-500 ease-out p-6 overflow-y-auto">
+  <div class="flex justify-between items-center mb-6">
+    <img src="assets/images/logo.png" alt="logo" class="h-9">
+    <button class="mobile-nav-close w-10 h-10 rounded-full border border-line flex items-center justify-center"><i class="fa-solid fa-xmark"></i></button>
   </div>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="products.html">Products</a>
-  <a href="news.html">News</a>
-  <a href="blog.html">Blog</a>
-  <a href="gallery.html" class="active">Gallery</a>
-  <a href="depots.html">Depots</a>
-  <a href="contact.html">Contact</a>
-  <div style="margin-top:22px;display:flex;gap:10px;">
-    <a href="tel:+8801700000000" class="btn btn-primary btn-sm btn-block"><i class="fa-solid fa-phone"></i><span>Call Us</span></a>
+  <a href="index.html" class="nav-link block py-3 font-display font-semibold text-navy border-b border-line">Home</a>
+  <a href="about.html" class="nav-link block py-3 font-display font-semibold text-navy border-b border-line">About</a>
+  <a href="products.html" class="nav-link block py-3 font-display font-semibold text-navy border-b border-line">Products</a>
+  <a href="news.html" class="nav-link block py-3 font-display font-semibold text-navy border-b border-line">News</a>
+  <a href="blog.html" class="nav-link block py-3 font-display font-semibold text-navy border-b border-line">Blog</a>
+  <a href="gallery.html" class="nav-link block py-3 font-display font-semibold text-primary border-b border-line">Gallery</a>
+  <a href="depots.html" class="nav-link block py-3 font-display font-semibold text-navy border-b border-line">Depots</a>
+  <a href="contact.html" class="nav-link block py-3 font-display font-semibold text-navy">Contact</a>
+  <div class="mt-6 flex gap-2.5">
+    <a href="tel:+8801700000000" class="w-full inline-flex items-center justify-center gap-2 bg-primary text-white font-display font-semibold text-sm px-5 py-3 rounded-full"><i class="fa-solid fa-phone"></i><span>Call Us</span></a>
   </div>
 </div>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="index.html" class="brand">
-      <img src="assets/images/logo.png" alt="AS Bio Care Limited logo">
-      <!-- <span class="brand-name">AS BIO CARE<small>Aquaculture &amp; Poultry Health</small></span>-->
+<header id="site-header" class="fixed top-0 inset-x-0 z-[1000] py-[18px] transition-all duration-400">
+  <div class="max-w-[1240px] mx-auto px-6 flex items-center justify-between gap-5">
+    <a href="index.html" class="flex items-center gap-3">
+      <img id="brand-logo" src="assets/images/logo.png" alt="AS Bio Care Limited logo" class="h-11 w-11 object-contain transition-all duration-300">
     </a>
-    <nav class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="products.html">Products</a>
-      <a href="news.html">News</a>
-      <a href="blog.html">Blog</a>
-      <a href="gallery.html" class="active">Gallery</a>
-      <a href="depots.html">Depots</a>
-      <a href="contact.html">Contact</a>
+    <nav class="hidden lg:flex items-center gap-0.5">
+      <a href="index.html" class="nav-link relative font-display font-semibold text-[14px] text-navy px-4 py-2.5 rounded-full hover:text-primary transition-colors after:content-[''] after:absolute after:left-4 after:right-4 after:bottom-1.5 after:h-0.5 after:bg-secondary after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform">Home</a>
+      <a href="about.html" class="nav-link relative font-display font-semibold text-[14px] text-navy px-4 py-2.5 rounded-full hover:text-primary transition-colors after:content-[''] after:absolute after:left-4 after:right-4 after:bottom-1.5 after:h-0.5 after:bg-secondary after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform">About</a>
+      <a href="products.html" class="nav-link relative font-display font-semibold text-[14px] text-navy px-4 py-2.5 rounded-full hover:text-primary transition-colors after:content-[''] after:absolute after:left-4 after:right-4 after:bottom-1.5 after:h-0.5 after:bg-secondary after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform">Products</a>
+      <a href="news.html" class="nav-link relative font-display font-semibold text-[14px] text-navy px-4 py-2.5 rounded-full hover:text-primary transition-colors after:content-[''] after:absolute after:left-4 after:right-4 after:bottom-1.5 after:h-0.5 after:bg-secondary after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform">News</a>
+      <a href="blog.html" class="nav-link relative font-display font-semibold text-[14px] text-navy px-4 py-2.5 rounded-full hover:text-primary transition-colors after:content-[''] after:absolute after:left-4 after:right-4 after:bottom-1.5 after:h-0.5 after:bg-secondary after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform">Blog</a>
+      <a href="gallery.html" class="nav-link relative font-display font-semibold text-[14px] text-primary px-4 py-2.5 rounded-full after:content-[''] after:absolute after:left-4 after:right-4 after:bottom-1.5 after:h-0.5 after:bg-secondary after:scale-x-100 after:origin-left after:transition-transform">Gallery</a>
+      <a href="depots.html" class="nav-link relative font-display font-semibold text-[14px] text-navy px-4 py-2.5 rounded-full hover:text-primary transition-colors after:content-[''] after:absolute after:left-4 after:right-4 after:bottom-1.5 after:h-0.5 after:bg-secondary after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform">Depots</a>
+      <a href="contact.html" class="nav-link relative font-display font-semibold text-[14px] text-navy px-4 py-2.5 rounded-full hover:text-primary transition-colors after:content-[''] after:absolute after:left-4 after:right-4 after:bottom-1.5 after:h-0.5 after:bg-secondary after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform">Contact</a>
     </nav>
-    <div class="header-actions">
-      <div class="lang-switch">
-        <button class="active">EN</button><button>বাংলা</button>
+    <div class="flex items-center gap-2.5">
+      <div class="hidden lg:flex items-center border border-line rounded-full overflow-hidden font-display font-bold text-[13px]">
+        <button class="lang-btn px-3 py-2 bg-primary text-white">EN</button>
+        <button class="lang-btn px-3 py-2 text-slate">বাংলা</button>
       </div>
-      <button class="icon-btn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
-      <a href="tel:+8801700000000" class="btn btn-outline btn-sm" style="display:none" data-call><i class="fa-solid fa-phone"></i></a>
-      <a href="contact.html" class="btn btn-primary btn-sm"><span>Contact</span></a>
-      <button class="hamburger" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+      <button class="hidden lg:flex w-10 h-10 rounded-full border border-line items-center justify-center text-navy hover:bg-primary hover:text-white hover:border-primary transition-colors" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <a href="contact.html" class="hidden sm:inline-flex items-center gap-2 bg-primary text-white font-display font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-primary-600 transition-colors"><span>Contact</span></a>
+      <button id="hamburger" class="lg:hidden w-[42px] h-[42px] rounded-full border border-line flex items-center justify-center" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
     </div>
   </div>
 </header>
 
-<section class="page-hero">
-  <div class="container content">
-    <span class="eyebrow">Photo Gallery</span>
-    <h1>Gallery</h1>
-    <div class="breadcrumb"><a href="index.html">Home</a><i class="fa-solid fa-chevron-right" style="font-size:.6rem;"></i><span>Gallery</span></div>
-  </div>
-</section>
-
-<section class="section" style="padding-top:56px;">
-  <div class="container">
-    <div class="gallery-grid">
-      
-<div class="gallery-item reveal-zoom delay-1">
-  <img src="https://picsum.photos/seed/gal1/420/420" alt="Fish Farm Site Visit" loading="lazy">
-  <div class="overlay"><span>Fish Farm Site Visit</span></div>
-</div>
-<div class="gallery-item reveal-zoom delay-2">
-  <img src="https://picsum.photos/seed/gal2/420/300" alt="Poultry Farm Inspection" loading="lazy">
-  <div class="overlay"><span>Poultry Farm Inspection</span></div>
-</div>
-<div class="gallery-item reveal-zoom delay-3">
-  <img src="https://picsum.photos/seed/gal3/420/380" alt="Research Laboratory" loading="lazy">
-  <div class="overlay"><span>Research Laboratory</span></div>
-</div>
-<div class="gallery-item reveal-zoom delay-4">
-  <img src="https://picsum.photos/seed/gal4/420/320" alt="Farmer Training Camp" loading="lazy">
-  <div class="overlay"><span>Farmer Training Camp</span></div>
-</div>
-<div class="gallery-item reveal-zoom delay-1">
-  <img src="https://picsum.photos/seed/gal5/420/400" alt="Product Manufacturing" loading="lazy">
-  <div class="overlay"><span>Product Manufacturing</span></div>
-</div>
-<div class="gallery-item reveal-zoom delay-2">
-  <img src="https://picsum.photos/seed/gal6/420/300" alt="Depot Network Meeting" loading="lazy">
-  <div class="overlay"><span>Depot Network Meeting</span></div>
-</div>
-<div class="gallery-item reveal-zoom delay-3">
-  <img src="https://picsum.photos/seed/gal7/420/360" alt="Water Quality Testing" loading="lazy">
-  <div class="overlay"><span>Water Quality Testing</span></div>
-</div>
-<div class="gallery-item reveal-zoom delay-4">
-  <img src="https://picsum.photos/seed/gal8/420/320" alt="Award Ceremony 2026" loading="lazy">
-  <div class="overlay"><span>Award Ceremony 2026</span></div>
-</div>
-<div class="gallery-item reveal-zoom delay-1">
-  <img src="https://picsum.photos/seed/gal9/420/400" alt="Head Office Building" loading="lazy">
-  <div class="overlay"><span>Head Office Building</span></div>
-</div>
-<div class="gallery-item reveal-zoom delay-2">
-  <img src="https://picsum.photos/seed/gal10/420/300" alt="Fisheries Exhibition" loading="lazy">
-  <div class="overlay"><span>Fisheries Exhibition</span></div>
-</div>
-<div class="gallery-item reveal-zoom delay-3">
-  <img src="https://picsum.photos/seed/gal11/420/380" alt="Quality Control Lab" loading="lazy">
-  <div class="overlay"><span>Quality Control Lab</span></div>
-</div>
-<div class="gallery-item reveal-zoom delay-4">
-  <img src="https://picsum.photos/seed/gal12/420/320" alt="Community Outreach" loading="lazy">
-  <div class="overlay"><span>Community Outreach</span></div>
-</div>
+<section class="relative pt-[190px] pb-24 bg-navy text-white overflow-hidden">
+  <div class="absolute inset-0 bg-[radial-gradient(650px_320px_at_85%_0%,rgba(31,158,76,.35),transparent),radial-gradient(500px_300px_at_10%_100%,rgba(39,98,181,.4),transparent)]"></div>
+  <div class="relative z-[2] max-w-[1240px] mx-auto px-6">
+    <span class="inline-flex items-center gap-2 font-display font-semibold text-[12px] tracking-[.14em] uppercase bg-white/10 text-white px-4 py-[7px] rounded-full before:content-[''] before:w-[7px] before:h-[7px] before:rounded-full before:bg-secondary before:inline-block">Photo Gallery</span>
+    <h1 class="font-display font-semibold text-white text-[2rem] sm:text-[3rem] mt-2.5">Gallery</h1>
+    <div class="flex gap-2 items-center text-white/65 text-sm mt-3.5">
+      <a href="index.html" class="text-white font-semibold">Home</a>
+      <i class="fa-solid fa-chevron-right text-[10px]"></i>
+      <span>Gallery</span>
     </div>
   </div>
 </section>
 
-<div class="float-stack">
-  <a href="#" class="fab fab-messenger" aria-label="Messenger"><i class="fa-brands fa-facebook-messenger"></i><span class="tip">Chat on Messenger</span></a>
-  <a href="#" class="fab fab-whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i><span class="tip">WhatsApp Us</span></a>
-  <a href="tel:+8801700000000" class="fab fab-call" aria-label="Call"><i class="fa-solid fa-phone"></i><span class="tip">Call Head Office</span></a>
-  <button class="scroll-top" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
+<section class="pt-14 pb-24">
+  <div class="max-w-[1240px] mx-auto px-6">
+    <div class="columns-1 sm:columns-2 lg:columns-4 gap-4">
+
+      <div class="gallery-item break-inside-avoid mb-4 rounded-md overflow-hidden relative cursor-pointer group" data-reveal="zoom">
+        <img src="https://picsum.photos/seed/gal1/420/420" alt="Fish Farm Site Visit" loading="lazy" class="w-full block transition-transform duration-500 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-navy/75 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-white font-display font-semibold text-sm">Fish Farm Site Visit</span></div>
+      </div>
+      <div class="gallery-item break-inside-avoid mb-4 rounded-md overflow-hidden relative cursor-pointer group" data-reveal="zoom">
+        <img src="https://picsum.photos/seed/gal2/420/300" alt="Poultry Farm Inspection" loading="lazy" class="w-full block transition-transform duration-500 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-navy/75 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-white font-display font-semibold text-sm">Poultry Farm Inspection</span></div>
+      </div>
+      <div class="gallery-item break-inside-avoid mb-4 rounded-md overflow-hidden relative cursor-pointer group" data-reveal="zoom">
+        <img src="https://picsum.photos/seed/gal3/420/380" alt="Research Laboratory" loading="lazy" class="w-full block transition-transform duration-500 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-navy/75 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-white font-display font-semibold text-sm">Research Laboratory</span></div>
+      </div>
+      <div class="gallery-item break-inside-avoid mb-4 rounded-md overflow-hidden relative cursor-pointer group" data-reveal="zoom">
+        <img src="https://picsum.photos/seed/gal4/420/320" alt="Farmer Training Camp" loading="lazy" class="w-full block transition-transform duration-500 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-navy/75 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-white font-display font-semibold text-sm">Farmer Training Camp</span></div>
+      </div>
+      <div class="gallery-item break-inside-avoid mb-4 rounded-md overflow-hidden relative cursor-pointer group" data-reveal="zoom">
+        <img src="https://picsum.photos/seed/gal5/420/400" alt="Product Manufacturing" loading="lazy" class="w-full block transition-transform duration-500 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-navy/75 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-white font-display font-semibold text-sm">Product Manufacturing</span></div>
+      </div>
+      <div class="gallery-item break-inside-avoid mb-4 rounded-md overflow-hidden relative cursor-pointer group" data-reveal="zoom">
+        <img src="https://picsum.photos/seed/gal6/420/300" alt="Depot Network Meeting" loading="lazy" class="w-full block transition-transform duration-500 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-navy/75 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-white font-display font-semibold text-sm">Depot Network Meeting</span></div>
+      </div>
+      <div class="gallery-item break-inside-avoid mb-4 rounded-md overflow-hidden relative cursor-pointer group" data-reveal="zoom">
+        <img src="https://picsum.photos/seed/gal7/420/360" alt="Water Quality Testing" loading="lazy" class="w-full block transition-transform duration-500 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-navy/75 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-white font-display font-semibold text-sm">Water Quality Testing</span></div>
+      </div>
+      <div class="gallery-item break-inside-avoid mb-4 rounded-md overflow-hidden relative cursor-pointer group" data-reveal="zoom">
+        <img src="https://picsum.photos/seed/gal8/420/320" alt="Award Ceremony 2026" loading="lazy" class="w-full block transition-transform duration-500 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-navy/75 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-white font-display font-semibold text-sm">Award Ceremony 2026</span></div>
+      </div>
+      <div class="gallery-item break-inside-avoid mb-4 rounded-md overflow-hidden relative cursor-pointer group" data-reveal="zoom">
+        <img src="https://picsum.photos/seed/gal9/420/400" alt="Head Office Building" loading="lazy" class="w-full block transition-transform duration-500 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-navy/75 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-white font-display font-semibold text-sm">Head Office Building</span></div>
+      </div>
+      <div class="gallery-item break-inside-avoid mb-4 rounded-md overflow-hidden relative cursor-pointer group" data-reveal="zoom">
+        <img src="https://picsum.photos/seed/gal10/420/300" alt="Fisheries Exhibition" loading="lazy" class="w-full block transition-transform duration-500 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-navy/75 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-white font-display font-semibold text-sm">Fisheries Exhibition</span></div>
+      </div>
+      <div class="gallery-item break-inside-avoid mb-4 rounded-md overflow-hidden relative cursor-pointer group" data-reveal="zoom">
+        <img src="https://picsum.photos/seed/gal11/420/380" alt="Quality Control Lab" loading="lazy" class="w-full block transition-transform duration-500 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-navy/75 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-white font-display font-semibold text-sm">Quality Control Lab</span></div>
+      </div>
+      <div class="gallery-item break-inside-avoid mb-4 rounded-md overflow-hidden relative cursor-pointer group" data-reveal="zoom">
+        <img src="https://picsum.photos/seed/gal12/420/320" alt="Community Outreach" loading="lazy" class="w-full block transition-transform duration-500 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-navy/75 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-white font-display font-semibold text-sm">Community Outreach</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="fixed right-6 bottom-6 z-[900] flex flex-col-reverse gap-3.5 items-center">
+  <a href="#" class="w-[54px] h-[54px] rounded-full flex items-center justify-center text-white text-xl shadow-card relative group bg-[#0084FF]" aria-label="Messenger">
+    <i class="fa-brands fa-facebook-messenger"></i>
+    <span class="absolute inset-0 rounded-full border-2 border-[#0084FF] animate-pulseRing"></span>
+    <span class="absolute right-16 bg-navy text-white px-3.5 py-1.5 rounded-lg text-xs whitespace-nowrap opacity-0 translate-x-1.5 group-hover:opacity-100 group-hover:translate-x-0 transition-all font-display pointer-events-none">Chat on Messenger</span>
+  </a>
+  <a href="#" class="w-[54px] h-[54px] rounded-full flex items-center justify-center text-white text-xl shadow-card relative group bg-[#25D366]" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="absolute right-16 bg-navy text-white px-3.5 py-1.5 rounded-lg text-xs whitespace-nowrap opacity-0 translate-x-1.5 group-hover:opacity-100 group-hover:translate-x-0 transition-all font-display pointer-events-none">WhatsApp Us</span>
+  </a>
+  <a href="tel:+8801700000000" class="w-[54px] h-[54px] rounded-full flex items-center justify-center text-white text-xl shadow-card relative group bg-primary" aria-label="Call">
+    <i class="fa-solid fa-phone"></i>
+    <span class="absolute right-16 bg-navy text-white px-3.5 py-1.5 rounded-lg text-xs whitespace-nowrap opacity-0 translate-x-1.5 group-hover:opacity-100 group-hover:translate-x-0 transition-all font-display pointer-events-none">Call Head Office</span>
+  </a>
+  <button class="scroll-top w-[46px] h-[46px] rounded-full bg-navy text-white flex items-center justify-center shadow-card opacity-0 invisible translate-y-2.5 transition-all duration-300" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
 </div>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="assets/images/logo.png" alt="AS Bio Care Limited">
-        <p>AS BIO CARE LIMITED manufactures trusted aquaculture and poultry healthcare products &mdash; fisheries medicines, nutritional supplements, water treatment solutions and disease prevention formulas for farmers across Bangladesh.</p>
-        <div class="footer-social">
-          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+<footer class="bg-navy text-white/75 pt-20">
+  <div class="max-w-[1240px] mx-auto px-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1.3fr] gap-10 pb-12 border-b border-white/10">
+      <div>
+        <img src="assets/images/logo.png" alt="AS Bio Care Limited" class="h-11 mb-4">
+        <p class="text-sm leading-relaxed text-white/60">AS BIO CARE LIMITED manufactures trusted aquaculture and poultry healthcare products &mdash; fisheries medicines, nutritional supplements, water treatment solutions and disease prevention formulas for farmers across Bangladesh.</p>
+        <div class="flex gap-2.5 mt-5">
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-secondary transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-secondary transition-colors" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-secondary transition-colors" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-secondary transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
         </div>
       </div>
-      <div class="footer-col">
-        <h5>Company</h5>
-        <a href="about.html">About Us</a>
-        <a href="mission.html">Our Mission</a>
-        <a href="vision.html">Our Vision</a>
-        <a href="motto.html">Our Motto</a>
-        <a href="team.html">Expert Team</a>
-        <a href="testimonials.html">Testimonials</a>
+      <div>
+        <h5 class="text-white font-display font-semibold text-[15px] mb-5">Company</h5>
+        <a href="about.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">About Us</a>
+        <a href="mission.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">Our Mission</a>
+        <a href="vision.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">Our Vision</a>
+        <a href="motto.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">Our Motto</a>
+        <a href="team.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">Expert Team</a>
+        <a href="testimonials.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">Testimonials</a>
       </div>
-      <div class="footer-col">
-        <h5>Resources</h5>
-        <a href="products.html">Products</a>
-        <a href="news.html">News</a>
-        <a href="blog.html">Blog</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="depots.html">Our Depots</a>
-        <a href="contact.html">Contact Us</a>
+      <div>
+        <h5 class="text-white font-display font-semibold text-[15px] mb-5">Resources</h5>
+        <a href="products.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">Products</a>
+        <a href="news.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">News</a>
+        <a href="blog.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">Blog</a>
+        <a href="gallery.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">Gallery</a>
+        <a href="depots.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">Our Depots</a>
+        <a href="contact.html" class="block text-white/60 text-sm mb-3 hover:text-secondary hover:pl-1 transition-all">Contact Us</a>
       </div>
-      <div class="footer-col">
-        <h5>Get in Touch</h5>
-        <ul class="footer-contact" style="list-style:none;padding:0;margin:0 0 18px;">
-          <li><i class="fa-solid fa-location-dot"></i><span>Head Office: 123 Progoti Sarani, Dhaka 1212, Bangladesh</span></li>
-          <li><i class="fa-solid fa-phone"></i><span>+880 1700-000000</span></li>
-          <li><i class="fa-solid fa-envelope"></i><span>info@asbiocare.com</span></li>
+      <div>
+        <h5 class="text-white font-display font-semibold text-[15px] mb-5">Get in Touch</h5>
+        <ul class="list-none p-0 mb-4.5">
+          <li class="flex gap-2.5 text-sm text-white/65 mb-3.5"><i class="fa-solid fa-location-dot text-secondary mt-0.5"></i><span>Head Office: 123 Progoti Sarani, Dhaka 1212, Bangladesh</span></li>
+          <li class="flex gap-2.5 text-sm text-white/65 mb-3.5"><i class="fa-solid fa-phone text-secondary mt-0.5"></i><span>+880 1700-000000</span></li>
+          <li class="flex gap-2.5 text-sm text-white/65 mb-3.5"><i class="fa-solid fa-envelope text-secondary mt-0.5"></i><span>info@asbiocare.com</span></li>
         </ul>
-        <h5 style="font-size:.85rem;">Newsletter</h5>
-        <form class="newsletter" data-demo-form>
-          <input type="email" placeholder="Your email address" required>
-          <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+        <h5 class="text-white font-display font-semibold text-[13px] mb-2">Newsletter</h5>
+        <form class="flex mt-2.5 rounded-full overflow-hidden bg-white/10 p-1.5" data-demo-form>
+          <input type="email" placeholder="Your email address" required class="flex-1 bg-transparent border-none px-4 text-sm text-white placeholder:text-white/50 focus:outline-none">
+          <button type="submit" class="bg-secondary border-none text-white px-4.5 py-2.5 rounded-full font-bold"><i class="fa-solid fa-paper-plane"></i></button>
         </form>
       </div>
     </div>
-    <div class="footer-bottom">
+    <div class="flex justify-between items-center py-6 text-sm text-white/50 flex-wrap gap-2.5">
       <span>&copy; 2026 AS Bio Care Limited. All rights reserved.</span>
-      <span><a href="contact.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="contact.html">Terms of Service</a></span>
+      <span><a href="contact.html" class="hover:text-white">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="contact.html" class="hover:text-white">Terms of Service</a></span>
     </div>
   </div>
 </footer>
 
-<div class="lightbox"><span class="lightbox-close">&times;</span><img src="" alt=""></div>
+<div class="lightbox hidden fixed inset-0 bg-navy/90 z-[3000] items-center justify-center p-10">
+  <span class="lightbox-close absolute top-6 right-8 text-white text-2xl cursor-pointer">&times;</span>
+  <img src="" alt="" class="max-w-[90vw] max-h-[85vh] rounded-lg">
+</div>
 
 <script src="assets/js/main.js"></script>
 </body>
