@@ -1,4 +1,4 @@
-/* AS BIO CARE LIMITED — shared site behavior (Tailwind-only build) */
+/* AS Bio Care & Agro Science Limited — shared site behavior (Tailwind-only build) */
 document.addEventListener('DOMContentLoaded', function () {
 
   /* ---------- Loader ---------- */
