@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AS Bio Care - Admin Panel</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body class="h-screen w-full flex bg-slate-100 text-slate-800 overflow-hidden">
+
+  <!-- ======================================================= -->
+  <!-- MOBILE OVERLAY (shown only when sidebar is open on mobile) -->
+  <!-- ======================================================= -->
+  <div id="mobileOverlay" class="fixed inset-0 bg-slate-900/50 z-30 lg:hidden hidden"></div>
+
+  <!-- ======================================================= -->
+  <!-- SIDEBAR                                                  -->
+  <!-- ======================================================= -->
+  <aside id="sidebar"
+    class="fixed lg:static inset-y-0 left-0 z-40 flex flex-col bg-teal-950 text-teal-100 w-[268px] lg:w-[268px] -translate-x-full lg:translate-x-0 transition-all duration-200 ease-in-out">
+
+    <!-- Brand -->
+    <div class="h-16 flex items-center gap-3 px-4 border-b border-teal-900/80 shrink-0">
+      <div class="h-9 w-9 rounded-lg bg-cyan-500 flex items-center justify-center shrink-0">
+        <i data-lucide="fish" class="text-teal-950" width="20" height="20"></i>
+      </div>
+      <div class="min-w-0" id="brandText">
+        <p class="text-sm font-semibold text-white leading-tight truncate">AS BIO CARE</p>
+        <p class="text-[11px] text-teal-400 leading-tight truncate">Admin Panel</p>
+      </div>
+      <button id="closeMobileSidebar" class="ml-auto lg:hidden text-teal-300 hover:text-white p-1 rounded-md hover:bg-teal-900">
+        <i data-lucide="x" width="18" height="18"></i>
+      </button>
+    </div>
+
+    <!-- Menu -->
+    <nav class="flex-1 overflow-y-auto py-3 px-2.5 space-y-0.5">
+
+      <!-- Single item: Dashboard -->
+      <button class="menu-single w-full flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium bg-cyan-500 text-teal-950">
+        <i data-lucide="layout-dashboard" width="18" height="18" class="shrink-0"></i>
+        <span class="menu-label">Dashboard</span>
+      </button>
+
+      <!-- Parent item with children: Website & CMS -->
+      <div class="menu-parent-group">
+        <button class="menu-parent w-full flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-teal-200 hover:bg-teal-900 hover:text-white">
+          <i data-lucide="globe-2" width="18" height="18" class="shrink-0"></i>
+          <span class="menu-label flex-1 text-left">Website &amp; CMS</span>
+          <i data-lucide="chevron-down" width="16" height="16" class="menu-chevron shrink-0 transition-transform rotate-180"></i>
+        </button>
+        <div class="menu-children mt-0.5 ml-4 pl-4 border-l border-teal-900 space-y-0.5">
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] bg-cyan-500 text-teal-950 font-semibold">Home Banners</button>
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">Why Choose Us</button>
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">About / Company Profile</button>
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">News &amp; Events</button>
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">Blog</button>
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">Testimonials</button>
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">Gallery</button>
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">Downloads</button>
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">Contact Messages</button>
+        </div>
+      </div>
+
+      <!-- Parent item: Product Catalog -->
+      <div class="menu-parent-group">
+        <button class="menu-parent w-full flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-teal-200 hover:bg-teal-900 hover:text-white">
+          <i data-lucide="package-search" width="18" height="18" class="shrink-0"></i>
+          <span class="menu-label flex-1 text-left">Product Catalog</span>
+          <i data-lucide="chevron-down" width="16" height="16" class="menu-chevron shrink-0 transition-transform"></i>
+        </button>
+        <div class="menu-children hidden mt-0.5 ml-4 pl-4 border-l border-teal-900 space-y-0.5">
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">Products</button>
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">Categories</button>
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">Units</button>
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">Batches &amp; Expiry</button>
+        </div>
+      </div>
+
+      <!-- Parent item: Inventory -->
+      <div class="menu-parent-group">
+        <button class="menu-parent w-full flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-teal-200 hover:bg-teal-900 hover:text-white">
+          <i data-lucide="warehouse" width="18" height="18" class="shrink-0"></i>
+          <span class="menu-label flex-1 text-left">Inventory</span>
+          <i data-lucide="chevron-down" width="16" height="16" class="menu-chevron shrink-0 transition-transform"></i>
+        </button>
+        <div class="menu-children hidden mt-0.5 ml-4 pl-4 border-l border-teal-900 space-y-0.5">
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">Head Office Stock</button>
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">Depot Stock</button>
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">Stock Transfers</button>
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">Stock Adjustments</button>
+        </div>
+      </div>
+
+      <!-- Single item: Depots -->
+      <button class="menu-single w-full flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-teal-200 hover:bg-teal-900 hover:text-white">
+        <i data-lucide="building-2" width="18" height="18" class="shrink-0"></i>
+        <span class="menu-label">Depots</span>
+      </button>
+
+      <!-- Parent item: Customers -->
+      <div class="menu-parent-group">
+        <button class="menu-parent w-full flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-teal-200 hover:bg-teal-900 hover:text-white">
+          <i data-lucide="users" width="18" height="18" class="shrink-0"></i>
+          <span class="menu-label flex-1 text-left">Customers</span>
+          <i data-lucide="chevron-down" width="16" height="16" class="menu-chevron shrink-0 transition-transform"></i>
+        </button>
+        <div class="menu-children hidden mt-0.5 ml-4 pl-4 border-l border-teal-900 space-y-0.5">
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">All Customers</button>
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">Customer Categories</button>
+        </div>
+      </div>
+
+      <!-- Parent item: Sales & Invoicing -->
+      <div class="menu-parent-group">
+        <button class="menu-parent w-full flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-teal-200 hover:bg-teal-900 hover:text-white">
+          <i data-lucide="receipt" width="18" height="18" class="shrink-0"></i>
+          <span class="menu-label flex-1 text-left">Sales &amp; Invoicing</span>
+          <i data-lucide="chevron-down" width="16" height="16" class="menu-chevron shrink-0 transition-transform"></i>
+        </button>
+        <div class="menu-children hidden mt-0.5 ml-4 pl-4 border-l border-teal-900 space-y-0.5">
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">Invoices</button>
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">Payments</button>
+        </div>
+      </div>
+
+      <!-- Parent item: Expenses -->
+      <div class="menu-parent-group">
+        <button class="menu-parent w-full flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-teal-200 hover:bg-teal-900 hover:text-white">
+          <i data-lucide="wallet" width="18" height="18" class="shrink-0"></i>
+          <span class="menu-label flex-1 text-left">Expenses</span>
+          <i data-lucide="chevron-down" width="16" height="16" class="menu-chevron shrink-0 transition-transform"></i>
+        </button>
+        <div class="menu-children hidden mt-0.5 ml-4 pl-4 border-l border-teal-900 space-y-0.5">
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">All Expenses</button>
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">Expense Categories</button>
+        </div>
+      </div>
+
+      <!-- Parent item: Reports -->
+      <div class="menu-parent-group">
+        <button class="menu-parent w-full flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-teal-200 hover:bg-teal-900 hover:text-white">
+          <i data-lucide="bar-chart-3" width="18" height="18" class="shrink-0"></i>
+          <span class="menu-label flex-1 text-left">Reports</span>
+          <i data-lucide="chevron-down" width="16" height="16" class="menu-chevron shrink-0 transition-transform"></i>
+        </button>
+        <div class="menu-children hidden mt-0.5 ml-4 pl-4 border-l border-teal-900 space-y-0.5">
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">Sales Reports</button>
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">Inventory Reports</button>
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">Expiry Reports</button>
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">Financial Summary</button>
+        </div>
+      </div>
+
+      <!-- Parent item: Employees -->
+      <div class="menu-parent-group">
+        <button class="menu-parent w-full flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-teal-200 hover:bg-teal-900 hover:text-white">
+          <i data-lucide="id-card" width="18" height="18" class="shrink-0"></i>
+          <span class="menu-label flex-1 text-left">Employees</span>
+          <i data-lucide="chevron-down" width="16" height="16" class="menu-chevron shrink-0 transition-transform"></i>
+        </button>
+        <div class="menu-children hidden mt-0.5 ml-4 pl-4 border-l border-teal-900 space-y-0.5">
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">Employee List</button>
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">Departments</button>
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">Designations</button>
+        </div>
+      </div>
+
+      <!-- Parent item: User Management -->
+      <div class="menu-parent-group">
+        <button class="menu-parent w-full flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-teal-200 hover:bg-teal-900 hover:text-white">
+          <i data-lucide="shield-check" width="18" height="18" class="shrink-0"></i>
+          <span class="menu-label flex-1 text-left">User Management</span>
+          <i data-lucide="chevron-down" width="16" height="16" class="menu-chevron shrink-0 transition-transform"></i>
+        </button>
+        <div class="menu-children hidden mt-0.5 ml-4 pl-4 border-l border-teal-900 space-y-0.5">
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">Users</button>
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">Roles</button>
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">Permissions</button>
+        </div>
+      </div>
+
+      <!-- Parent item: Settings -->
+      <div class="menu-parent-group">
+        <button class="menu-parent w-full flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-teal-200 hover:bg-teal-900 hover:text-white">
+          <i data-lucide="settings" width="18" height="18" class="shrink-0"></i>
+          <span class="menu-label flex-1 text-left">Settings</span>
+          <i data-lucide="chevron-down" width="16" height="16" class="menu-chevron shrink-0 transition-transform"></i>
+        </button>
+        <div class="menu-children hidden mt-0.5 ml-4 pl-4 border-l border-teal-900 space-y-0.5">
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">Company Settings</button>
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">SEO Settings</button>
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">Social Links</button>
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">Language</button>
+          <button class="menu-child w-full text-left rounded-lg px-3 py-2 text-[13.5px] text-teal-300 hover:bg-teal-900 hover:text-white">Backup</button>
+        </div>
+      </div>
+
+    </nav>
+
+    <!-- Collapse toggle (desktop only) -->
+    <div class="border-t border-teal-900/80 p-2.5 hidden lg:block shrink-0">
+      <button id="collapseToggle" class="w-full flex items-center justify-center gap-2 rounded-lg px-3 py-2 text-xs font-medium text-teal-300 hover:bg-teal-900 hover:text-white">
+        <i data-lucide="chevron-left" width="16" height="16"></i>
+        <span id="collapseLabel">Collapse</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ======================================================= -->
+  <!-- RIGHT COLUMN: HEADER + CONTENT                           -->
+  <!-- ======================================================= -->
+  <div class="flex-1 flex flex-col min-w-0">
+
+    <!-- HEADER / NAVBAR -->
+    <header class="h-16 shrink-0 bg-white border-b border-slate-200 flex items-center gap-3 px-4 lg:px-6">
+      <button id="openMobileSidebar" class="lg:hidden p-2 -ml-2 rounded-md text-slate-600 hover:bg-slate-100">
+        <i data-lucide="menu" width="20" height="20"></i>
+      </button>
+
+      <div class="min-w-0">
+        <p class="text-[11px] uppercase tracking-wide text-slate-400 font-medium truncate">Website &amp; CMS</p>
+        <h1 class="text-base font-semibold text-slate-900 truncate leading-tight">Home Banners</h1>
+      </div>
+
+      <!-- Search (desktop) -->
+      <div class="ml-auto hidden md:flex items-center relative">
+        <i data-lucide="search" width="16" height="16" class="absolute left-3 text-slate-400"></i>
+        <input type="text" placeholder="Search..."
+          class="w-56 lg:w-72 pl-9 pr-3 py-2 text-sm rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-cyan-500/40 focus:border-cyan-500 transition" />
+      </div>
+
+      <!-- Search (mobile) -->
+      <button class="ml-auto md:hidden p-2 rounded-md text-slate-600 hover:bg-slate-100">
+        <i data-lucide="search" width="19" height="19"></i>
+      </button>
+
+      <!-- Notifications -->
+      <button class="relative p-2 rounded-md text-slate-600 hover:bg-slate-100">
+        <i data-lucide="bell" width="19" height="19"></i>
+        <span class="absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-amber-500 ring-2 ring-white"></span>
+      </button>
+
+      <div class="w-px h-8 bg-slate-200 hidden sm:block"></div>
+
+      <!-- Profile -->
+      <div class="relative">
+        <button id="profileButton" class="flex items-center gap-2 rounded-lg pl-1 pr-2 py-1 hover:bg-slate-100">
+          <div class="h-8 w-8 rounded-full bg-teal-950 text-white flex items-center justify-center text-xs font-semibold shrink-0">RS</div>
+          <div class="hidden sm:block text-left leading-tight">
+            <p class="text-sm font-medium text-slate-800">Rahim Sarker</p>
+            <p class="text-[11px] text-slate-400">Super Admin</p>
+          </div>
+          <i data-lucide="chevrons-up-down" width="14" height="14" class="text-slate-400 hidden sm:block"></i>
+        </button>
+
+        <div id="profileMenu" class="hidden absolute right-0 mt-2 w-52 bg-white rounded-xl border border-slate-200 shadow-lg shadow-slate-200/60 py-1.5 z-50">
+          <div class="px-3 py-2 border-b border-slate-100">
+            <p class="text-sm font-medium text-slate-800">Rahim Sarker</p>
+            <p class="text-xs text-slate-400 truncate">rahim@asbiocare.com</p>
+          </div>
+          <button class="w-full flex items-center gap-2.5 px-3 py-2 text-sm text-slate-600 hover:bg-slate-50">
+            <i data-lucide="user-round" width="16" height="16"></i> My Profile
+          </button>
+          <button class="w-full flex items-center gap-2.5 px-3 py-2 text-sm text-slate-600 hover:bg-slate-50">
+            <i data-lucide="key-round" width="16" height="16"></i> Change Password
+          </button>
+          <div class="h-px bg-slate-100 my-1"></div>
+          <button class="w-full flex items-center gap-2.5 px-3 py-2 text-sm text-rose-600 hover:bg-rose-50">
+            <i data-lucide="log-out" width="16" height="16"></i> Logout
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- EMPTY CONTENT PAGE -->
+    <main class="flex-1 overflow-y-auto p-4 lg:p-6">
+      <div class="h-full min-h-[420px] rounded-2xl border-2 border-dashed border-slate-300 bg-white flex flex-col items-center justify-center text-center px-6">
+        <div class="h-14 w-14 rounded-full bg-teal-50 flex items-center justify-center mb-4">
+          <i data-lucide="inbox" width="26" height="26" class="text-teal-700"></i>
+        </div>
+        <h2 class="text-slate-800 font-semibold text-lg">Home Banners</h2>
+        <p class="text-slate-400 text-sm mt-1 max-w-sm">
+          This page is ready for its list, form, or detail view. Content will go here in the next design pass.
+        </p>
+      </div>
+    </main>
+  </div>
+
+  <!-- ======================================================= -->
+  <!-- DEMO SCRIPT (only to preview collapse / drawer / dropdown -->
+  <!-- behaviour here -- reimplement with your own JS/Inertia)  -->
+  <!-- ======================================================= -->
+  <script>
+    lucide.createIcons();
+
+    // Mobile drawer
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('mobileOverlay');
+    document.getElementById('openMobileSidebar').addEventListener('click', () => {
+      sidebar.classList.remove('-translate-x-full');
+      overlay.classList.remove('hidden');
+    });
+    document.getElementById('closeMobileSidebar').addEventListener('click', closeMobile);
+    overlay.addEventListener('click', closeMobile);
+    function closeMobile() {
+      sidebar.classList.add('-translate-x-full');
+      overlay.classList.add('hidden');
+    }
+
+    // Desktop collapse
+    let collapsed = false;
+    document.getElementById('collapseToggle').addEventListener('click', () => {
+      collapsed = !collapsed;
+      sidebar.classList.toggle('lg:w-[76px]', collapsed);
+      sidebar.classList.toggle('lg:w-[268px]', !collapsed);
+      document.querySelectorAll('.menu-label, .menu-chevron').forEach(el => el.classList.toggle('lg:hidden', collapsed));
+      document.getElementById('brandText').classList.toggle('lg:hidden', collapsed);
+      document.getElementById('collapseLabel').classList.toggle('hidden', collapsed);
+      document.querySelectorAll('.menu-children').forEach(el => { if (collapsed) el.classList.add('lg:hidden'); else el.classList.remove('lg:hidden'); });
+    });
+
+    // Parent expand/collapse
+    document.querySelectorAll('.menu-parent').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const group = btn.closest('.menu-parent-group');
+        const children = group.querySelector('.menu-children');
+        const chevron = btn.querySelector('.menu-chevron');
+        children.classList.toggle('hidden');
+        chevron.classList.toggle('rotate-180');
+      });
+    });
+
+    // Profile dropdown
+    const profileButton = document.getElementById('profileButton');
+    const profileMenu = document.getElementById('profileMenu');
+    profileButton.addEventListener('click', (e) => {
+      e.stopPropagation();
+      profileMenu.classList.toggle('hidden');
+    });
+    document.addEventListener('click', () => profileMenu.classList.add('hidden'));
+  </script>
+</body>
+</html>
